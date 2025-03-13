@@ -1,7 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, Shield, DollarSign, Zap, Award, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { NumberTicker } from './magicui/number-ticker';
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
@@ -17,35 +16,9 @@ const container = {
   }
 };
 
-const counterAnimation = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.5
-    }
-  }
-};
-
 export default function HVACServicePage() {
   return (
-    <div className="flex flex-col items-center w-full bg-gray-50">
-      <motion.div
-        className="w-[95%] rounded-2xl bg-white border-blue-800 border py-12 text-white mt-5"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={counterAnimation}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <Counter number={26} text="Years of Experience" />
-            <Counter number={5000} text="Completed Projects" />
-            <Counter number={98} text="Client Satisfaction" suffix="%" />
-            <Counter number={50} text="Certified Technicians" />
-          </div>
-        </div>
-      </motion.div>
+    <div className="flex flex-col items-center w-full bg-gray-50">    
 
       <motion.div className="w-[90%] px-4 py-8 md:py-16" initial="hidden" animate="visible" variants={fadeIn}>
         <div className="text-center mb-16">
@@ -123,19 +96,5 @@ const FeatureCard = ({ icon, title, description, footer }) => {
         </CardContent>
       </Card>
     </motion.div>
-  );
-};
-
-const Counter = ({ number, text, suffix = '' }) => {
-  return (
-    <div>
-      <motion.p className="text-4xl text-blue-800 md:text-5xl font-bold mb-2" variants={counterAnimation}>
-        <NumberTicker value={number} className="whitespace-pre-wrap tracking-tighter text-blue-800" />
-        {suffix}
-      </motion.p>
-      <motion.p className="text-sm md:text-base text-blue-800" variants={counterAnimation}>
-        {text}
-      </motion.p>
-    </div>
   );
 };
