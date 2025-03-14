@@ -1,5 +1,5 @@
-import { Outlet } from "react-router-dom"
-import Header from "./header"
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
 
 function Layout() {
   return (
@@ -10,8 +10,7 @@ function Layout() {
       </main>
       {/* You can add a Footer component here if needed */}
     </div>
-  )
+  );
 }
 
-export default Layout
-
+export default Layout;
