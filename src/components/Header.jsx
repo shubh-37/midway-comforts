@@ -1,39 +1,39 @@
-"use client"
+'use client';
 
-import { useState, useEffect } from "react"
-import { Menu } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { cn } from "@/lib/utils"
-import { Link } from "react-router-dom"
+import { useState, useEffect } from 'react';
+import { Menu } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
+import { ScrollProgress } from './magicui/scroll-progress';
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Before & After", href: "/before-after" },
-  { name: "AC Calculator", href: "/calculator" },
-
-]
+  { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Before & After', href: '/before-after' },
+  { name: 'AC Calculator', href: '/calculator' }
+];
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
+      setScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur-sm transition-all duration-300",
-        scrolled ? "shadow-md" : "",
+        'sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm transition-all duration-300',
+        scrolled ? 'shadow-md' : ''
       )}
     >
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -53,7 +53,7 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-
+        <ScrollProgress className="top-[65px]" />
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
             <button className="inline-flex h-10 w-10 items-center justify-center rounded-md text-gray-700 transition-colors  hover:bg-gray-100 hover:text-blue-600">
@@ -68,8 +68,8 @@ export default function Header() {
                   key={item.name}
                   to={item.href}
                   className={cn(
-                    "text-base font-medium text-gray-700 transition-all hover:text-blue-600 hover:translate-x-1",
-                    "animate-fadeIn",
+                    'text-base font-medium text-gray-700 transition-all hover:text-blue-600 hover:translate-x-1',
+                    'animate-fadeIn'
                   )}
                   style={{ animationDelay: `${index * 50}ms` }}
                   onClick={() => setIsOpen(false)}
@@ -82,6 +82,5 @@ export default function Header() {
         </Sheet>
       </div>
     </header>
-  )
+  );
 }
-
