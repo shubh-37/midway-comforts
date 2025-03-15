@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import hermesLogo from '../assets/hermes-logo.svg';
 import anytimeLogo from '../assets/anytime-logo.svg';
 import titanLogo from '../assets/titan-logo.jpeg';
+
 const brands = [
   {
     name: 'HDFC Bank',
@@ -43,36 +44,62 @@ export default function BrandMarquee() {
   }, []);
 
   return (
-    <section className="w-full overflow-hidden bg-background py-12 md:py-24">
-      <div className="container flex flex-col items-center justify-center gap-4 text-center">
-        <h3 className="text-2xl font-bold tracking-tighter sm:text-4xl md:text-4xl text-gray-800">
+    <section className="w-full overflow-hidden bg-background py-8 md:py-16">
+      <div className="container flex flex-col items-center justify-center gap-4 text-center px-4">
+        <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-gray-800">
           Trusted by Leading Brands
         </h3>
-        <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <p className="mx-auto max-w-[700px] text-gray-600 text-sm md:text-base">
           We partner with the world&apos;s most prestigious brands to deliver exceptional experiences.
         </p>
       </div>
 
-      <div className="relative mt-12 flex w-full overflow-hidden">
+      <div className="block sm:hidden relative mt-8 w-full overflow-hidden">
+        <motion.div
+          className="flex gap-4 py-8 flex-nowrap"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            duration: 25,
+            ease: 'linear',
+            repeat: Infinity
+          }}
+          style={{ width: duplicatedBrands.length * 160 }}
+        >
+          {duplicatedBrands.map((brand, idx) => (
+            <div key={`${brand.name}-mobile-${idx}`} className="flex items-center justify-center h-32 w-40">
+              <img
+                src={brand.logo || '/placeholder.svg'}
+                alt={`${brand.name} logo`}
+                className="h-full object-contain"
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      <div className="hidden sm:block relative mt-12 w-full overflow-hidden">
         <motion.div
           className="flex gap-8 py-4 w-[200%]"
           animate={{ x: ['0%', '-50%'] }}
           transition={{
-            duration: 20,
+            duration: 25,
             ease: 'linear',
             repeat: Infinity
           }}
         >
           {duplicatedBrands.map((brand, idx) => (
-            <div key={`${brand.name}-${idx}`} className="flex w-[200px] flex-col items-center gap-4">
-              <div className="relative aspect-[2/1] w-full overflow-hidden rounded-lg bg-muted p-4">
+            <div
+              key={`${brand.name}-desktop-${idx}`}
+              className="flex w-[200px] md:w-[220px] flex-col items-center gap-4"
+            >
+              <div className="w-full h-20 md:h-24 bg-white rounded-lg shadow-sm flex items-center justify-center p-4">
                 <img
                   src={brand.logo || '/placeholder.svg'}
                   alt={`${brand.name} logo`}
-                  className="w-full h-full object-contain p-2 transition-opacity hover:opacity-70"
+                  className="max-h-14 md:max-h-16 max-w-full"
                 />
               </div>
-              <span className="text-sm font-medium">{brand.name}</span>
+              <span className="text-sm md:text-base font-medium">{brand.name}</span>
             </div>
           ))}
         </motion.div>
