@@ -160,7 +160,7 @@ export default function CompanyTimeline() {
   ];
 
   return (
-    <div className="relative bg-gradient-to-b from-background to-muted/30 py-16 overflow-x-hidden">
+    <div className="relative bg-gradient-to-b from-background to-muted/30 py-10 overflow-x-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -left-16 top-1/4 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
         <div className="absolute -right-16 top-3/4 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl"></div>
