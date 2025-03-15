@@ -45,7 +45,9 @@ export default function BrandMarquee() {
   return (
     <section className="w-full overflow-hidden bg-background py-12 md:py-24">
       <div className="container flex flex-col items-center justify-center gap-4 text-center">
-        <h3 className="text-2xl font-bold tracking-tighter sm:text-4xl md:text-4xl">Trusted by Leading Brands</h3>
+        <h3 className="text-2xl font-bold tracking-tighter sm:text-4xl md:text-4xl text-gray-800">
+          Trusted by Leading Brands
+        </h3>
         <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
           We partner with the world&apos;s most prestigious brands to deliver exceptional experiences.
         </p>

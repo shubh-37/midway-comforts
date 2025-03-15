@@ -168,7 +168,7 @@ export default function CompanyTimeline() {
 
       <div className="container relative mx-auto px-4">
         <div className="mb-16 text-center">
-          <h1 className="mb-3 text-4xl font-bold tracking-tight md:text-5xl">Our Journey</h1>
+          <h1 className="mb-3 text-2xl text-gray-800 font-bold tracking-tight md:text-4xl">Our Journey</h1>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">Milestones of Midway Comforts</p>
         </div>
 
