@@ -18,16 +18,15 @@ const container = {
 
 export default function HVACServicePage() {
   return (
-    <div className="flex flex-col items-center w-full bg-gray-50">    
-
+    <div className="flex flex-col items-center w-full bg-gray-50">
       <motion.div className="w-[90%] px-4 py-8 md:py-16" initial="hidden" animate="visible" variants={fadeIn}>
         <div className="text-center mb-16">
-          <motion.h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6" variants={fadeIn}>
+          <motion.h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-gray-800 mb-6" variants={fadeIn}>
             Why Choose Us for Your HVAC Needs
           </motion.h1>
           <motion.p className="max-w-3xl mx-auto text-gray-600" variants={fadeIn}>
-            With 26 years of proven experience, we've established ourselves as leaders in the HVAC industry by
-            consistently delivering exceptional service and innovative solutions.
+            At Midway Comforts, we don't just provide air conditioning — we create comfort, sustainability, and
+            long-term value for every client we serve. Here's why you should choose us for all your HVAC needs.
           </motion.p>
         </div>
 
@@ -39,16 +38,16 @@ export default function HVACServicePage() {
         >
           <FeatureCard
             icon={<Clock className="w-8 h-8 text-blue-800" />}
-            title="26 Years of Experience"
-            description="Since 1999, we've been delivering exceptional HVAC solutions with a track record of reliability and excellence that spans over two and a half decades."
-            footer="Over 10,000 successful installations"
+            title="Experience & Expertise"
+            description="Over 25 years in the HVAC industry with a track record of successful projects and our average staff is 15+ years showing further expertise"
+            footer="Minimum 15+ years experienced staff"
           />
 
           <FeatureCard
             icon={<Shield className="w-8 h-8 text-blue-800" />}
-            title="Licensed & Certified Technicians"
-            description="Our team consists of highly trained, certified professionals who stay updated with the latest HVAC technologies and industry standards."
-            footer="100% licensed and insured"
+            title="Comprehensive Solutions"
+            description="From design to installation and round-the-clock servicing. We offer end-to-end solutions for all your HVAC needs."
+            footer="Customized solutions available"
           />
 
           <FeatureCard
@@ -60,23 +59,23 @@ export default function HVACServicePage() {
 
           <FeatureCard
             icon={<Zap className="w-8 h-8 text-blue-800" />}
-            title="Energy-Efficient Solutions"
-            description="We specialize in eco-friendly HVAC systems that reduce your carbon footprint while significantly lowering your energy bills over time."
-            footer="Up to 40% energy savings"
+            title="Innovative & Sustainable Practices"
+            description="Focus on energy efficiency and high-quality air for healthier environments. Our sustainable practices help you save money and reduce your carbon footprint."
+            footer="Energy-efficient solutions available"
           />
 
           <FeatureCard
             icon={<Award className="w-8 h-8 text-blue-800" />}
-            title="Industry-Leading Warranties"
-            description="We stand behind our work with comprehensive warranties, giving you peace of mind and protection for your investment."
-            footer="Extended warranties available"
+            title="Customer-Centric Approach"
+            description="Unmatched client retention, with many relationships lasting decades. Our commitment to customer satisfaction is the cornerstone of our business."
+            footer="100% customer satisfaction guaranteed"
           />
 
           <FeatureCard
             icon={<MessageSquare className="w-8 h-8 text-blue-800" />}
-            title="24/7 Emergency Service"
-            description="HVAC emergencies don't wait for business hours. Our responsive team is available around the clock to handle urgent situations when you need us most."
-            footer="Average response time under 1 hour"
+            title="Proven Reliability"
+            description=": We ensured uninterrupted service even during the COVID-19 pandemic, never letting clients go a day without comfort."
+            footer="24/7 emergency service available"
           />
         </motion.div>
       </motion.div>
