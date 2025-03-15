@@ -1,14 +1,6 @@
 import { motion } from 'framer-motion';
-import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail, Calculator, ImageIcon } from 'lucide-react';
+import { MapPin, Phone, Mail, Calculator, ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const socialIcons = [
-  { icon: Facebook, href: '#' },
-  { icon: Twitter, href: '#' },
-  { icon: Instagram, href: '#' },
-  { icon: Linkedin, href: '#' }
-];
-
 const quickLinks = [
   { text: 'About Us', href: '/about' },
   { text: 'Projects', href: '/projects' },
@@ -39,25 +31,8 @@ export default function Footer() {
               Providing premium HVAC solutions since 1999. With 26 years of experience, we're your trusted partner for
               all heating, ventilation, and air conditioning needs.
             </p>
-            <div className="flex space-x-4">
-              {socialIcons.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition-colors"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </motion.a>
-                );
-              })}
-            </div>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-4">
             <h2 className="text-xl font-bold border-b border-blue-500 pb-2 inline-block">Quick Links</h2>
             <ul className="space-y-2">
