@@ -2,8 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { ArrowRight, ArrowLeft, ArrowRightCircle, Monitor, Megaphone, Wind, Cpu, Zap, Calendar } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Monitor, Megaphone, Wind, Cpu, Zap, Calendar } from 'lucide-react';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -44,57 +43,49 @@ export default function PremiumHVACSolutions() {
   const solutions = [
     {
       icon: <Monitor className="w-8 h-8 text-blue-600" />,
-      title: 'Air Conditioning Systems',
+      title: 'Cutting-Edge Cooling Solutions',
       description:
-        'State-of-the-art cooling solutions including central air, split systems, and ductless mini-splits for residential and commercial spaces.',
-      features: ['Energy-efficient models', 'Smart temperature control', 'Quiet operation'],
-      details:
-        'Our air conditioning systems are designed with the latest technology to provide optimal cooling while minimizing energy consumption. We offer a range of options to suit different spaces and requirements, from compact units for small apartments to powerful systems for large commercial buildings.'
+        'Experience the next generation of air conditioning with our high-performance cooling systems. Designed for efficiency, comfort, and durability, our solutions cater to homes, offices, and commercial spaces, ensuring optimal temperature control in every environment.',
+      features: [
+        'Higher Energy Efficiency & Eco-Friendly',
+        'Compact & Flexible Design',
+        'Easy Maintenance & High Reliability'
+      ]
     },
     {
       icon: <Megaphone className="w-8 h-8 text-blue-600" />,
       title: 'Heating Systems',
       description:
         'High-efficiency furnaces, heat pumps, and boilers designed to provide reliable warmth while minimizing energy consumption.',
-      features: ['High AFUE ratings', 'Dual-fuel options', 'Zoned heating control'],
-      details:
-        'Stay warm during the coldest months with our high-efficiency heating systems. Our furnaces and heat pumps are engineered to deliver consistent warmth throughout your space while keeping energy costs low. With advanced features like zoned heating control, you can customize the temperature in different areas for maximum comfort.'
+      features: ['High AFUE ratings', 'Dual-fuel options', 'Zoned heating control']
     },
     {
       icon: <Wind className="w-8 h-8 text-blue-600" />,
-      title: 'Ventilation Systems',
+      title: 'High-Performance HVAC Solutions for Commercial Spaces',
       description:
-        'Advanced ventilation solutions that improve indoor air quality, reduce allergens, and maintain proper air circulation.',
-      features: ['HEPA filtration', 'Heat recovery systems', 'Air purification'],
-      details:
-        'Breathe easier with our advanced ventilation systems that ensure proper air circulation and filtration. Our HEPA filtration technology removes up to 99.97% of airborne particles, while heat recovery systems help maintain energy efficiency by recapturing thermal energy from exhaust air.'
+        'Enhance efficiency, comfort, and climate control in large-scale commercial environments with our advanced HVAC systems. Designed for malls, office buildings, hotels, and industrial facilities, our solutions provide reliable temperature regulation while optimizing energy usage.',
+      features: ['Custom Climate Control', 'Energy-Efficient & Cost-Effective', 'Scalable & Smart Integration']
     },
     {
       icon: <Cpu className="w-8 h-8 text-blue-600" />,
       title: 'Smart HVAC Controls',
       description:
         'Intelligent thermostats and control systems that optimize performance, enable remote access, and reduce energy costs.',
-      features: ['Mobile app control', 'Learning algorithms', 'Usage analytics'],
-      details:
-        'Take control of your comfort with our smart HVAC control systems. Access and adjust your heating and cooling from anywhere using our mobile app. Our learning algorithms adapt to your preferences over time, automatically optimizing settings for comfort and efficiency while providing detailed usage analytics.'
+      features: ['Mobile app control', 'Learning algorithms', 'Usage analytics']
     },
     {
       icon: <Zap className="w-8 h-8 text-blue-600" />,
-      title: 'Commercial HVAC Solutions',
+      title: 'Advanced Ventilation Solutions for Commercial Spaces',
       description:
-        'Specialized systems designed for offices, retail spaces, warehouses, and other commercial facilities with advanced zoning options.',
-      features: ['Large-scale capacity', 'Building automation', 'Energy management'],
-      details:
-        'Our commercial HVAC solutions are built to handle the demands of larger spaces with precision and reliability. From office buildings to warehouses, we provide customized systems that integrate with building automation platforms and include comprehensive energy management features to reduce operational costs.'
+        'Maintain superior indoor air quality and comfort with our cutting-edge ventilation systems, designed for offices, malls, hotels, and industrial facilities. Our solutions optimize airflow, reduce contaminants, and ensure a fresh environment for employees, customers, and visitors.',
+      features: ['Optimized Air Circulation', 'Energy-Efficient Ventilation', 'Humidity & Temperature Regulation']
     },
     {
       icon: <Calendar className="w-8 h-8 text-blue-600" />,
       title: 'Maintenance Services',
       description:
         'Comprehensive maintenance plans and services to ensure your HVAC systems operate at peak efficiency year-round.',
-      features: ['Regular inspections', 'Preventative care', '24/7 emergency service'],
-      details:
-        'Keep your HVAC system running smoothly with our comprehensive maintenance services. Our technicians perform thorough inspections and preventative care to identify and address potential issues before they become problems. With our 24/7 emergency service, help is always available when you need it most.'
+      features: ['Regular inspections', 'Preventative care', '24/7 emergency service']
     }
   ];
 
@@ -229,34 +220,6 @@ const SolutionCard = ({ solution }) => {
                 </li>
               ))}
             </ul>
-
-            <div className="mt-4 md:mt-6">
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className="text-blue-600 font-medium flex items-center hover:text-blue-800 transition-colors p-0 text-sm md:text-base"
-                  >
-                    Learn more <ArrowRightCircle className="w-3 h-3 md:w-4 md:h-4 ml-1" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-72 md:w-80 p-4 bg-white">
-                  <motion.div
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <h4 className="font-semibold text-base md:text-lg mb-2">{solution.title}</h4>
-                    <p className="text-gray-600 text-xs md:text-sm">{solution.details}</p>
-                    <div className="mt-4 pt-4 border-t border-gray-100">
-                      <Button variant="outline" size="sm" className="w-full">
-                        Request a quote
-                      </Button>
-                    </div>
-                  </motion.div>
-                </PopoverContent>
-              </Popover>
-            </div>
           </div>
         </CardContent>
       </Card>
