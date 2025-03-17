@@ -58,7 +58,7 @@ export default function FaqSection({
 }) {
   return (
     <section className="py-16 px-5 mx-auto">
-      <div className="container space-y-16">
+      <div className="space-y-16">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-2xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">{heading}</h2>
           <p className="text-muted-foreground">{description}</p>
