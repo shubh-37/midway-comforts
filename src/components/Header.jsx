@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { ScrollProgress } from './magicui/scroll-progress';
+import midwayLogo from '@/assets/midway-logo.jpg';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -37,11 +38,12 @@ export default function Header() {
       )}
     >
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center transition-transform duration-300 hover:scale-105">
-          <span className="text-xl font-bold text-blue-800">Midway Comforts</span>
+        <Link to="/" className="flex items-center transition-transform duration-300 hover:scale-105">
+          <div className=" w-36">
+            <img src={midwayLogo} alt="Midway Comforts" />
+          </div>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex md:items-center md:space-x-6">
           {navItems.map((item) => (
             <Link
