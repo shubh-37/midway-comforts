@@ -94,9 +94,9 @@ export default function HeroSection() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <Counter number={26} text="Years of Experience" />
-            <Counter number={5000} text="Completed Projects" />
-            <Counter number={98} text="Client Satisfaction" suffix="%" />
-            <Counter number={50} text="Certified Technicians" />
+            <Counter number={3400} text="Completed Projects" />
+            <Counter number={99} text="Client Satisfaction" suffix="%" />
+            <Counter number={70} text="Certified Technicians" />
           </div>
         </div>
       </motion.div>
