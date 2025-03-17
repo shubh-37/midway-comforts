@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { NumberTicker } from './magicui/number-ticker';
+import { AuroraText } from './magicui/aurora-text';
 
 const counterAnimation = {
   hidden: { opacity: 0 },
@@ -33,11 +34,11 @@ export default function HeroSection() {
         <div className="container relative z-10 px-4 md:px-6">
           <div
             className={cn(
-              'inline-block rounded-full bg-gradient-to-r from-yellow-500 to-yellow-400 px-4 py-1 text-sm font-medium text-blue-800 shadow-lg transition-all duration-700 ease-out',
+              'inline-block rounded-full bg-black text-yellow-400 px-4 py-1 font-medium shadow-lg transition-all duration-700 ease-out',
               isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             )}
           >
-            Celebrating 26 Years of Excellence
+            Celebrating <AuroraText className="font-bold">26 Years of Excellence</AuroraText>
           </div>
 
           <div className="mt-6 max-w-3xl">
