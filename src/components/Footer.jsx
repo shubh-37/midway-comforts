@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const quickLinks = [
   { text: 'About Us', href: '/about' },
   { text: 'Projects', href: '/projects' },
-  { text: 'Case Studies', href: '/case-studies' },
+  { text: 'Products', href: '/products' },
   { text: 'Before & After', href: '/before-after' },
   { text: 'AC Calculator', href: '/calculator' },
   { text: 'Privacy Policy', href: '/privacy-policy' },

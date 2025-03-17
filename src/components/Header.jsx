@@ -10,8 +10,8 @@ import { ScrollProgress } from './magicui/scroll-progress';
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
+  { name: 'Products', href: '/products' },
   { name: 'Projects', href: '/projects' },
-  { name: 'Case Studies', href: '/case-studies' },
   { name: 'Before & After', href: '/before-after' },
   { name: 'AC Calculator', href: '/calculator' }
 ];
