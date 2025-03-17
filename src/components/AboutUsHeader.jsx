@@ -1,6 +1,9 @@
 import React from 'react';
 import { Zap, Eye } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { SparklesText } from './magicui/sparkles-text';
 
 export default function AboutUsHeader() {
   const containerVariants = {
@@ -46,27 +49,63 @@ export default function AboutUsHeader() {
 
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants}>
-      <div>
-        <motion.h5
-          variants={itemVariants}
-          className="bg-blue-100 w-min mx-auto px-3 py-2 rounded-3xl font-bold text-blue-800 text-center whitespace-nowrap"
-        >
-          About Us
-        </motion.h5>
-        <motion.h2 variants={itemVariants} className="text-2xl font-bold my-4 text-center text-gray-700">
-          26 Years of HVAC Excellence
-        </motion.h2>
-        <motion.p variants={itemVariants} className="text-center text-gray-700 mt-4 mb-8">
-          Founded in <b>1999</b>, Midway Comforts is the result of the passion and perseverance of{' '}
-          <b>Mr. A. Sattar Khokar and Mr. Manish Pandey.</b> From a small showroom in Prabhadevi to becoming one of
-          <b> Mumbai's fastest-growing dealerships</b> for <b>TOSHIBA and CARRIER Air Conditioning</b>, we've built a
-          legacy of excellence. We specialize in <b>end-to-end HVAC solutions</b>, including{' '}
-          <b>
-            Design, Sales, Installation, Commissioning, and Servicing of Ductables, VRF, Mini VRF, Ventilation Systems,
-            Chillers, and AHUs.
-          </b>
-        </motion.p>
-      </div>
+      <Card className=" mx-auto my-2 border-blue-700">
+        <CardHeader className="text-center space-y-2 pb-2">
+          <Badge
+            variant="secondary"
+            className="w-fit mx-auto px-4 py-1 text-sm font-medium bg-blue-100 rounded-4xl text-blue-700"
+          >
+            About Us
+          </Badge>
+          <CardTitle className="text-3xl font-bold text-primary">
+            <SparklesText text="26 Years of HVAC Excellence" className="text-3xl" />
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 text-center">
+          <p className="text-lg">
+            Founded in <span className="font-semibold">1999</span>, Midway Comforts is the result of the passion and
+            perseverance of
+            <span className="font-semibold"> Mr. A. Sattar Khokar</span> and{' '}
+            <span className="font-semibold">Mr. Manish Pandey</span>.
+          </p>
+
+          <p>
+            From a small showroom in Prabhadevi to becoming one of
+            <span className="font-semibold text-primary"> Mumbai's fastest-growing dealerships</span> for
+            <span className="font-semibold"> TOSHIBA and CARRIER Air Conditioning</span>, we've built a legacy of
+            excellence.
+          </p>
+
+          <div className="pt-2">
+            <p className="font-medium">
+              We specialize in <span className="text-primary font-semibold">end-to-end HVAC solutions</span>, including:
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 mt-3">
+              <Badge variant="outline" className="px-3 py-1">
+                Design
+              </Badge>
+              <Badge variant="outline" className="px-3 py-1">
+                Sales
+              </Badge>
+              <Badge variant="outline" className="px-3 py-1">
+                Installation
+              </Badge>
+              <Badge variant="outline" className="px-3 py-1">
+                Commissioning
+              </Badge>
+              <Badge variant="outline" className="px-3 py-1">
+                Servicing
+              </Badge>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-center bg-muted/20 rounded-b-lg">
+          <p className="text-center">
+            <span className="font-medium">Our Expertise:</span> Ductables, VRF, Mini VRF, Ventilation Systems, Chillers,
+            and AHUs
+          </p>
+        </CardFooter>
+      </Card>
       <motion.div variants={cardVariants} className="w-full bg-blue-800 text-white rounded-lg p-8 shadow-lg">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
