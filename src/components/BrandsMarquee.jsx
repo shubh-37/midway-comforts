@@ -3,7 +3,12 @@ import { useEffect, useState } from 'react';
 import hermesLogo from '../assets/hermes-logo.svg';
 import anytimeLogo from '../assets/anytime-logo.svg';
 import titanLogo from '../assets/titan-logo.jpeg';
-
+import kalpataruLogo from '../assets/kalpataru-logo.png';
+import lodhaLogo from '../assets/lodha-logo.png';
+import narangLogo from '../assets/narang-logo.jpg';
+import rustomjeeLogo from '../assets/rustomjee-logo.png';
+import herStoryLogo from '../assets/her-story.png';
+import montBlancLogo from '../assets/montblanc-1.svg';
 const brands = [
   {
     name: 'HDFC Bank',
@@ -32,6 +37,30 @@ const brands = [
   {
     name: 'Titan Eye',
     logo: titanLogo
+  },
+  {
+    name: 'Kalpa-taru',
+    logo: kalpataruLogo
+  },
+  {
+    name: 'Abhinandan Lodha',
+    logo: lodhaLogo
+  },
+  {
+    name: 'Narang Realty',
+    logo: narangLogo
+  },
+  {
+    name: 'Rustomjee Realty',
+    logo: rustomjeeLogo
+  },
+  {
+    name: 'HerStory',
+    logo: herStoryLogo
+  },
+  {
+    name: 'Mont Blanc',
+    logo: montBlancLogo
   }
 ];
 
@@ -45,7 +74,7 @@ export default function BrandMarquee() {
 
   return (
     <section className="w-full overflow-hidden bg-background py-8 md:py-16">
-      <div className="container flex flex-col items-center justify-center gap-4 text-center px-4">
+      <div className="flex flex-col items-center justify-center gap-4 text-center px-4">
         <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-gray-800">
           Trusted by Leading Brands
         </h3>
@@ -92,7 +121,7 @@ export default function BrandMarquee() {
               key={`${brand.name}-desktop-${idx}`}
               className="flex w-[200px] md:w-[220px] flex-col items-center gap-4"
             >
-              <div className="w-full h-20 md:h-24 bg-white rounded-lg shadow-sm flex items-center justify-center p-4">
+              <div className="w-full h-20 md:h-24 bg-white rounded-lg shadow-sm flex items-center justify-center px-1">
                 <img
                   src={brand.logo || '/placeholder.svg'}
                   alt={`${brand.name} logo`}
