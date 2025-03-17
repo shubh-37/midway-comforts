@@ -108,7 +108,7 @@ export default function BrandMarquee() {
 
       <div className="hidden sm:block relative mt-12 w-full overflow-hidden">
         <motion.div
-          className="flex gap-8 py-4 w-[200%]"
+          className="flex gap-8 py-4 w-[250%]"
           animate={{ x: ['0%', '-50%'] }}
           transition={{
             duration: 25,
@@ -117,18 +117,15 @@ export default function BrandMarquee() {
           }}
         >
           {duplicatedBrands.map((brand, idx) => (
-            <div
-              key={`${brand.name}-desktop-${idx}`}
-              className="flex w-[200px] md:w-[220px] flex-col items-center gap-4"
-            >
-              <div className="w-full h-20 md:h-24 bg-white rounded-lg shadow-sm flex items-center justify-center px-1">
+            <div key={`${brand.name}-desktop-${idx}`} className="flex w-[260px] flex-col items-center gap-4">
+              <div className="w-32 h-32 bg-white rounded-lg shadow-sm flex items-center justify-center px-1">
                 <img
                   src={brand.logo || '/placeholder.svg'}
                   alt={`${brand.name} logo`}
-                  className="max-h-14 md:max-h-16 max-w-full"
+                  className="max-h-20 max-w-full"
                 />
               </div>
-              <span className="text-sm md:text-base font-medium">{brand.name}</span>
+              <span className="text-lg font-medium text-center">{brand.name}</span>
             </div>
           ))}
         </motion.div>
