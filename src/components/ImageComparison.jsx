@@ -137,27 +137,14 @@ export default function ImageComparison({
                 alt={image.alt}
                 className="absolute inset-0 w-full h-full object-contain"
                 style={{
-                  // Position the image correctly relative to this segment
                   objectPosition: `${(-segments[index].start / (segments[index].end - segments[index].start)) * 100}% 0%`,
                   width: `${100 / ((segments[index].end - segments[index].start) / 100)}%`
                 }}
               />
             </div>
-
-            {/* Label for each image
-            {index < 3 ? (
-              <div className="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
-                {image.label}
-              </div>
-            ) : (
-              <div className="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
-                {image.label}
-              </div>
-            )} */}
           </div>
         ))}
 
-        {/* Slider handles */}
         {positions.map((position, index) => (
           <div
             key={index}
