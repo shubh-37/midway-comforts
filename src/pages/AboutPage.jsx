@@ -1,4 +1,5 @@
 import AboutUsHeader from '@/components/AboutUsHeader';
+import { Awards } from '@/components/Awards';
 import CompanyTimeline from '@/components/CompanyJourney';
 import IndustriesSection from '@/components/Industries';
 import LeadershipCarousel from '@/components/Leadership';
@@ -9,6 +10,7 @@ function AboutPage() {
       <AboutUsHeader />
       <CompanyTimeline />
       <LeadershipCarousel />
+      <Awards />
       <IndustriesSection />
     </div>
   );
