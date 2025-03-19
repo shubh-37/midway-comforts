@@ -25,6 +25,7 @@
     "@tsparticles/slim": "^3.8.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.5.2",
     "framer-motion": "^12.5.0",
     "lucide-react": "^0.479.0",
     "motion": "^12.5.0",
