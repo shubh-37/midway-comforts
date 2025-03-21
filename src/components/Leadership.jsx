@@ -5,9 +5,27 @@ import femaleAvatar from '@/assets/female.svg';
 import manish from '@/assets/manish.jpeg';
 import aashish from '@/assets/aashish.jpeg';
 import sattar from '@/assets/sattar.jpeg';
+import rajeev from '@/assets/rajeev.jpeg';
+import tabrej from '@/assets/tabrej.jpeg';
+import santosh from '@/assets/santosh.jpeg';
+import rajaram from '@/assets/rajaram.jpeg';
 import { Button } from './ui/moving-border';
+import { useEffect, useState } from 'react';
 
 export default function LeadershipCarousel() {
+  const [api, setApi] = useState(null);
+  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    if (!api) return;
+
+    const onChange = (status) => {
+      setCurrent(status.selectedIndex);
+    };
+
+    api.on('select', onChange);
+    return () => api.off('select', onChange);
+  }, [api]);
+
   const teamMembers = [
     {
       id: 1,
@@ -23,51 +41,51 @@ export default function LeadershipCarousel() {
     },
     {
       id: 3,
-      name: 'Mr Tabjrej Khan',
+      name: 'Mr. Tabrej Khan',
       title: 'Project Sales',
-      image: maleAvatar
+      image: tabrej
     },
     {
       id: 4,
-      name: 'Mrs Nilisha Pathare',
+      name: 'Mrs. Nilisha Pathare',
       title: 'Billing',
       image: femaleAvatar
     },
     {
       id: 5,
-      name: 'Mr Raja Ram Yadav',
+      name: 'Mr. Raja Ram Yadav',
       title: 'Accounts',
-      image: maleAvatar
+      image: rajaram
     },
     {
       id: 6,
-      name: 'Mr Ashish Pandya',
+      name: 'Mr. Ashish Pandya',
       title: 'Accounts and HR',
       image: aashish
     },
     {
       id: 7,
-      name: 'Mr Rajendra Dalave',
+      name: 'Mr. Rajendra Dalave',
       title: 'Design',
       image: maleAvatar
     },
     {
       id: 8,
-      name: 'Mr Santosh Patil ',
+      name: 'Mr. Santosh Patil ',
       title: 'Service',
-      image: maleAvatar
+      image: santosh
     },
     {
       id: 9,
-      name: 'Mr Shabbir Khan',
+      name: 'Mr. Shabbir Khan',
       title: 'Projects Execution',
       image: maleAvatar
     },
     {
       id: 10,
-      name: 'Mr Rajiv Sinha',
+      name: 'Mr. Rajeev Sinha',
       title: 'Procurement',
-      image: maleAvatar
+      image: rajeev
     }
   ];
 
@@ -81,38 +99,58 @@ export default function LeadershipCarousel() {
             decades of combined experience and passion to every project.
           </p>
         </div>
-        <div className="px-4">
-          <Carousel className="w-full">
+        <div className="px-4 relative">
+          <Carousel
+            className="w-full"
+            setApi={setApi}
+            opts={{
+              align: 'start',
+              loop: true
+            }}
+          >
             <CarouselContent>
               {teamMembers.map((member) => (
-                <CarouselItem key={member.id} className="md:basis-1/2 lg:basis-1/4">
-                  <Button
-                    borderRadius="1.75rem"
-                    className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-                  >
-                    <Card className="h-full border-none shadow-sm hover:shadow-md transition-shadow duration-300">
-                      <CardContent className="p-6 text-center">
-                        <div className="flex justify-center mb-4">
-                          <div className="relative w-24 h-24 rounded-full overflow-hidden bg-muted">
-                            <img
-                              src={member.image || maleAvatar}
-                              alt={member.name}
-                              className="w-full h-full object-contain"
-                            />
+                <CarouselItem key={member.id} className="md:basis-1/3 lg:basis-1/4 pl-4">
+                  <div className="h-full flex items-center justify-center">
+                    <Button
+                      borderRadius="1.75rem"
+                      className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 w-[250px]"
+                    >
+                      <Card className="w-[250px] h-[250px] border-none shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <CardContent className="p-6 text-center flex flex-col justify-center h-full">
+                          <div className="flex justify-center mb-4">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden bg-muted">
+                              <img
+                                src={member.image || maleAvatar}
+                                alt={member.name}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                        <p className="text-primary font-medium mb-3">{member.title}</p>
-                        {member.description && <p className="text-muted-foreground text-sm">{member.description}</p>}
-                      </CardContent>
-                    </Card>
-                  </Button>
+                          <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                          <p className="text-primary font-medium">{member.title}</p>
+                        </CardContent>
+                      </Card>
+                    </Button>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2" />
           </Carousel>
+
+          {/* Optional: Small indicators at the bottom */}
+          <div className="flex justify-center gap-1 mt-4">
+            {teamMembers.map((_, index) => (
+              <span
+                key={index}
+                className={`block h-2 w-2 rounded-full transition-colors ${
+                  current === index ? 'bg-primary' : 'bg-muted'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
