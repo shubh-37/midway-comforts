@@ -37,7 +37,7 @@ export default function Header() {
         scrolled ? 'shadow-md' : ''
       )}
     >
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/" className="flex items-center transition-transform duration-300 hover:scale-105">
           <div className=" w-36">
             <img src={midwayLogo} alt="Midway Comforts" />
