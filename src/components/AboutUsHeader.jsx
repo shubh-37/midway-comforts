@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { SparklesText } from './magicui/sparkles-text';
+import LeadershipCarousel from './Leadership';
 
 export default function AboutUsHeader() {
   const containerVariants = {
@@ -106,6 +107,7 @@ export default function AboutUsHeader() {
           </p>
         </CardFooter>
       </Card>
+      <LeadershipCarousel />
       <motion.div variants={cardVariants} className="w-full bg-blue-800 text-white rounded-lg p-8 shadow-lg">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
