@@ -86,6 +86,12 @@ export default function LeadershipCarousel() {
       name: 'Mr. Rajeev Sinha',
       title: 'Procurement',
       image: rajeev
+    },
+    {
+      id: 11,
+      name: 'Mr. Bonny',
+      title: 'Service Coordinator',
+      image: maleAvatar
     }
   ];
 
