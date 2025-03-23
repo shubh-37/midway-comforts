@@ -62,7 +62,7 @@ const PartnerBrands = () => {
             </div>
             <div className="flex items-center mt-3 text-blue-600">
               <ShieldCheck className="w-5 h-5 mr-1" />
-              <span className="text-sm font-medium">Official Partner</span>
+              <span className="text-sm font-medium">Official Dealer</span>
             </div>
           </div>
 
@@ -72,7 +72,7 @@ const PartnerBrands = () => {
             </div>
             <div className="flex items-center mt-3 text-blue-600">
               <ShieldCheck className="w-5 h-5 mr-1" />
-              <span className="text-sm font-medium">Official Partner</span>
+              <span className="text-sm font-medium">Official Dealer</span>
             </div>
           </div>
         </div>
