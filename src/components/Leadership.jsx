@@ -125,7 +125,7 @@ export default function LeadershipCarousel() {
                       <Card className="w-[250px] h-[250px] border-none shadow-sm hover:shadow-md transition-shadow duration-300">
                         <CardContent className="p-6 text-center flex flex-col justify-center h-full">
                           <div className="flex justify-center mb-4">
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden bg-muted">
+                            <div className="relative w-28 h-28 rounded-full overflow-hidden bg-muted">
                               <img
                                 src={member.image || maleAvatar}
                                 alt={member.name}
