@@ -8,7 +8,6 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Zap, Check, Info, MessageCircle } from 'lucide-react';
 
 function CalculatorPage() {
-  // Form state
   const [dimensions, setDimensions] = useState({
     length: '',
     width: '',
@@ -33,63 +32,48 @@ function CalculatorPage() {
   });
   const [result, setResult] = useState(null);
 
-  // Calculate square footage
   const calculateSquareFootage = () => {
-    const length = Number.parseFloat(dimensions.length) || 0;
-    const width = Number.parseFloat(dimensions.width) || 0;
+    const length = parseFloat(dimensions.length) || 0;
+    const width = parseFloat(dimensions.width) || 0;
     return length * width;
   };
 
-  // Calculate AC tonnage based on all factors
   const calculateTonnage = () => {
-    // Base calculation using square footage
     const squareFootage = calculateSquareFootage();
-    let baseTonnage = 0;
+    let baseTonnage = squareFootage / 125; // Updated to 1 ton per 125 sq ft
 
-    // Basic square footage calculation (approximately 1 ton per 600 sq ft as a starting point)
-    baseTonnage = squareFootage / 600;
-
-    // Apply climate zone factor
     const climateFactor = getClimateFactor(location.climateZone);
     baseTonnage *= climateFactor;
 
-    // Apply sun exposure factor
     const exposureFactor = getExposureFactor(location.sunExposure);
     baseTonnage *= exposureFactor;
 
-    // Apply insulation quality factor
     const insulationFactor = getInsulationFactor(building.insulation);
     baseTonnage *= insulationFactor;
 
-    // Apply window factor
-    const windowCount = Number.parseInt(building.windows) || 0;
-    const windowFactor = 1 + windowCount * 0.04; // Each window adds approximately 4% to the load
+    const windowCount = parseInt(building.windows) || 0;
+    const windowFactor = 1 + windowCount * 0.04;
     baseTonnage *= windowFactor;
 
-    // Apply room type factor
     const roomTypeFactor = getRoomTypeFactor(usage.roomType);
     baseTonnage *= roomTypeFactor;
 
-    // Apply occupancy factor
-    const occupantCount = Number.parseInt(usage.occupants) || 1;
-    const occupancyFactor = 1 + (occupantCount - 1) * 0.02; // Each additional occupant adds 2% to the load
+    const occupantCount = parseInt(usage.occupants) || 1;
+    const occupancyFactor = 1 + (occupantCount - 1) * 0.02;
     baseTonnage *= occupancyFactor;
 
-    // Apply additional factors
-    if (additionalFactors.kitchen) baseTonnage *= 1.15; // Kitchen adds 15%
-    if (additionalFactors.highCeilings) baseTonnage *= 1.12; // High ceilings add 12%
-    if (additionalFactors.electronics) baseTonnage *= 1.08; // Electronics add 8%
+    if (additionalFactors.kitchen) baseTonnage *= 1.15;
+    if (additionalFactors.highCeilings) baseTonnage *= 1.12;
+    if (additionalFactors.electronics) baseTonnage *= 1.08;
 
-    // Round to nearest 0.5 ton
     const roundedTonnage = Math.round(baseTonnage * 2) / 2;
 
-    // Generate recommendation
     let recommendation = '';
-    if (roundedTonnage <= 1) {
+    if (roundedTonnage <= 1.5) {
       recommendation = 'Mini-split or window unit recommended for small spaces.';
-    } else if (roundedTonnage <= 2.5) {
+    } else if (roundedTonnage <= 3) {
       recommendation = 'Central air conditioning system with proper ductwork recommended.';
-    } else if (roundedTonnage <= 4) {
+    } else if (roundedTonnage <= 5) {
       recommendation = 'High-capacity central air system recommended. Consider zoning for efficiency.';
     } else {
       recommendation = 'Multiple units or a commercial-grade system recommended for this large space.';
@@ -102,7 +86,6 @@ function CalculatorPage() {
     };
   };
 
-  // Helper functions for factors
   const getClimateFactor = (climate) => {
     switch (climate) {
       case 'hot':
@@ -236,11 +219,11 @@ function CalculatorPage() {
                   <SelectTrigger id="climate-zone">
                     <SelectValue placeholder="Select your climate" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="hot">Hot (90°F+ summers)</SelectItem>
-                    <SelectItem value="warm">Warm (80-90°F summers)</SelectItem>
-                    <SelectItem value="moderate">Moderate (70-80°F summers)</SelectItem>
-                    <SelectItem value="cool">Cool (below 70°F summers)</SelectItem>
+                  <SelectContent className="bg-white">
+                    <SelectItem value="hot">Hot (32°C+ summers)</SelectItem>
+                    <SelectItem value="warm">Warm (26-32°C summers)</SelectItem>
+                    <SelectItem value="moderate">Moderate (21-26°C summers)</SelectItem>
+                    <SelectItem value="cool">Cool (below 21°C summers)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -253,7 +236,7 @@ function CalculatorPage() {
                   <SelectTrigger id="sun-exposure">
                     <SelectValue placeholder="Select exposure level" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectItem value="high">High (direct sun most of the day)</SelectItem>
                     <SelectItem value="moderate">Moderate (partial sun exposure)</SelectItem>
                     <SelectItem value="low">Low (minimal direct sunlight)</SelectItem>
@@ -277,7 +260,7 @@ function CalculatorPage() {
                   <SelectTrigger id="insulation">
                     <SelectValue placeholder="Select insulation level" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectItem value="poor">Poor (minimal insulation)</SelectItem>
                     <SelectItem value="average">Average (standard insulation)</SelectItem>
                     <SelectItem value="good">Good (well insulated)</SelectItem>
@@ -308,7 +291,7 @@ function CalculatorPage() {
                   <SelectTrigger id="room-type">
                     <SelectValue placeholder="Select room type" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white cursor-pointer">
                     <SelectItem value="living">Living Room</SelectItem>
                     <SelectItem value="bedroom">Bedroom</SelectItem>
                     <SelectItem value="kitchen">Kitchen</SelectItem>
