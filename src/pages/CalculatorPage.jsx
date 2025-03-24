@@ -40,7 +40,7 @@ function CalculatorPage() {
 
   const calculateTonnage = () => {
     const squareFootage = calculateSquareFootage();
-    let baseTonnage = squareFootage / 125; // Updated to 1 ton per 125 sq ft
+    let baseTonnage = squareFootage / 125;
 
     const climateFactor = getClimateFactor(location.climateZone);
     baseTonnage *= climateFactor;
@@ -52,19 +52,19 @@ function CalculatorPage() {
     baseTonnage *= insulationFactor;
 
     const windowCount = parseInt(building.windows) || 0;
-    const windowFactor = 1 + windowCount * 0.04;
+    const windowFactor = 1 + windowCount * 0.025;
     baseTonnage *= windowFactor;
 
     const roomTypeFactor = getRoomTypeFactor(usage.roomType);
     baseTonnage *= roomTypeFactor;
 
     const occupantCount = parseInt(usage.occupants) || 1;
-    const occupancyFactor = 1 + (occupantCount - 1) * 0.02;
+    const occupancyFactor = 1 + (occupantCount - 1) * 0.015;
     baseTonnage *= occupancyFactor;
 
-    if (additionalFactors.kitchen) baseTonnage *= 1.15;
-    if (additionalFactors.highCeilings) baseTonnage *= 1.12;
-    if (additionalFactors.electronics) baseTonnage *= 1.08;
+    if (additionalFactors.kitchen) baseTonnage *= 1.1;
+    if (additionalFactors.highCeilings) baseTonnage *= 1.1;
+    if (additionalFactors.electronics) baseTonnage *= 1.05;
 
     const roundedTonnage = Math.round(baseTonnage * 2) / 2;
 
@@ -88,63 +88,42 @@ function CalculatorPage() {
 
   const getClimateFactor = (climate) => {
     switch (climate) {
-      case 'hot':
-        return 1.3;
-      case 'warm':
-        return 1.15;
-      case 'moderate':
-        return 1.0;
-      case 'cool':
-        return 0.9;
-      default:
-        return 1.0;
+      case 'hot': return 1.2;
+      case 'warm': return 1.1;
+      case 'moderate': return 1.0;
+      case 'cool': return 0.9;
+      default: return 1.0;
     }
   };
 
   const getExposureFactor = (exposure) => {
     switch (exposure) {
-      case 'high':
-        return 1.25;
-      case 'moderate':
-        return 1.1;
-      case 'low':
-        return 1.0;
-      case 'none':
-        return 0.9;
-      default:
-        return 1.0;
+      case 'high': return 1.15;
+      case 'moderate': return 1.05;
+      case 'low': return 1.0;
+      case 'none': return 0.95;
+      default: return 1.0;
     }
   };
 
   const getInsulationFactor = (insulation) => {
     switch (insulation) {
-      case 'poor':
-        return 1.3;
-      case 'average':
-        return 1.1;
-      case 'good':
-        return 1.0;
-      case 'excellent':
-        return 0.9;
-      default:
-        return 1.1;
+      case 'poor': return 1.2;
+      case 'average': return 1.1;
+      case 'good': return 1.0;
+      case 'excellent': return 0.95;
+      default: return 1.1;
     }
   };
 
   const getRoomTypeFactor = (roomType) => {
     switch (roomType) {
-      case 'kitchen':
-        return 1.2;
-      case 'living':
-        return 1.1;
-      case 'bedroom':
-        return 1.0;
-      case 'office':
-        return 1.15;
-      case 'basement':
-        return 0.9;
-      default:
-        return 1.0;
+      case 'kitchen': return 1.15;
+      case 'living': return 1.1;
+      case 'bedroom': return 1.0;
+      case 'office': return 1.1;
+      case 'basement': return 0.9;
+      default: return 1.0;
     }
   };
 
