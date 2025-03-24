@@ -52,28 +52,28 @@ function CalculatorPage() {
     baseTonnage *= insulationFactor;
 
     const windowCount = parseInt(building.windows) || 0;
-    const windowFactor = 1 + windowCount * 0.025;
+    const windowFactor = 1 + windowCount * 0.005;
     baseTonnage *= windowFactor;
 
     const roomTypeFactor = getRoomTypeFactor(usage.roomType);
     baseTonnage *= roomTypeFactor;
 
     const occupantCount = parseInt(usage.occupants) || 1;
-    const occupancyFactor = 1 + (occupantCount - 1) * 0.015;
+    const occupancyFactor = 1 + (occupantCount - 1) * 0.003;
     baseTonnage *= occupancyFactor;
 
-    if (additionalFactors.kitchen) baseTonnage *= 1.1;
-    if (additionalFactors.highCeilings) baseTonnage *= 1.1;
-    if (additionalFactors.electronics) baseTonnage *= 1.05;
+    if (additionalFactors.kitchen) baseTonnage *= 1.03;
+    if (additionalFactors.highCeilings) baseTonnage *= 1.03;
+    if (additionalFactors.electronics) baseTonnage *= 1.02;
 
     const roundedTonnage = Math.round(baseTonnage * 2) / 2;
 
     let recommendation = '';
     if (roundedTonnage <= 1.5) {
       recommendation = 'Mini-split or window unit recommended for small spaces.';
-    } else if (roundedTonnage <= 3) {
+    } else if (roundedTonnage <= 2.5) {
       recommendation = 'Central air conditioning system with proper ductwork recommended.';
-    } else if (roundedTonnage <= 5) {
+    } else if (roundedTonnage <= 4) {
       recommendation = 'High-capacity central air system recommended. Consider zoning for efficiency.';
     } else {
       recommendation = 'Multiple units or a commercial-grade system recommended for this large space.';
@@ -88,42 +88,63 @@ function CalculatorPage() {
 
   const getClimateFactor = (climate) => {
     switch (climate) {
-      case 'hot': return 1.2;
-      case 'warm': return 1.1;
-      case 'moderate': return 1.0;
-      case 'cool': return 0.9;
-      default: return 1.0;
+      case 'hot':
+        return 1.02;
+      case 'warm':
+        return 1.01;
+      case 'moderate':
+        return 1.0;
+      case 'cool':
+        return 0.98;
+      default:
+        return 1.0;
     }
   };
 
   const getExposureFactor = (exposure) => {
     switch (exposure) {
-      case 'high': return 1.15;
-      case 'moderate': return 1.05;
-      case 'low': return 1.0;
-      case 'none': return 0.95;
-      default: return 1.0;
+      case 'high':
+        return 1.03;
+      case 'moderate':
+        return 1.01;
+      case 'low':
+        return 1.0;
+      case 'none':
+        return 0.98;
+      default:
+        return 1.0;
     }
   };
 
   const getInsulationFactor = (insulation) => {
     switch (insulation) {
-      case 'poor': return 1.2;
-      case 'average': return 1.1;
-      case 'good': return 1.0;
-      case 'excellent': return 0.95;
-      default: return 1.1;
+      case 'poor':
+        return 1.02;
+      case 'average':
+        return 1.01;
+      case 'good':
+        return 1.0;
+      case 'excellent':
+        return 0.98;
+      default:
+        return 1.0;
     }
   };
 
   const getRoomTypeFactor = (roomType) => {
     switch (roomType) {
-      case 'kitchen': return 1.15;
-      case 'living': return 1.1;
-      case 'bedroom': return 1.0;
-      case 'office': return 1.1;
-      case 'basement': return 0.9;
-      default: return 1.0;
+      case 'kitchen':
+        return 1.03;
+      case 'living':
+        return 1.02;
+      case 'bedroom':
+        return 1.0;
+      case 'office':
+        return 1.01;
+      case 'basement':
+        return 0.98;
+      default:
+        return 1.0;
     }
   };
 
@@ -362,6 +383,13 @@ function CalculatorPage() {
                 <p className="text-gray-700">
                   Air conditioner size is measured in "Tons," which refers to the cooling capacity of the system. One
                   ton equals 12,000 BTU/hr (British Thermal Units per hour).
+                  <br />
+                  <span className="font-semibold">
+                    (The AC tonnage calculator provided on this site is intended for general reference only. While it
+                    offers useful estimates, it may not account for all factors affecting cooling needs. For accurate
+                    recommendations tailored to your specific requirements, we recommend consulting a certified HVAC
+                    professional.)
+                  </span>
                 </p>
 
                 <div className="border-l-4 border-blue-500 pl-4 py-2">
