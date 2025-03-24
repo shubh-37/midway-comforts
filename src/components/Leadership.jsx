@@ -10,6 +10,7 @@ import tabrej from '@/assets/tabrej.jpeg';
 import santosh from '@/assets/santosh.jpeg';
 import rajaram from '@/assets/rajaram.jpeg';
 import shabbir from '@/assets/shabbir.jpeg';
+import nilisha from '@/assets/nilisha.jpeg';
 import { Button } from './ui/moving-border';
 import { useEffect, useState } from 'react';
 
@@ -50,7 +51,7 @@ export default function LeadershipCarousel() {
       id: 4,
       name: 'Mrs. Nilisha Pathare',
       title: 'Billing',
-      image: femaleAvatar
+      image: nilisha
     },
     {
       id: 5,
