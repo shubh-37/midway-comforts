@@ -9,6 +9,7 @@ import rajeev from '@/assets/rajeev.jpeg';
 import tabrej from '@/assets/tabrej.jpeg';
 import santosh from '@/assets/santosh.jpeg';
 import rajaram from '@/assets/rajaram.jpeg';
+import shabbir from '@/assets/shabbir.jpeg';
 import { Button } from './ui/moving-border';
 import { useEffect, useState } from 'react';
 
@@ -79,7 +80,7 @@ export default function LeadershipCarousel() {
       id: 9,
       name: 'Mr. Shabbir Khan',
       title: 'Projects Execution',
-      image: maleAvatar
+      image: shabbir
     },
     {
       id: 10,
