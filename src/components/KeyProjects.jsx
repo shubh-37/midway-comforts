@@ -1,14 +1,16 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ChevronDown, Building, ArrowRight } from 'lucide-react';
+import { Building, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-
+import aero1 from '@/assets/aero1.jpeg';
+import aero2 from '@/assets/aero2.jpeg';
+import col1 from '@/assets/col1.jpeg';
+import col2 from '@/assets/col2.jpeg';
 // Case studies data
 const caseStudies = [
   {
@@ -35,7 +37,8 @@ const caseStudies = [
     benefits:
       'The client was highly satisfied with the results, and since our assessment and customized approach, not a single gas leak complaint has been reported. The sustainable cooling system we provided offers peace of mind and dependable performance.',
     conclusion:
-      "Midway Comforts successfully resolved the persistent gas leak issues at Tanishq's showroom by applying an anti-corrosion coating and ensuring proper tonnage calculation. Our solution provided lasting protection against corrosive gases and maintained optimal cooling performance."
+      "Midway Comforts successfully resolved the persistent gas leak issues at Tanishq's showroom by applying an anti-corrosion coating and ensuring proper tonnage calculation. Our solution provided lasting protection against corrosive gases and maintained optimal cooling performance.",
+    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
   },
   {
     id: 'ventilation',
@@ -62,7 +65,8 @@ const caseStudies = [
     benefits:
       'By focusing on power-saving strategies and utilizing modern technologies like CO2 sensors and BMS systems, we were able to significantly reduce future power consumption for the client. The client expressed high satisfaction with the project outcome, appreciating the balance between efficiency, reliability, and long-term cost savings.',
     conclusion:
-      'Midway Comforts successfully completed the air conditioning and ventilation project for Aero Mall, Pune Airport, providing an efficient and durable solution that ensures optimal cooling and air quality round-the-clock.'
+      'Midway Comforts successfully completed the air conditioning and ventilation project for Aero Mall, Pune Airport, providing an efficient and durable solution that ensures optimal cooling and air quality round-the-clock.',
+    images: [aero1, aero2]
   },
   {
     id: 'safety',
@@ -96,7 +100,8 @@ const caseStudies = [
     benefits:
       "The experience prompted Midway Comforts to establish higher standards for safety compliance across all projects, marking a significant milestone in the company's safety protocols.",
     conclusion:
-      "The successful implementation of safety protocols for this project has brought about a positive transformation in Midway Comforts' approach to safety. By prioritizing training and compliance, we have created a safer and more reliable working environment for all future projects."
+      "The successful implementation of safety protocols for this project has brought about a positive transformation in Midway Comforts' approach to safety. By prioritizing training and compliance, we have created a safer and more reliable working environment for all future projects.",
+    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
   },
   {
     id: 'overseas',
@@ -122,7 +127,8 @@ const caseStudies = [
     benefits:
       "The successful execution of this overseas project highlighted Midway Comforts' capability to operate effectively in international settings.",
     conclusion:
-      "Midway Comforts' ability to handle overseas projects with precision and efficiency sets us apart as a reliable partner for complex installations. Our commitment to quality and thoroughness ensures outstanding performance, regardless of geographical challenges."
+      "Midway Comforts' ability to handle overseas projects with precision and efficiency sets us apart as a reliable partner for complex installations. Our commitment to quality and thoroughness ensures outstanding performance, regardless of geographical challenges.",
+    images: [col1, col2]
   },
   {
     id: 'sound',
@@ -147,7 +153,8 @@ const caseStudies = [
     benefits:
       "The client was highly satisfied with the outcome, which led to multiple referrals from Rustomjee residents for future projects, enhancing Midway Comforts' reputation as a reliable and proficient service provider.",
     conclusion:
-      "This project demonstrated Midway Comforts' ability to tackle complex challenges with finesse. By effectively addressing sound transmission issues without disrupting the interiors, we have reinforced our commitment to excellence and customer satisfaction."
+      "This project demonstrated Midway Comforts' ability to tackle complex challenges with finesse. By effectively addressing sound transmission issues without disrupting the interiors, we have reinforced our commitment to excellence and customer satisfaction.",
+    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
   },
   {
     id: 'hybrid',
@@ -172,7 +179,8 @@ const caseStudies = [
     benefits:
       'Reduced heat load and improved cooling efficiency, lowered power consumption, resulting in long-term cost savings, and enhanced comfort levels throughout the premises.',
     conclusion:
-      "The Hybrid Solutions project for Ad Factor demonstrates Midway Comforts' ability to provide tailored solutions that meet client requirements without compromising quality. By combining innovative approaches with efficient execution, we ensured a highly satisfactory outcome for the client."
+      "The Hybrid Solutions project for Ad Factor demonstrates Midway Comforts' ability to provide tailored solutions that meet client requirements without compromising quality. By combining innovative approaches with efficient execution, we ensured a highly satisfactory outcome for the client.",
+    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
   },
   {
     id: 'billing',
@@ -197,7 +205,8 @@ const caseStudies = [
     benefits:
       "Additionally, the use of double-glazed glass effectively reduced sound levels, further enhancing the client's experience.",
     conclusion:
-      "Midway Comforts' ability to deliver energy-efficient solutions while ensuring uninterrupted operations proved essential in this project. Our expertise in implementing cutting-edge technology continues to provide unmatched value to our clients."
+      "Midway Comforts' ability to deliver energy-efficient solutions while ensuring uninterrupted operations proved essential in this project. Our expertise in implementing cutting-edge technology continues to provide unmatched value to our clients.",
+    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
   }
 ];
 
@@ -249,8 +258,16 @@ const CaseStudyCard = ({ study, isActive, onClick }) => {
         <p className="text-blue-100 line-clamp-3">{study.overview}</p>
         <div className="mt-4 flex justify-between items-center">
           <span className="text-sm text-blue-200">Client: {study.client}</span>
-          <Button variant="ghost" size="sm" className="text-yellow-400 hover:text-yellow-300 hover:bg-blue-800 p-0">
-            {isActive ? <ChevronDown className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+          <Button
+            variant="outline"
+            size="sm"
+            className="text-yellow-400 hover:text-yellow-300 hover:bg-blue-800"
+            onClick={(e) => {
+              e.stopPropagation();
+              onClick();
+            }}
+          >
+            View Details
           </Button>
         </div>
       </div>
@@ -258,87 +275,122 @@ const CaseStudyCard = ({ study, isActive, onClick }) => {
   );
 };
 
-// Detailed case study view
-const CaseStudyDetail = ({ study }) => {
+// Modal component for case study details
+const CaseStudyModal = ({ study, isOpen, onClose }) => {
+  if (!isOpen) return null;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-white rounded-lg shadow-xl p-6 border-l-4 border-yellow-400"
+      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto"
+      onClick={onClose}
     >
-      <div className="flex justify-between items-start mb-6">
-        <div>
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        transition={{ type: 'spring', damping: 20 }}
+        className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="sticky top-0 bg-white z-10 flex justify-between items-center p-4 border-b">
           <h2 className="text-2xl font-bold text-blue-950">{study.title}</h2>
-          {study.subtitle && <p className="text-yellow-600 font-medium">{study.subtitle}</p>}
-          <p className="text-gray-600 mt-1">
-            {study.client} | {study.location}
-          </p>
+          <Button variant="ghost" size="icon" onClick={onClose} className="rounded-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-x"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+            <span className="sr-only">Close</span>
+          </Button>
         </div>
-        <Badge className="bg-yellow-400 text-blue-950 hover:bg-yellow-500 text-sm">{study.industry}</Badge>
-      </div>
 
-      <Accordion type="single" collapsible className="w-full">
-        <AccordionItem value="overview">
-          <AccordionTrigger className="text-blue-900 font-semibold">Client Overview</AccordionTrigger>
-          <AccordionContent>
-            <p className="text-gray-700">{study.overview}</p>
-          </AccordionContent>
-        </AccordionItem>
+        <div className="p-6">
+          <div className="flex justify-between items-start mb-6">
+            <div>
+              {study.subtitle && <p className="text-yellow-600 font-medium">{study.subtitle}</p>}
+              <p className="text-gray-600 mt-1">
+                {study.client} | {study.location}
+              </p>
+            </div>
+            <Badge className="bg-yellow-400 text-blue-950 hover:bg-yellow-500 text-sm">{study.industry}</Badge>
+          </div>
 
-        <AccordionItem value="problem">
-          <AccordionTrigger className="text-blue-900 font-semibold">Initial Situation & Challenges</AccordionTrigger>
-          <AccordionContent>
-            <p className="text-gray-700">{study.problem}</p>
-          </AccordionContent>
-        </AccordionItem>
+          {/* Image gallery */}
+          {study.images && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              {study.images.map((image, index) => (
+                <div key={index} className="rounded-lg overflow-hidden border border-gray-200">
+                  <img
+                    src={image || '/placeholder.svg'}
+                    alt={`${study.title} - Image ${index + 1}`}
+                    className="w-full h-64 object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
-        <AccordionItem value="assessment">
-          <AccordionTrigger className="text-blue-900 font-semibold">Assessment & Proposed Solution</AccordionTrigger>
-          <AccordionContent>
-            <CaseStudySection title="Assessment" content={study.assessment} className="mb-4" />
-            <CaseStudySection title="Proposed Solution" content={study.solution} />
-          </AccordionContent>
-        </AccordionItem>
+          <div className="space-y-6">
+            <div className="bg-blue-50 p-4 rounded-lg">
+              <h3 className="text-xl font-semibold text-blue-900 mb-3">Client Overview</h3>
+              <p className="text-gray-700">{study.overview}</p>
+            </div>
 
-        <AccordionItem value="implementation">
-          <AccordionTrigger className="text-blue-900 font-semibold">Implementation Process</AccordionTrigger>
-          <AccordionContent>
-            <p className="text-gray-700">{study.implementation}</p>
-          </AccordionContent>
-        </AccordionItem>
+            <div>
+              <h3 className="text-xl font-semibold text-blue-900 mb-3">Initial Situation & Challenges</h3>
+              <p className="text-gray-700">{study.problem}</p>
+            </div>
 
-        {study.safetyProtocols && (
-          <AccordionItem value="safety">
-            <AccordionTrigger className="text-blue-900 font-semibold">Safety Protocols</AccordionTrigger>
-            <AccordionContent>
-              <CaseStudySection content={study.safetyProtocols} />
-            </AccordionContent>
-          </AccordionItem>
-        )}
+            <div>
+              <h3 className="text-xl font-semibold text-blue-900 mb-3">Assessment & Proposed Solution</h3>
+              <CaseStudySection title="Assessment" content={study.assessment} className="mb-4" />
+              <CaseStudySection title="Proposed Solution" content={study.solution} />
+            </div>
 
-        <AccordionItem value="results">
-          <AccordionTrigger className="text-blue-900 font-semibold">Results & Benefits</AccordionTrigger>
-          <AccordionContent>
-            <CaseStudySection title="Results" content={study.results} className="mb-4" />
-            <CaseStudySection title="Benefits" content={study.benefits} />
-          </AccordionContent>
-        </AccordionItem>
+            <div>
+              <h3 className="text-xl font-semibold text-blue-900 mb-3">Implementation Process</h3>
+              <p className="text-gray-700">{study.implementation}</p>
+            </div>
 
-        <AccordionItem value="conclusion">
-          <AccordionTrigger className="text-blue-900 font-semibold">Conclusion</AccordionTrigger>
-          <AccordionContent>
-            <p className="text-gray-700">{study.conclusion}</p>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+            {study.safetyProtocols && (
+              <div>
+                <h3 className="text-xl font-semibold text-blue-900 mb-3">Safety Protocols</h3>
+                <CaseStudySection content={study.safetyProtocols} />
+              </div>
+            )}
 
-      <div className="mt-6 flex justify-end">
-        <Button className="bg-blue-900 hover:bg-blue-800 text-white">
-          Contact Us <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-      </div>
+            <div>
+              <h3 className="text-xl font-semibold text-blue-900 mb-3">Results & Benefits</h3>
+              <CaseStudySection title="Results" content={study.results} className="mb-4" />
+              <CaseStudySection title="Benefits" content={study.benefits} />
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-blue-900 mb-3">Conclusion</h3>
+              <p className="text-gray-700">{study.conclusion}</p>
+            </div>
+          </div>
+
+          <div className="mt-6 flex justify-end">
+            <Button className="bg-blue-900 hover:bg-blue-800 text-white">
+              Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -359,11 +411,18 @@ const filterOptions = [
 export default function KeyProjects() {
   const [activeStudy, setActiveStudy] = useState(null);
   const [filter, setFilter] = useState('all');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredStudies = filter === 'all' ? caseStudies : caseStudies.filter((study) => study.industry === filter);
 
-  // Add a ref for the detail section
-  const detailRef = useRef(null);
+  const handleOpenModal = (study) => {
+    setActiveStudy(study);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="container mx-auto py-12 px-4">
@@ -395,38 +454,14 @@ export default function KeyProjects() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredStudies.map((study) => (
-              <CaseStudyCard
-                key={study.id}
-                study={study}
-                isActive={activeStudy?.id === study.id}
-                onClick={() => {
-                  setActiveStudy(activeStudy?.id === study.id ? null : study);
-                  // If we're opening a study (not closing), scroll to the detail section after a small delay
-                  if (activeStudy?.id !== study.id) {
-                    setTimeout(() => {
-                      detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 100); // Small delay to allow the animation to start
-                  }
-                }}
-              />
+              <CaseStudyCard key={study.id} study={study} isActive={false} onClick={() => handleOpenModal(study)} />
             ))}
           </div>
         </Tabs>
       </div>
 
       <AnimatePresence>
-        {activeStudy && (
-          <motion.div
-            ref={detailRef}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="mt-8"
-          >
-            <CaseStudyDetail study={activeStudy} />
-          </motion.div>
-        )}
+        {activeStudy && <CaseStudyModal study={activeStudy} isOpen={isModalOpen} onClose={handleCloseModal} />}
       </AnimatePresence>
     </div>
   );
