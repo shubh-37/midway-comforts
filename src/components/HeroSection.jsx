@@ -31,7 +31,7 @@ export default function HeroSection() {
           <div className="absolute left-1/3 top-1/3 h-64 w-64 rounded-full bg-blue-300 opacity-10 blur-3xl animate-blob animation-delay-4000"></div>
         </div>
 
-        <div className="container relative z-10 px-4 md:px-6">
+        <div className="relative z-10 px-4 md:px-6">
           <div
             className={cn(
               'inline-block rounded-full bg-black text-yellow-400 px-4 py-1 font-medium shadow-lg transition-all duration-700 ease-out',

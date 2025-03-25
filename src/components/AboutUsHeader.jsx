@@ -109,7 +109,7 @@ export default function AboutUsHeader() {
       </Card>
       <LeadershipCarousel />
       <motion.div variants={cardVariants} className="w-full bg-blue-800 text-white rounded-lg p-8 shadow-lg">
-        <div className="container mx-auto">
+        <div className="mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div variants={itemVariants} className="space-y-4">
               <div className="flex items-center gap-3">

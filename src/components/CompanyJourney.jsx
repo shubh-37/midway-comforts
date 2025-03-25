@@ -166,7 +166,7 @@ export default function CompanyTimeline() {
         <div className="absolute -right-16 top-3/4 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl"></div>
       </div>
 
-      <div className="container relative mx-auto px-4">
+      <div className="relative mx-auto px-4">
         <div className="mb-16 text-center">
           <h1 className="mb-3 text-2xl text-gray-800 font-bold tracking-tight md:text-4xl">Our Journey</h1>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">Milestones of Midway Comforts</p>

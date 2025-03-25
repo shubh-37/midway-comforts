@@ -23,7 +23,7 @@ const services = [
 export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-white">
-      <div className="container mx-auto px-4 py-12">
+      <div className="mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h2 className="text-xl font-bold border-b border-blue-500 pb-2 inline-block">Midway Comforts</h2>
@@ -111,9 +111,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Anniversary Banner */}
-      <div className="bg-blue-600 py-8 text-center">
-        <div className="container mx-auto px-4 space-y-2">
+      <div className="bg-blue-700 py-8 text-center">
+        <div className="mx-auto px-4 space-y-2">
           <p className="text-sm font-medium">Celebrating a Milestone</p>
           <h2 className="text-2xl md:text-3xl font-bold">26 Years of Excellence in HVAC Solutions</h2>
           <p className="text-sm md:text-base">Thank you for trusting us with your comfort since 1999</p>

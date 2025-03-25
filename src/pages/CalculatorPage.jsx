@@ -416,19 +416,6 @@ function CalculatorPage() {
                   </ul>
                 </div>
 
-                <div>
-                  <h3 className="font-medium mb-3">Common AC Sizes:</h3>
-                  <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div>1.5 tons: 600-900 sq ft</div>
-                    <div>2 tons: 901-1200 sq ft</div>
-                    <div>2.5 tons: 1201-1500 sq ft</div>
-                    <div>3 tons: 1501-1800 sq ft</div>
-                    <div>3.5 tons: 1801-2100 sq ft</div>
-                    <div>4 tons: 2101-2400 sq ft</div>
-                    <div>5 tons: 2401-3000 sq ft</div>
-                  </div>
-                </div>
-
                 <div className="bg-blue-50 p-4 rounded-lg flex">
                   <div className="mr-4">
                     <div className="bg-blue-600 rounded-full p-2 text-white">
