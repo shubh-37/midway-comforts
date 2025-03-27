@@ -54,7 +54,7 @@ export default function FaqSection({
   supportHeading = 'Need more support?',
   supportDescription = 'Our dedicated support team is here to help you with any questions or concerns. Get in touch with us for personalized assistance.',
   supportButtonText = 'Contact Support',
-  supportButtonUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=contact@midwaycomforts.com&su=Support Request'
+  supportButtonUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=midwaycomforts@gmail.com&su=Support Request'
 }) {
   return (
     <section className="py-16 px-5 mx-auto">
