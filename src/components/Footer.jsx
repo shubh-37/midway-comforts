@@ -3,9 +3,9 @@ import { MapPin, Phone, Mail, Calculator, ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const quickLinks = [
   { text: 'About Us', href: '/about' },
-  { text: 'Projects', href: '/projects' },
+  { text: 'Key Projects', href: '/projects' },
   { text: 'Products', href: '/products' },
-  { text: 'Before & After', href: '/before-after' },
+  // { text: 'Before & After', href: '/before-after' },
   { text: 'AC Calculator', href: '/calculator' },
   { text: 'Privacy Policy', href: '/privacy-policy' },
   { text: 'Terms of Service', href: '/tnc' }
@@ -77,11 +77,15 @@ export default function Footer() {
                 </motion.div>
                 <motion.div whileHover={{ x: 5 }} className="flex items-center gap-2 text-yellow-400">
                   <Phone className="w-5 h-5" />
-                  <span>(022) 2670 1008</span>
+                  <span>9930267231</span>
+                  <span>9324775501</span>
                 </motion.div>
                 <motion.div whileHover={{ x: 5 }} className="flex items-center gap-2 text-yellow-400">
                   <Mail className="w-5 h-5" />
-                  <span>info@midwaycomforts.com</span>
+                  <div className='flex flex-col'>
+                    <span>midwaycomforts@gmail.com</span>
+                    <span>projects@midwaycomforts.in</span>
+                  </div>
                 </motion.div>
               </div>
 

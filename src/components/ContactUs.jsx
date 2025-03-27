@@ -1,7 +1,7 @@
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-
+import whatsapp from '@/assets/whatsapp.png';
 export default function ContactUs() {
   return (
     <div className="mx-auto px-4 py-12">
@@ -20,7 +20,7 @@ export default function ContactUs() {
           </CardHeader>
           <CardContent className="flex flex-col items-center justify-center p-8">
             <div className="mb-6">
-              <MessageCircle className="h-24 w-24 text-green-500 mx-auto" />
+              <img src={whatsapp} className="h-24 w-24  mx-auto" />
               <p className="text-center mt-4 text-gray-600">
                 Get quick responses to your questions by contacting us directly on WhatsApp. Our team is ready to assist
                 you!
@@ -29,7 +29,7 @@ export default function ContactUs() {
             <Button
               size="lg"
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg flex items-center gap-2"
-              onClick={() => window.open('https://wa.me/5551234567', '_blank')}
+              onClick={() => window.open('https://wa.me/9930267231', '_blank')}
             >
               <MessageCircle className="h-5 w-5" />
               Contact on WhatsApp
@@ -62,7 +62,8 @@ export default function ContactUs() {
               </div>
               <div>
                 <h3 className="font-bold text-xl">Phone</h3>
-                <p>(022) 2670 1008</p>
+                <p>(+91) 9930267231</p>
+                <p>(+91) 9324775501</p>
                 <p>24/7 Emergency Service Available</p>
               </div>
             </div>
@@ -73,7 +74,8 @@ export default function ContactUs() {
               </div>
               <div>
                 <h3 className="font-bold text-xl">Email</h3>
-                <p>info@midwaycomforts.com</p>
+                <p>projects@midwaycomforts.in</p>
+                <p>midwaycomforts@gmail.com</p>
               </div>
             </div>
 
@@ -83,8 +85,7 @@ export default function ContactUs() {
               </div>
               <div>
                 <h3 className="font-bold text-xl">Business Hours</h3>
-                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                <p>Saturday: 9:00 AM - 2:00 PM</p>
+                <p>Monday - Saturday: 9:30 AM - 7:00 PM</p>
                 <p>Sunday: Closed (Emergency Services Available)</p>
               </div>
             </div>
