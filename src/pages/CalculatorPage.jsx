@@ -4,8 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Zap, Check, Info, MessageCircle } from 'lucide-react';
+import { Zap, Check, Info, MessageCircle, Calculator } from 'lucide-react';
 
 function CalculatorPage() {
   const [dimensions, setDimensions] = useState({
@@ -25,16 +24,11 @@ function CalculatorPage() {
     roomType: '',
     occupants: '1'
   });
-  const [additionalFactors, setAdditionalFactors] = useState({
-    kitchen: false,
-    highCeilings: false,
-    electronics: false
-  });
   const [result, setResult] = useState(null);
 
   const calculateSquareFootage = () => {
-    const length = parseFloat(dimensions.length) || 0;
-    const width = parseFloat(dimensions.width) || 0;
+    const length = Number.parseFloat(dimensions.length) || 0;
+    const width = Number.parseFloat(dimensions.width) || 0;
     return length * width;
   };
 
@@ -51,20 +45,16 @@ function CalculatorPage() {
     const insulationFactor = getInsulationFactor(building.insulation);
     baseTonnage *= insulationFactor;
 
-    const windowCount = parseInt(building.windows) || 0;
+    const windowCount = Number.parseInt(building.windows) || 0;
     const windowFactor = 1 + windowCount * 0.005;
     baseTonnage *= windowFactor;
 
     const roomTypeFactor = getRoomTypeFactor(usage.roomType);
     baseTonnage *= roomTypeFactor;
 
-    const occupantCount = parseInt(usage.occupants) || 1;
+    const occupantCount = Number.parseInt(usage.occupants) || 1;
     const occupancyFactor = 1 + (occupantCount - 1) * 0.003;
     baseTonnage *= occupancyFactor;
-
-    if (additionalFactors.kitchen) baseTonnage *= 1.03;
-    if (additionalFactors.highCeilings) baseTonnage *= 1.03;
-    if (additionalFactors.electronics) baseTonnage *= 1.02;
 
     const roundedTonnage = Math.round(baseTonnage * 2) / 2;
 
@@ -154,10 +144,13 @@ function CalculatorPage() {
   };
 
   return (
-    <div className="mx-auto py-8 px-4">
+    <div className=" bg-white py-8 px-4">
       <div className="text-center mb-8">
-        <div className="text-sm font-medium text-blue-600 mb-2">HVAC Tools</div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">AC Tonnage Calculator</h1>
+        <div className="inline-flex items-center justify-center gap-2 bg-yellow-400 text-black font-bold px-4 py-1 rounded-full mb-4">
+          <Calculator className="h-4 w-4" />
+          <span>HVAC TOOLS</span>
+        </div>
+        <h1 className="text-4xl font-bold text-blue-700 mb-4">AC Tonnage Calculator</h1>
         <p className="text-gray-600 max-w-3xl mx-auto">
           Determine the right size air conditioning system for your space. Our calculator provides an estimate based on
           your room dimensions and other factors. For a professional assessment, contact our team with 26 years of HVAC
@@ -165,61 +158,75 @@ function CalculatorPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 bg-gray-50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold mb-6">Enter Your Space Details</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="lg:col-span-2 bg-white border border-blue-200 shadow-lg shadow-blue-100 p-6 rounded-lg">
+          <h2 className="text-xl font-semibold mb-6 text-blue-800 flex items-center">
+            <span className="bg-blue-600 text-white p-1 rounded mr-2 text-xs">01</span>
+            Enter Your Space Details
+          </h2>
 
           {/* Room Dimensions */}
-          <div className="mb-6">
-            <h3 className="font-medium mb-3">Room Dimensions</h3>
+          <div className="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100">
+            <h3 className="font-medium mb-3 text-blue-900">Room Dimensions</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="length">Length (feet)</Label>
+                <Label htmlFor="length" className="text-gray-700">
+                  Length (feet)
+                </Label>
                 <Input
                   id="length"
                   type="number"
                   placeholder="0"
                   value={dimensions.length}
                   onChange={(e) => setDimensions({ ...dimensions, length: e.target.value })}
+                  className="border-blue-200 focus:border-blue-500"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="width">Width (feet)</Label>
+                <Label htmlFor="width" className="text-gray-700">
+                  Width (feet)
+                </Label>
                 <Input
                   id="width"
                   type="number"
                   placeholder="0"
                   value={dimensions.width}
                   onChange={(e) => setDimensions({ ...dimensions, width: e.target.value })}
+                  className="border-blue-200 focus:border-blue-500"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="ceiling-height">Ceiling Height (feet)</Label>
+                <Label htmlFor="ceiling-height" className="text-gray-700">
+                  Ceiling Height (feet)
+                </Label>
                 <Input
                   id="ceiling-height"
                   type="number"
                   placeholder="8"
                   value={dimensions.ceilingHeight}
                   onChange={(e) => setDimensions({ ...dimensions, ceilingHeight: e.target.value })}
+                  className="border-blue-200 focus:border-blue-500"
                 />
               </div>
             </div>
           </div>
 
           {/* Location Factors */}
-          <div className="mb-6">
-            <h3 className="font-medium mb-3">Location Factors</h3>
+          <div className="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100">
+            <h3 className="font-medium mb-3 text-blue-900">Location Factors</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="climate-zone">Climate Zone</Label>
+                <Label htmlFor="climate-zone" className="text-gray-700">
+                  Climate Zone
+                </Label>
                 <Select
                   value={location.climateZone}
                   onValueChange={(value) => setLocation({ ...location, climateZone: value })}
                 >
-                  <SelectTrigger id="climate-zone">
+                  <SelectTrigger id="climate-zone" className="border-blue-200">
                     <SelectValue placeholder="Select your climate" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent>
                     <SelectItem value="hot">Hot (32°C+ summers)</SelectItem>
                     <SelectItem value="warm">Warm (26-32°C summers)</SelectItem>
                     <SelectItem value="moderate">Moderate (21-26°C summers)</SelectItem>
@@ -228,15 +235,17 @@ function CalculatorPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="sun-exposure">Sun Exposure</Label>
+                <Label htmlFor="sun-exposure" className="text-gray-700">
+                  Sun Exposure
+                </Label>
                 <Select
                   value={location.sunExposure}
                   onValueChange={(value) => setLocation({ ...location, sunExposure: value })}
                 >
-                  <SelectTrigger id="sun-exposure">
+                  <SelectTrigger id="sun-exposure" className="border-blue-200">
                     <SelectValue placeholder="Select exposure level" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent>
                     <SelectItem value="high">High (direct sun most of the day)</SelectItem>
                     <SelectItem value="moderate">Moderate (partial sun exposure)</SelectItem>
                     <SelectItem value="low">Low (minimal direct sunlight)</SelectItem>
@@ -248,19 +257,21 @@ function CalculatorPage() {
           </div>
 
           {/* Building Characteristics */}
-          <div className="mb-6">
-            <h3 className="font-medium mb-3">Building Characteristics</h3>
+          <div className="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100">
+            <h3 className="font-medium mb-3 text-blue-900">Building Characteristics</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="insulation">Insulation Quality</Label>
+                <Label htmlFor="insulation" className="text-gray-700">
+                  Insulation Quality
+                </Label>
                 <Select
                   value={building.insulation}
                   onValueChange={(value) => setBuilding({ ...building, insulation: value })}
                 >
-                  <SelectTrigger id="insulation">
+                  <SelectTrigger id="insulation" className="border-blue-200">
                     <SelectValue placeholder="Select insulation level" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent>
                     <SelectItem value="poor">Poor (minimal insulation)</SelectItem>
                     <SelectItem value="average">Average (standard insulation)</SelectItem>
                     <SelectItem value="good">Good (well insulated)</SelectItem>
@@ -269,29 +280,34 @@ function CalculatorPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="windows">Number of Windows</Label>
+                <Label htmlFor="windows" className="text-gray-700">
+                  Number of Windows
+                </Label>
                 <Input
                   id="windows"
                   type="number"
                   placeholder="0"
                   value={building.windows}
                   onChange={(e) => setBuilding({ ...building, windows: e.target.value })}
+                  className="border-blue-200 focus:border-blue-500"
                 />
               </div>
             </div>
           </div>
 
           {/* Room Usage */}
-          <div className="mb-6">
-            <h3 className="font-medium mb-3">Room Usage</h3>
+          <div className="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100">
+            <h3 className="font-medium mb-3 text-blue-900">Room Usage</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="room-type">Room Type</Label>
+                <Label htmlFor="room-type" className="text-gray-700">
+                  Room Type
+                </Label>
                 <Select value={usage.roomType} onValueChange={(value) => setUsage({ ...usage, roomType: value })}>
-                  <SelectTrigger id="room-type">
+                  <SelectTrigger id="room-type" className="border-blue-200">
                     <SelectValue placeholder="Select room type" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white cursor-pointer">
+                  <SelectContent>
                     <SelectItem value="living">Living Room</SelectItem>
                     <SelectItem value="bedroom">Bedroom</SelectItem>
                     <SelectItem value="kitchen">Kitchen</SelectItem>
@@ -302,71 +318,50 @@ function CalculatorPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="occupants">Average Occupants</Label>
+                <Label htmlFor="occupants" className="text-gray-700">
+                  Average Occupants
+                </Label>
                 <Input
                   id="occupants"
                   type="number"
                   placeholder="1"
                   value={usage.occupants}
                   onChange={(e) => setUsage({ ...usage, occupants: e.target.value })}
+                  className="border-blue-200 focus:border-blue-500"
                 />
               </div>
             </div>
           </div>
 
-          {/* Additional Factors */}
-          <div className="mb-6">
-            <h3 className="font-medium mb-3">Additional Factors</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="kitchen"
-                  checked={additionalFactors.kitchen}
-                  onCheckedChange={(checked) =>
-                    setAdditionalFactors({ ...additionalFactors, kitchen: checked === true })
-                  }
-                />
-                <Label htmlFor="kitchen">Kitchen with heat-generating appliances</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="high-ceilings"
-                  checked={additionalFactors.highCeilings}
-                  onCheckedChange={(checked) =>
-                    setAdditionalFactors({ ...additionalFactors, highCeilings: checked === true })
-                  }
-                />
-                <Label htmlFor="high-ceilings">High ceilings (over 10 feet)</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="electronics"
-                  checked={additionalFactors.electronics}
-                  onCheckedChange={(checked) =>
-                    setAdditionalFactors({ ...additionalFactors, electronics: checked === true })
-                  }
-                />
-                <Label htmlFor="electronics">Significant electronic equipment</Label>
-              </div>
-            </div>
-          </div>
-
-          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" size="lg" onClick={handleCalculate}>
-            Calculate Recommended AC Size <Info className="ml-2 h-4 w-4" />
+          <Button
+            className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg py-6"
+            size="lg"
+            onClick={handleCalculate}
+          >
+            Calculate Recommended AC Size <Calculator className="ml-2 h-5 w-5" />
           </Button>
 
           {result && (
-            <Card className="mt-6 border-blue-200 bg-blue-50">
-              <CardHeader>
-                <CardTitle className="text-blue-800">Calculation Result</CardTitle>
+            <Card className="mt-6 border-blue-500 bg-white">
+              <CardHeader className=" rounded-t-lg">
+                <CardTitle className="text-blue-700 flex items-center">
+                  <Zap className="mr-2 h-5 w-5" />
+                  Calculation Result
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <p className="text-lg font-medium">
-                    Recommended AC Size: <span className="text-blue-700 font-bold">{result.tonnage} tons</span>
-                  </p>
-                  <p>Room Size: {result.squareFootage} square feet</p>
-                  <p className="text-sm text-gray-600 mt-2">{result.recommendation}</p>
+              <CardContent className="pt-6">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Recommended AC Size:</span>
+                    <span className="text-2xl font-bold text-blue-700">{result.tonnage} tons</span>
+                  </div>
+                  <div className="flex items-center justify-between border-t border-blue-100 pt-2">
+                    <span className="text-gray-700">Room Size:</span>
+                    <span className="font-medium text-blue-600">{result.squareFootage} square feet</span>
+                  </div>
+                  <div className="bg-yellow-50 p-4 rounded-lg mt-4 border-l-4 border-yellow-400">
+                    <p className="text-sm text-gray-700">{result.recommendation}</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -374,65 +369,77 @@ function CalculatorPage() {
         </div>
 
         <div className="lg:col-span-1">
-          <Card>
-            <CardHeader className="bg-gray-50 border-b">
-              <CardTitle>Understanding AC Tonnage</CardTitle>
+          <Card className="bg-white border border-blue-200 shadow-lg shadow-blue-100 overflow-hidden">
+            <CardHeader className="text-blue-600 border-b border-blue-200">
+              <CardTitle className="flex items-center text-lg">
+                <Info className="mr-2 h-5 w-5" />
+                Understanding AC Tonnage
+              </CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
                 <p className="text-gray-700">
                   Air conditioner size is measured in "Tons," which refers to the cooling capacity of the system. One
                   ton equals 12,000 BTU/hr (British Thermal Units per hour).
-                  <br />
-                  <span className="font-semibold">
-                    (The AC tonnage calculator provided on this site is intended for general reference only. While it
-                    offers useful estimates, it may not account for all factors affecting cooling needs. For accurate
-                    recommendations tailored to your specific requirements, we recommend consulting a certified HVAC
-                    professional.)
-                  </span>
                 </p>
 
-                <div className="border-l-4 border-blue-500 pl-4 py-2">
-                  <h3 className="font-medium mb-2">Why proper sizing matters:</h3>
-                  <ul className="space-y-2">
+                <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
+                  <p className="text-blue-800 font-semibold text-sm">
+                    The AC tonnage calculator provided on this site is intended for general reference only. While it
+                    offers useful estimates, it may not account for all factors affecting cooling needs. For accurate
+                    recommendations tailored to your specific requirements, we recommend consulting a certified HVAC
+                    professional.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-yellow-400 pl-4 py-2">
+                  <h3 className="font-medium mb-2 text-blue-800">Why proper sizing matters:</h3>
+                  <ul className="space-y-3">
                     <li className="flex items-start">
-                      <Check className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">
+                      <div className="bg-blue-100 rounded-full p-1 mr-2 mt-0.5 flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-700" />
+                      </div>
+                      <span className="text-sm text-gray-700">
                         Undersized systems run constantly without providing adequate cooling
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <Check className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">
+                      <div className="bg-blue-100 rounded-full p-1 mr-2 mt-0.5 flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-700" />
+                      </div>
+                      <span className="text-sm text-gray-700">
                         Oversized systems cycle too frequently, causing temperature swings and humidity issues
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <Check className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">
+                      <div className="bg-blue-100 rounded-full p-1 mr-2 mt-0.5 flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-700" />
+                      </div>
+                      <span className="text-sm text-gray-700">
                         Properly sized systems provide optimal comfort and energy efficiency
                       </span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-blue-50 p-4 rounded-lg flex">
+                <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-lg flex">
                   <div className="mr-4">
-                    <div className="bg-blue-600 rounded-full p-2 text-white">
+                    <div className="bg-yellow-400 rounded-full p-2 text-black">
                       <Zap className="h-5 w-5" />
                     </div>
                   </div>
                   <div>
                     <h3 className="font-medium text-blue-800">26 Years of Expert Sizing & Installation</h3>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-sm text-gray-700 mt-1">
                       Trust our experienced technicians to help you select the perfect HVAC system for your specific
                       needs. We've been sizing and installing systems correctly since 1999.
                     </p>
                   </div>
                 </div>
+
                 <Button
                   size="lg"
-                  className="bg-green-600 hover:bg-green-700 text-white text-lg py-4 px-8 rounded-lg flex items-center gap-2 w-full"
+                  className="bg-blue-700 hover:bg-blue-800 text-white font-bold text-lg py-6 rounded-lg flex items-center justify-center gap-2 w-full"
                   onClick={() => window.open('https://wa.me/5551234567', '_blank')}
                 >
                   <MessageCircle className="h-5 w-5" />
