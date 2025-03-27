@@ -9,6 +9,7 @@ import aero1 from '@/assets/aero1.jpeg';
 import aero2 from '@/assets/aero2.jpeg';
 import col1 from '@/assets/col1.jpeg';
 import col2 from '@/assets/col2.jpeg';
+
 // Case studies data
 const caseStudies = [
   {
@@ -406,8 +407,6 @@ const filterOptions = [
   { value: 'Corporate', label: 'Corporate' }
 ];
 
-// Add a ref for the detail section
-
 // Main component
 export default function KeyProjects() {
   const [activeStudy, setActiveStudy] = useState(null);
@@ -431,7 +430,7 @@ export default function KeyProjects() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center mb-12"
+        className="text-center mb-8"
       >
         <h1 className="text-4xl font-bold text-blue-950 mb-4">Our Success Stories</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -439,27 +438,37 @@ export default function KeyProjects() {
         </p>
       </motion.div>
 
-      <div className="mb-8">
-        <Tabs defaultValue="all" onValueChange={setFilter}>
-          <TabsList className="bg-blue-100 p-1 mb-6 flex flex-wrap">
+      {/* Fixed position tabs container with shadow for better visibility */}
+      <div className="sticky top-0 z-30 mb-8">
+        <Tabs defaultValue="all" onValueChange={setFilter} className="w-full">
+          <TabsList className="bg-blue-100 p-2 w-full h-auto flex flex-wrap justify-center gap-3 md:gap-2">
             {filterOptions.map((option) => (
               <TabsTrigger
                 key={option.value}
                 value={option.value}
-                className="data-[state=active]:bg-blue-900 data-[state=active]:text-white"
+                className="data-[state=active]:bg-blue-900 data-[state=active]:text-white px-3 py-2 flex-grow md:flex-grow-0 text-sm md:text-base"
               >
                 {option.label}
               </TabsTrigger>
             ))}
           </TabsList>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredStudies.map((study) => (
-              <CaseStudyCard key={study.id} study={study} isActive={false} onClick={() => handleOpenModal(study)} />
-            ))}
-          </div>
         </Tabs>
       </div>
+
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {filteredStudies.map((study) => (
+          <CaseStudyCard key={study.id} study={study} isActive={false} onClick={() => handleOpenModal(study)} />
+        ))}
+      </div>
+
+      {filteredStudies.length === 0 && (
+        <div className="text-center py-16">
+          <p className="text-xl text-gray-500">No case studies found for this filter.</p>
+          <Button variant="outline" className="mt-4" onClick={() => setFilter('all')}>
+            View all case studies
+          </Button>
+        </div>
+      )}
 
       <AnimatePresence>
         {activeStudy && <CaseStudyModal study={activeStudy} isOpen={isModalOpen} onClose={handleCloseModal} />}

@@ -226,7 +226,7 @@ function CalculatorPage() {
                   <SelectTrigger id="climate-zone" className="border-blue-200">
                     <SelectValue placeholder="Select your climate" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectItem value="hot">Hot (32°C+ summers)</SelectItem>
                     <SelectItem value="warm">Warm (26-32°C summers)</SelectItem>
                     <SelectItem value="moderate">Moderate (21-26°C summers)</SelectItem>
@@ -245,7 +245,7 @@ function CalculatorPage() {
                   <SelectTrigger id="sun-exposure" className="border-blue-200">
                     <SelectValue placeholder="Select exposure level" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectItem value="high">High (direct sun most of the day)</SelectItem>
                     <SelectItem value="moderate">Moderate (partial sun exposure)</SelectItem>
                     <SelectItem value="low">Low (minimal direct sunlight)</SelectItem>
@@ -271,7 +271,7 @@ function CalculatorPage() {
                   <SelectTrigger id="insulation" className="border-blue-200">
                     <SelectValue placeholder="Select insulation level" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectItem value="poor">Poor (minimal insulation)</SelectItem>
                     <SelectItem value="average">Average (standard insulation)</SelectItem>
                     <SelectItem value="good">Good (well insulated)</SelectItem>
@@ -307,7 +307,7 @@ function CalculatorPage() {
                   <SelectTrigger id="room-type" className="border-blue-200">
                     <SelectValue placeholder="Select room type" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectItem value="living">Living Room</SelectItem>
                     <SelectItem value="bedroom">Bedroom</SelectItem>
                     <SelectItem value="kitchen">Kitchen</SelectItem>
