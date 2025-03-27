@@ -97,7 +97,7 @@ export default function HeroSection() {
             <Counter number={26} text="Years of Experience" />
             <Counter number={3400} text="Completed Projects" />
             <Counter number={99} text="Client Satisfaction" suffix="%" />
-            <Counter number={70} text="Certified Technicians" />
+            <Counter number={80} text="Certified Technicians" />
           </div>
         </div>
       </motion.div>
