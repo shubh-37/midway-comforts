@@ -71,7 +71,7 @@ export default function AboutUsHeader() {
           </p>
 
           <p>
-            From a small showroom in Prabhadevi to becoming one of
+            From a showroom in Prabhadevi to becoming one of
             <span className="font-semibold text-primary"> Mumbai's fastest-growing dealerships</span> for
             <span className="font-semibold"> TOSHIBA and CARRIER Air Conditioning</span>, we've built a legacy of
             excellence.
