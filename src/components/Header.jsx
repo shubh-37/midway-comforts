@@ -10,8 +10,8 @@ const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
   { name: 'Products', href: '/products' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Before & After', href: '/before-after' },
+  { name: 'Key Projects', href: '/projects' },
+  // { name: 'Before & After', href: '/before-after' },
   { name: 'AC Calculator', href: '/calculator' }
 ];
 
@@ -37,7 +37,7 @@ export default function Header() {
     >
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/" className="flex items-center transition-transform duration-300 hover:scale-105">
-          <div className=" w-36">
+          <div className="w-44">
             <img src={midwayLogo} alt="Midway Comforts" />
           </div>
         </Link>
