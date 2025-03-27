@@ -9,6 +9,7 @@ import narangLogo from '../assets/narang-logo.jpg';
 import rustomjeeLogo from '../assets/rustomjee-logo.png';
 import herStoryLogo from '../assets/her-story.png';
 import montBlancLogo from '../assets/montblanc-1.svg';
+import adFactorLogo from '../assets/ad-factor.jpg';
 const brands = [
   {
     name: 'HDFC Bank',
@@ -61,6 +62,10 @@ const brands = [
   {
     name: 'Mont Blanc',
     logo: montBlancLogo
+  },
+  {
+    name: 'Ad Factor',
+    logo: adFactorLogo
   }
 ];
 
@@ -83,7 +88,7 @@ export default function BrandMarquee() {
         </p>
       </div>
 
-      <div className="block sm:hidden relative mt-8 w-full overflow-hidden">
+      <div className="sm:hidden relative mt-8 w-full overflow-hidden">
         <motion.div
           className="flex gap-4 py-8 flex-nowrap"
           animate={{ x: ['0%', '-50%'] }}
