@@ -181,7 +181,7 @@ export default function CompanyTimeline() {
               opacity: 0;
               transition:
                 opacity 1s ease-out,
-                transform 0.5s ease-out;
+                transform 0.1s ease-out;
             }
             .milestone-card.visible {
               opacity: 1;
