@@ -39,7 +39,7 @@ export default function HVACServicePage() {
           <FeatureCard
             icon={<Clock className="w-8 h-8 text-blue-800" />}
             title="Experience & Expertise"
-            description="Over 25 years in the HVAC industry with a track record of successful projects and our average staff is 15+ years showing further expertise"
+            description="Over 25 years in the HVAC industry with a track record of successful projects and our average staff experience is over 15 years showing further expertise"
             footer="Minimum 15+ years experienced staff"
           />
 
@@ -74,7 +74,7 @@ export default function HVACServicePage() {
           <FeatureCard
             icon={<MessageSquare className="w-8 h-8 text-blue-800" />}
             title="Proven Reliability"
-            description=": We ensured uninterrupted service even during the COVID-19 pandemic, never letting clients go a day without comfort."
+            description="We ensured uninterrupted service even during the COVID-19 pandemic, never letting clients go a day without comfort."
             footer="24/7 emergency service available"
           />
         </motion.div>
