@@ -383,7 +383,10 @@ const CaseStudyModal = ({ study, isOpen, onClose }) => {
           </div>
 
           <div className="mt-6 flex justify-end">
-            <Button className="bg-blue-900 hover:bg-blue-800 text-white">
+            <Button
+              className="bg-blue-900 hover:bg-blue-800 text-white"
+              onClick={() => window.open('https://wa.me/9930267231', '_blank')}
+            >
               Contact Us <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
