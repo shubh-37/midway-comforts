@@ -5,7 +5,7 @@ const quickLinks = [
   { text: 'About Us', href: '/about' },
   { text: 'Key Projects', href: '/projects' },
   { text: 'Products', href: '/products' },
-  // { text: 'Before & After', href: '/before-after' },
+  { text: 'AC Guide', href: '/ac-guide' },
   { text: 'AC Calculator', href: '/calculator' },
   { text: 'Privacy Policy', href: '/privacy-policy' },
   { text: 'Terms of Service', href: '/tnc' }
@@ -82,7 +82,7 @@ export default function Footer() {
                 </motion.div>
                 <motion.div whileHover={{ x: 5 }} className="flex items-center gap-2 text-yellow-400">
                   <Mail className="w-5 h-5" />
-                  <div className='flex flex-col'>
+                  <div className="flex flex-col">
                     <span>midwaycomforts@gmail.com</span>
                     <span>projects@midwaycomforts.in</span>
                   </div>

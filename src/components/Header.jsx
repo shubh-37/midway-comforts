@@ -11,7 +11,7 @@ const navItems = [
   { name: 'About Us', href: '/about' },
   { name: 'Products', href: '/products' },
   { name: 'Key Projects', href: '/projects' },
-  // { name: 'Before & After', href: '/before-after' },
+  { name: 'AC Guide', href: '/ac-guide' },
   { name: 'AC Calculator', href: '/calculator' }
 ];
 
