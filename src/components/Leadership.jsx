@@ -11,6 +11,7 @@ import santosh from '@/assets/santosh.jpeg';
 import rajaram from '@/assets/rajaram.jpeg';
 import shabbir from '@/assets/shabbir.jpeg';
 import nilisha from '@/assets/nilisha.jpeg';
+import bonny from '@/assets/bonny.jpeg';
 import { Button } from './ui/moving-border';
 import { useEffect, useState } from 'react';
 
@@ -91,9 +92,9 @@ export default function LeadershipCarousel() {
     },
     {
       id: 11,
-      name: 'Mr. Bonny',
+      name: 'Mr. Bonny Fernandez',
       title: 'Service Coordinator',
-      image: maleAvatar
+      image: bonny
     }
   ];
 
