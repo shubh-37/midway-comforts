@@ -1,21 +1,142 @@
 import { motion } from 'framer-motion';
-import { Fan, Thermometer, Wrench, Shield, Leaf, Droplets, Zap, MessageCircle } from 'lucide-react';
+import { Fan, Thermometer, Wrench, Shield, Leaf, Droplets, Zap, MessageCircle, ArrowDown, ArrowUp } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { VerticalMarquee } from '@/components/vertical-marquee';
 import acimage from '@/assets/ac.png';
 import whatsapp from '@/assets/whatsapp.png';
+
+// Updated the circularProcessStyles to fix the mobile marquee overflow
+const circularProcessStyles = `
+  .circular-process-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 700px;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .mobile-process-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  .mobile-step-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .mobile-arrow {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+  }
+  
+  .mobile-loop-indicator {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 20;
+  }
+  
+  .mobile-marquee-container {
+    height: 450px; /* Reduced height */
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* Important: Ensure no overflow */
+  }
+  
+  .mobile-marquee-container::before,
+  .mobile-marquee-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  .mobile-marquee-container::before {
+    top: 0;
+    background: linear-gradient(to bottom, white, transparent);
+  }
+  
+  .mobile-marquee-container::after {
+    bottom: 0;
+    background: linear-gradient(to top, white, transparent);
+  }
+
+  /* Make mobile cards narrower */
+  .mobile-process-card {
+    width: 100%;
+    max-width: 260px; /* Narrower width */
+  }
+
+  @media (max-width: 768px) {
+    .circular-process-container {
+      display: none !important;
+    }
+    
+    .mobile-process-container {
+      display: flex;
+    }
+
+    /* Additional responsive adjustments */
+    .tabs-content-container {
+      position: relative;
+      width: 100%;
+      min-height: 500px; /* Min height to contain marquee */
+      overflow: hidden; /* Prevent overflow */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .mobile-process-container {
+      display: none;
+    }
+  }
+`;
+
 export default function ACGuidePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
+      <style jsx>{circularProcessStyles}</style>
       <HowAcWorksSection />
       <MythsVsFactsSection />
       <ServiceImportanceSection />
     </div>
   );
 }
+
 function HowAcWorksSection() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -39,7 +160,7 @@ function HowAcWorksSection() {
 
   return (
     <section id="how-ac-works" className="py-10 bg-white">
-      <div className="container px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -63,61 +184,205 @@ function HowAcWorksSection() {
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger
                   value="process"
-                  className=" data-[state=active]:bg-slate-100 data-[state=active]:text-black py-2"
+                  className="data-[state=active]:bg-slate-100 data-[state=active]:text-black py-2"
                 >
                   Step-by-Step Process
                 </TabsTrigger>
                 <TabsTrigger
                   value="diagram"
-                  className=" data-[state=active]:bg-slate-100 data-[state=active]:text-black py-2"
+                  className="data-[state=active]:bg-slate-100 data-[state=active]:text-black py-2"
                 >
                   AC Cycle Diagram
                 </TabsTrigger>
               </TabsList>
-              <TabsContent value="process" className="mt-6">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  <ACProcessCard
-                    step="1"
-                    title="Compressor"
-                    location="Outdoor Unit"
-                    description="Compresses refrigerant gas, increasing pressure and temperature to create hot, high-pressure gas."
-                    icon={<Fan className="h-10 w-10 text-blue-500" />}
-                  />
-                  <ACProcessCard
-                    step="2"
-                    title="Condenser Coil"
-                    location="Outdoor Unit"
-                    description="Hot gas passes through coils, cooling and condensing into liquid. Heat transfers to outside air."
-                    icon={<Thermometer className="h-10 w-10 text-red-500" />}
-                  />
-                  <ACProcessCard
-                    step="3"
-                    title="Expansion Valve"
-                    location="Between Units"
-                    description="Liquid refrigerant passes through valve, pressure drops, cooling further into cold liquid."
-                    icon={<Zap className="h-10 w-10 text-yellow-500" />}
-                  />
-                  <ACProcessCard
-                    step="4"
-                    title="Evaporator Coil"
-                    location="Indoor Unit"
-                    description="Cold liquid absorbs heat from indoor air, evaporating back to gas state."
-                    icon={<Thermometer className="h-10 w-10 text-blue-300" />}
-                  />
-                  <ACProcessCard
-                    step="5"
-                    title="Cooling the Air"
-                    location="Indoor Unit"
-                    description="Warm room air blows over cold coils, cools down, and circulates back into the room."
-                    icon={<Droplets className="h-10 w-10 text-blue-400" />}
-                  />
-                  <ACProcessCard
-                    step="6"
-                    title="Return to Compressor"
-                    location="System Cycle"
-                    description="Warm gas refrigerant flows back to compressor and the cycle repeats continuously."
-                    icon={<Fan className="h-10 w-10 text-blue-600" />}
-                  />
+              {/* Fixed TabsContent with better containment */}
+              <TabsContent value="process" className="mt-6 tabs-content-container">
+                <div className="relative w-full max-w-5xl mx-auto">
+                  {/* Desktop View */}
+                  <div className="circular-process-container md:block">
+                    {/* Top */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 transform">
+                      <ProcessCard
+                        step="1"
+                        title="Compressor"
+                        location="Outdoor Unit"
+                        description="Compresses refrigerant gas, increasing pressure and temperature to create hot, high-pressure gas."
+                        icon={<Fan className="h-10 w-10 text-blue-500" />}
+                      />
+                      <div className="absolute bottom-0 left-[75%] transform translate-y-8">
+                        <Arrow direction="down-right" />
+                      </div>
+                    </div>
+
+                    {/* Top Right */}
+                    <div className="absolute top-[20%] right-0 transform translate-x-0">
+                      <ProcessCard
+                        step="2"
+                        title="Condenser Coil"
+                        location="Outdoor Unit"
+                        description="Hot gas passes through coils, cooling and condensing into liquid. Heat transfers to outside air."
+                        icon={<Thermometer className="h-10 w-10 text-red-500" />}
+                      />
+                      <div className="absolute bottom-0 left-1/2 transform translate-y-8">
+                        <Arrow direction="down" />
+                      </div>
+                    </div>
+
+                    {/* Bottom Right */}
+                    <div className="absolute bottom-[20%] right-0 transform translate-x-0">
+                      <ProcessCard
+                        step="3"
+                        title="Expansion Valve"
+                        location="Between Units"
+                        description="Liquid refrigerant passes through valve, pressure drops, cooling further into cold liquid."
+                        icon={<Zap className="h-10 w-10 text-yellow-500" />}
+                      />
+                      <div className="absolute bottom-1/2 left-0 transform -translate-x-8">
+                        <Arrow direction="down-left" />
+                      </div>
+                    </div>
+
+                    {/* Bottom */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 transform">
+                      <ProcessCard
+                        step="4"
+                        title="Evaporator Coil"
+                        location="Indoor Unit"
+                        description="Cold liquid absorbs heat from indoor air, evaporating back to gas state."
+                        icon={<Thermometer className="h-10 w-10 text-blue-300" />}
+                      />
+                      <div className="absolute top-0 left-[25%] transform -translate-y-8">
+                        <Arrow direction="up-left" />
+                      </div>
+                    </div>
+
+                    {/* Bottom Left */}
+                    <div className="absolute bottom-[20%] left-0 transform -translate-x-0">
+                      <ProcessCard
+                        step="5"
+                        title="Cooling the Air"
+                        location="Indoor Unit"
+                        description="Warm room air blows over cold coils, cools down, and circulates back into the room."
+                        icon={<Droplets className="h-10 w-10 text-blue-400" />}
+                      />
+                      <div className="absolute top-0 left-1/2 transform -translate-y-8">
+                        <Arrow direction="up" />
+                      </div>
+                    </div>
+
+                    {/* Top Left */}
+                    <div className="absolute top-[20%] left-0 transform -translate-x-0">
+                      <ProcessCard
+                        step="6"
+                        title="Return to Compressor"
+                        location="System Cycle"
+                        description="Warm gas refrigerant flows back to compressor and the cycle repeats continuously."
+                        icon={<Fan className="h-10 w-10 text-blue-600" />}
+                      />
+                      <div className="absolute top-1/2 right-0 transform translate-x-8">
+                        <Arrow direction="up-right" />
+                      </div>
+                    </div>
+
+                    {/* Center */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="bg-blue-100 rounded-full p-4 shadow-sm text-center">
+                        <Fan className="h-8 w-8 text-blue-700 mx-auto animate-spin-slow" />
+                        <p className="text-xs font-medium mt-1">Continuous Cycle</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mobile View - Vertical Marquee - Fixed */}
+                  <div className="mobile-process-container">
+                    <div className="mobile-marquee-container">
+                      <VerticalMarquee speed={3} direction="down">
+                        {/* Step 1 */}
+                        <div className="mobile-step-container">
+                          <MobileProcessCard
+                            step="1"
+                            title="Compressor"
+                            location="Outdoor Unit"
+                            description="Compresses refrigerant gas, increasing pressure and temperature."
+                            icon={<Fan className="h-8 w-8 text-blue-500" />}
+                          />
+                        </div>
+                        <div className="mobile-arrow">
+                          <ArrowDown className="h-6 w-6 text-blue-500" />
+                        </div>
+
+                        {/* Step 2 */}
+                        <div className="mobile-step-container">
+                          <MobileProcessCard
+                            step="2"
+                            title="Condenser Coil"
+                            location="Outdoor Unit"
+                            description="Hot gas cools and condenses into liquid."
+                            icon={<Thermometer className="h-8 w-8 text-red-500" />}
+                          />
+                        </div>
+                        <div className="mobile-arrow">
+                          <ArrowDown className="h-6 w-6 text-blue-500" />
+                        </div>
+
+                        {/* Step 3 */}
+                        <div className="mobile-step-container">
+                          <MobileProcessCard
+                            step="3"
+                            title="Expansion Valve"
+                            location="Between Units"
+                            description="Liquid refrigerant cools further into cold liquid."
+                            icon={<Zap className="h-8 w-8 text-yellow-500" />}
+                          />
+                        </div>
+                        <div className="mobile-arrow">
+                          <ArrowDown className="h-6 w-6 text-blue-500" />
+                        </div>
+
+                        {/* Step 4 */}
+                        <div className="mobile-step-container">
+                          <MobileProcessCard
+                            step="4"
+                            title="Evaporator Coil"
+                            location="Indoor Unit"
+                            description="Cold liquid absorbs heat from indoor air."
+                            icon={<Thermometer className="h-8 w-8 text-blue-300" />}
+                          />
+                        </div>
+                        <div className="mobile-arrow">
+                          <ArrowDown className="h-6 w-6 text-blue-500" />
+                        </div>
+
+                        {/* Step 5 */}
+                        <div className="mobile-step-container">
+                          <MobileProcessCard
+                            step="5"
+                            title="Cooling the Air"
+                            location="Indoor Unit"
+                            description="Warm room air blows over cold coils and cools down."
+                            icon={<Droplets className="h-8 w-8 text-blue-400" />}
+                          />
+                        </div>
+                        <div className="mobile-arrow">
+                          <ArrowDown className="h-6 w-6 text-blue-500" />
+                        </div>
+
+                        {/* Step 6 */}
+                        <div className="mobile-step-container">
+                          <MobileProcessCard
+                            step="6"
+                            title="Return to Compressor"
+                            location="System Cycle"
+                            description="Warm gas refrigerant returns to compressor."
+                            icon={<Fan className="h-8 w-8 text-blue-600" />}
+                          />
+                        </div>
+                        <div className="mobile-arrow">
+                          <ArrowUp className="h-6 w-6 text-blue-500" />
+                        </div>
+                      </VerticalMarquee>
+                    </div>
+                  </div>
                 </div>
               </TabsContent>
               <TabsContent value="diagram" className="mt-6">
@@ -131,23 +396,69 @@ function HowAcWorksSection() {
   );
 }
 
-function ACProcessCard({ step, title, location, description, icon }) {
+// Regular ProcessCard for desktop
+function ProcessCard({ step, title, location, description, icon }) {
   return (
-    <Card className="overflow-hidden">
-      <CardHeader className="bg-muted/50 pb-3">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm font-medium text-muted-foreground">Step {step}</p>
-            <CardTitle className="text-xl">{title}</CardTitle>
-          </div>
-          <div className="rounded-full bg-background p-2 shadow-sm">{icon}</div>
+    <div className="bg-white rounded-lg shadow-sm p-4 w-64">
+      <div className="flex items-center mb-2">
+        <div className="rounded-full bg-blue-100 p-2 mr-3">{icon}</div>
+        <div>
+          <p className="text-sm font-medium text-muted-foreground">Step {step}</p>
+          <h3 className="text-lg font-bold">{title}</h3>
         </div>
-      </CardHeader>
-      <CardContent className="pt-4">
-        <p className="text-sm font-medium text-blue-600 mb-2">{location}</p>
-        <CardDescription className="text-sm">{description}</CardDescription>
-      </CardContent>
-    </Card>
+      </div>
+      <p className="text-sm font-medium text-blue-600 mb-1">{location}</p>
+      <p className="text-sm text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
+// New MobileProcessCard with more compact design
+function MobileProcessCard({ step, title, location, description, icon }) {
+  return (
+    <div className="bg-white rounded-lg shadow-sm p-3 mobile-process-card">
+      <div className="flex items-center mb-1">
+        <div className="rounded-full bg-blue-100 p-1 mr-2">{icon}</div>
+        <div>
+          <p className="text-xs font-medium text-muted-foreground">Step {step}</p>
+          <h3 className="text-md font-bold">{title}</h3>
+        </div>
+      </div>
+      <p className="text-xs font-medium text-blue-600 mb-1">{location}</p>
+      <p className="text-xs text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
+function Arrow({ direction = 'right' }) {
+  const rotationClasses = {
+    right: 'rotate-0',
+    'down-right': 'rotate-45',
+    down: 'rotate-90',
+    'down-left': 'rotate-135',
+    left: 'rotate-180',
+    'up-left': '-rotate-135',
+    up: '-rotate-90',
+    'up-right': '-rotate-45'
+  };
+
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`transform ${rotationClasses[direction]}`}
+    >
+      <path
+        d="M5 12H19M19 12L12 5M19 12L12 19"
+        stroke="#3B82F6"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
@@ -206,7 +517,7 @@ function MythsVsFactsSection() {
 
   return (
     <section id="myths-facts" className="py-16 md:py-24 bg-blue-50">
-      <div className="container px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -332,7 +643,7 @@ function ServiceImportanceSection() {
 
   return (
     <section id="service" className="py-16 md:py-24 bg-white">
-      <div className="container px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -409,8 +720,7 @@ function ServiceImportanceSection() {
               <div className="mt-8 p-6 bg-blue-50 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">Did You Know?</h3>
                 <p className="text-muted-foreground mb-3">
-                  According to the US Department of Energy, regular AC maintenance can improve its efficiency by up to
-                  5-15%.
+                  Regular AC maintenance can improve its efficiency by up to 5-15%.
                 </p>
                 <p className="text-muted-foreground">
                   HVAC systems consume around 50-55% of the total electricity bill in a household or a corporate office.
