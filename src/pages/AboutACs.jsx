@@ -8,9 +8,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { VerticalMarquee } from '@/components/vertical-marquee';
 import acimage from '@/assets/ac.png';
 import compressor from '@/assets/compressor.png';
-import expansion from '@/assets/expansion.png';
+import expansion from '@/assets/expansion.jpeg';
 import evaporator from '@/assets/evaporator.jpg';
 import condenser from '@/assets/condenssor.png';
+import cooling from '@/assets/cooling.jpeg';
 import whatsapp from '@/assets/whatsapp.png';
 
 // Updated the circularProcessStyles to fix the mobile marquee overflow
@@ -267,7 +268,7 @@ function HowAcWorksSection() {
                         title="Cooling the Air"
                         location="Indoor Unit"
                         description="Warm room air blows over cold coils, cools down, and circulates back into the room."
-                        icon={<Droplets className="h-10 w-10 text-blue-400" />}
+                        icon={<img src={cooling} alt="Cooling" className="h-10 w-10 object-cover" />}
                       />
                       <div className="absolute top-0 left-1/2 transform -translate-y-8">
                         <Arrow direction="up" />
@@ -376,7 +377,7 @@ function HowAcWorksSection() {
                             title="Cooling the Air"
                             location="Indoor Unit"
                             description="Warm room air blows over cold coils and cools down."
-                            icon={<Droplets className="h-8 w-8 text-blue-400" />}
+                            icon={<img src={cooling} alt="Cooling" className="h-8 w-8 object-cover" />}
                           />
                         </div>
                         <div className="mobile-arrow">
