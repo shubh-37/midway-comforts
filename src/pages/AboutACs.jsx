@@ -296,7 +296,19 @@ function HowAcWorksSection() {
                   {/* Mobile View - Vertical Marquee - Fixed */}
                   <div className="mobile-process-container">
                     <div className="mobile-marquee-container">
-                      <VerticalMarquee speed={3} direction="down">
+                      <VerticalMarquee speed={4} direction="down">
+                        <div className="mobile-step-container">
+                          <MobileProcessCard
+                            step="6"
+                            title="Return to Compressor"
+                            location="System Cycle"
+                            description="Warm gas refrigerant returns to compressor."
+                            icon={<Fan className="h-8 w-8 text-blue-600" />}
+                          />
+                        </div>
+                        <div className="mobile-arrow">
+                          <ArrowDown className="h-6 w-6 text-blue-500" />
+                        </div>
                         {/* Step 1 */}
                         <div className="mobile-step-container">
                           <MobileProcessCard
@@ -368,18 +380,6 @@ function HowAcWorksSection() {
                         </div>
 
                         {/* Step 6 */}
-                        <div className="mobile-step-container">
-                          <MobileProcessCard
-                            step="6"
-                            title="Return to Compressor"
-                            location="System Cycle"
-                            description="Warm gas refrigerant returns to compressor."
-                            icon={<Fan className="h-8 w-8 text-blue-600" />}
-                          />
-                        </div>
-                        <div className="mobile-arrow">
-                          <ArrowUp className="h-6 w-6 text-blue-500" />
-                        </div>
                       </VerticalMarquee>
                     </div>
                   </div>
