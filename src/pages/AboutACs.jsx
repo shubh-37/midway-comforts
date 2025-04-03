@@ -7,6 +7,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { VerticalMarquee } from '@/components/vertical-marquee';
 import acimage from '@/assets/ac.png';
+import compressor from '@/assets/compressor.png';
+import expansion from '@/assets/expansion.png';
+import evaporator from '@/assets/evaporator.jpg';
+import condenser from '@/assets/condenssor.png';
 import whatsapp from '@/assets/whatsapp.png';
 
 // Updated the circularProcessStyles to fix the mobile marquee overflow
@@ -207,7 +211,7 @@ function HowAcWorksSection() {
                         title="Compressor"
                         location="Outdoor Unit"
                         description="Compresses refrigerant gas, increasing pressure and temperature to create hot, high-pressure gas."
-                        icon={<Fan className="h-10 w-10 text-blue-500" />}
+                        icon={<img src={compressor} alt="Compressor" className="h-10 w-10 object-cover" />}
                       />
                       <div className="absolute bottom-0 left-[75%] transform translate-y-8">
                         <Arrow direction="down-right" />
@@ -221,7 +225,7 @@ function HowAcWorksSection() {
                         title="Condenser Coil"
                         location="Outdoor Unit"
                         description="Hot gas passes through coils, cooling and condensing into liquid. Heat transfers to outside air."
-                        icon={<Thermometer className="h-10 w-10 text-red-500" />}
+                        icon={<img src={condenser} alt="Condenser Coil" className="h-10 w-10 object-cover" />}
                       />
                       <div className="absolute bottom-0 left-1/2 transform translate-y-8">
                         <Arrow direction="down" />
@@ -235,7 +239,7 @@ function HowAcWorksSection() {
                         title="Expansion Valve"
                         location="Between Units"
                         description="Liquid refrigerant passes through valve, pressure drops, cooling further into cold liquid."
-                        icon={<Zap className="h-10 w-10 text-yellow-500" />}
+                        icon={<img src={expansion} alt="Expansion Valve" className="h-10 w-10 object-cover" />}
                       />
                       <div className="absolute bottom-1/2 left-0 transform -translate-x-8">
                         <Arrow direction="down-left" />
@@ -249,7 +253,7 @@ function HowAcWorksSection() {
                         title="Evaporator Coil"
                         location="Indoor Unit"
                         description="Cold liquid absorbs heat from indoor air, evaporating back to gas state."
-                        icon={<Thermometer className="h-10 w-10 text-blue-300" />}
+                        icon={<img src={evaporator} alt="Evaporator Coil" className="h-10 w-10 object-cover" />}
                       />
                       <div className="absolute top-0 left-[25%] transform -translate-y-8">
                         <Arrow direction="up-left" />
@@ -277,7 +281,7 @@ function HowAcWorksSection() {
                         title="Return to Compressor"
                         location="System Cycle"
                         description="Warm gas refrigerant flows back to compressor and the cycle repeats continuously."
-                        icon={<Fan className="h-10 w-10 text-blue-600" />}
+                        icon={<img src={compressor} alt="Compressor" className="h-10 w-10 object-cover" />}
                       />
                       <div className="absolute top-1/2 right-0 transform translate-x-8">
                         <Arrow direction="up-right" />
@@ -303,7 +307,7 @@ function HowAcWorksSection() {
                             title="Return to Compressor"
                             location="System Cycle"
                             description="Warm gas refrigerant returns to compressor."
-                            icon={<Fan className="h-8 w-8 text-blue-600" />}
+                            icon={<img src={compressor} alt="Compressor" className="h-8 w-8 object-cover" />}
                           />
                         </div>
                         <div className="mobile-arrow">
@@ -316,7 +320,7 @@ function HowAcWorksSection() {
                             title="Compressor"
                             location="Outdoor Unit"
                             description="Compresses refrigerant gas, increasing pressure and temperature."
-                            icon={<Fan className="h-8 w-8 text-blue-500" />}
+                            icon={<img src={compressor} alt="Compressor" className="h-8 w-8 object-cover" />}
                           />
                         </div>
                         <div className="mobile-arrow">
@@ -330,7 +334,7 @@ function HowAcWorksSection() {
                             title="Condenser Coil"
                             location="Outdoor Unit"
                             description="Hot gas cools and condenses into liquid."
-                            icon={<Thermometer className="h-8 w-8 text-red-500" />}
+                            icon={<img src={condenser} alt="Condenser Coil" className="h-8 w-8 object-cover" />}
                           />
                         </div>
                         <div className="mobile-arrow">
@@ -344,7 +348,7 @@ function HowAcWorksSection() {
                             title="Expansion Valve"
                             location="Between Units"
                             description="Liquid refrigerant cools further into cold liquid."
-                            icon={<Zap className="h-8 w-8 text-yellow-500" />}
+                            icon={<img src={expansion} alt="Expansion Valve" className="h-8 w-8 object-cover" />}
                           />
                         </div>
                         <div className="mobile-arrow">
@@ -358,7 +362,7 @@ function HowAcWorksSection() {
                             title="Evaporator Coil"
                             location="Indoor Unit"
                             description="Cold liquid absorbs heat from indoor air."
-                            icon={<Thermometer className="h-8 w-8 text-blue-300" />}
+                            icon={<img src={evaporator} alt="Evaporator Coil" className="h-8 w-8 object-cover" />}
                           />
                         </div>
                         <div className="mobile-arrow">
@@ -378,8 +382,6 @@ function HowAcWorksSection() {
                         <div className="mobile-arrow">
                           <ArrowDown className="h-6 w-6 text-blue-500" />
                         </div>
-
-                        {/* Step 6 */}
                       </VerticalMarquee>
                     </div>
                   </div>
@@ -401,7 +403,7 @@ function ProcessCard({ step, title, location, description, icon }) {
   return (
     <div className="bg-white rounded-lg shadow-sm p-4 w-64">
       <div className="flex items-center mb-2">
-        <div className="rounded-full bg-blue-100 p-2 mr-3">{icon}</div>
+        <div className="rounded-full p-2 mr-3">{icon}</div>
         <div>
           <p className="text-sm font-medium text-muted-foreground">Step {step}</p>
           <h3 className="text-lg font-bold">{title}</h3>
@@ -418,7 +420,7 @@ function MobileProcessCard({ step, title, location, description, icon }) {
   return (
     <div className="bg-white rounded-lg shadow-sm p-3 mobile-process-card">
       <div className="flex items-center mb-1">
-        <div className="rounded-full bg-blue-100 p-1 mr-2">{icon}</div>
+        <div className="rounded-full p-1 mr-2">{icon}</div>
         <div>
           <p className="text-xs font-medium text-muted-foreground">Step {step}</p>
           <h3 className="text-md font-bold">{title}</h3>
