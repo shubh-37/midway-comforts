@@ -214,7 +214,7 @@ function HowAcWorksSection() {
                         description="Compresses refrigerant gas, increasing pressure and temperature to create hot, high-pressure gas."
                         icon={<img src={compressor} alt="Compressor" className="h-10 w-10 object-cover" />}
                       />
-                      <div className="absolute bottom-0 left-[75%] transform translate-y-8">
+                      <div className="absolute bottom-0 left-[100%] transform translate-y-10">
                         <Arrow direction="down-right" />
                       </div>
                     </div>
@@ -228,7 +228,7 @@ function HowAcWorksSection() {
                         description="Hot gas passes through coils, cooling and condensing into liquid. Heat transfers to outside air."
                         icon={<img src={condenser} alt="Condenser Coil" className="h-10 w-10 object-cover" />}
                       />
-                      <div className="absolute bottom-0 left-1/2 transform translate-y-8">
+                      <div className="absolute bottom-0 left-1/2 transform translate-y-14">
                         <Arrow direction="down" />
                       </div>
                     </div>
@@ -242,7 +242,7 @@ function HowAcWorksSection() {
                         description="Liquid refrigerant passes through valve, pressure drops, cooling further into cold liquid."
                         icon={<img src={expansion} alt="Expansion Valve" className="h-10 w-10 object-cover" />}
                       />
-                      <div className="absolute bottom-1/2 left-0 transform -translate-x-8">
+                      <div className="absolute bottom-1/4 left-0 transform -translate-x-10">
                         <Arrow direction="down-left" />
                       </div>
                     </div>
@@ -256,7 +256,7 @@ function HowAcWorksSection() {
                         description="Cold liquid absorbs heat from indoor air, evaporating back to gas state."
                         icon={<img src={evaporator} alt="Evaporator Coil" className="h-10 w-10 object-cover" />}
                       />
-                      <div className="absolute top-0 left-[25%] transform -translate-y-8">
+                      <div className="absolute top-0 right-[100%] transform -translate-y-10">
                         <Arrow direction="up-left" />
                       </div>
                     </div>
@@ -270,7 +270,7 @@ function HowAcWorksSection() {
                         description="Warm room air blows over cold coils, cools down, and circulates back into the room."
                         icon={<img src={cooling} alt="Cooling" className="h-10 w-10 object-cover" />}
                       />
-                      <div className="absolute top-0 left-1/2 transform -translate-y-8">
+                      <div className="absolute top-0 left-1/3 transform -translate-y-10">
                         <Arrow direction="up" />
                       </div>
                     </div>
@@ -284,7 +284,7 @@ function HowAcWorksSection() {
                         description="Warm gas refrigerant flows back to compressor and the cycle repeats continuously."
                         icon={<img src={compressor} alt="Compressor" className="h-10 w-10 object-cover" />}
                       />
-                      <div className="absolute top-1/2 right-0 transform translate-x-8">
+                      <div className="absolute top-1/4 right-0 transform translate-x-10">
                         <Arrow direction="up-right" />
                       </div>
                     </div>
@@ -447,9 +447,9 @@ function Arrow({ direction = 'right' }) {
 
   return (
     <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      width="60"
+      height="60"
+      viewBox="0 0 25 15"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={`transform ${rotationClasses[direction]}`}
