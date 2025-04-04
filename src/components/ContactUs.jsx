@@ -29,7 +29,7 @@ export default function ContactUs() {
             <Button
               size="lg"
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg flex items-center gap-2"
-              onClick={() => window.open('https://wa.me/9930267231', '_blank')}
+              onClick={() => window.open('https://wa.me/9324775501', '_blank')}
             >
               <MessageCircle className="h-5 w-5" />
               Contact on WhatsApp

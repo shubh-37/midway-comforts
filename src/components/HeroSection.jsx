@@ -69,17 +69,17 @@ export default function HeroSection() {
                 isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               )}
             >
-              <Link
-                to="/quote"
+              <button
+                onClick={() => window.open('https://wa.me/9324775501', '_blank')}
                 className="inline-flex h-12 items-center justify-center rounded-md bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 text-base font-medium text-black shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
               >
                 Get a Free Quote
-              </Link>
+              </button>
               <Link
-                to="/services"
+                to="/products"
                 className="inline-flex h-12 items-center justify-center rounded-md border border-white/70 bg-white/10 px-6 text-base font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
               >
-                Explore Services
+                Explore Products
               </Link>
             </div>
           </div>
