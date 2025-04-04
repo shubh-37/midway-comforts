@@ -100,15 +100,6 @@ export default function Footer() {
                     AC Tonnage Calculator
                   </Link>
                 </motion.div>
-                <motion.div whileHover={{ x: 5 }}>
-                  <Link
-                    to="/before-after"
-                    className="text-gray-300 hover:text-blue-400 transition-colors flex items-center gap-2"
-                  >
-                    <ImageIcon className="w-4 h-4" />
-                    Before & After Gallery
-                  </Link>
-                </motion.div>
               </div>
             </div>
           </div>
