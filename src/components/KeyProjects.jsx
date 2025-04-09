@@ -9,7 +9,10 @@ import aero1 from '@/assets/aero1.jpeg';
 import aero2 from '@/assets/aero2.jpeg';
 import col1 from '@/assets/col1.jpeg';
 import col2 from '@/assets/col2.jpeg';
-
+import reliance from '@/assets/reliance.jpeg';
+import reliance1 from '@/assets/reliance1.jpeg';
+import tanshiq from '@/assets/tanshiq.jpeg';
+import tanshiq1 from '@/assets/tanshiq1.jpeg';
 // Case studies data
 const caseStudies = [
   {
@@ -37,7 +40,7 @@ const caseStudies = [
       'The client was highly satisfied with the results, and since our assessment and customized approach, not a single gas leak complaint has been reported. The sustainable cooling system we provided offers peace of mind and dependable performance.',
     conclusion:
       "Midway Comforts successfully resolved the persistent gas leak issues at Tanishq's showroom by applying an anti-corrosion coating and ensuring proper tonnage calculation. Our solution provided lasting protection against corrosive gases and maintained optimal cooling performance.",
-    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
+    images: [tanshiq, tanshiq1]
   },
   {
     id: 'ventilation',
@@ -100,7 +103,7 @@ const caseStudies = [
       "The experience prompted Midway Comforts to establish higher standards for safety compliance across all projects, marking a significant milestone in the company's safety protocols.",
     conclusion:
       "The successful implementation of safety protocols for this project has brought about a positive transformation in Midway Comforts' approach to safety. By prioritizing training and compliance, we have created a safer and more reliable working environment for all future projects.",
-    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
+    images: [reliance, reliance1]
   },
   {
     id: 'overseas',
