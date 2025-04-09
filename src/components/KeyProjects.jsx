@@ -17,6 +17,8 @@ import rustom from '@/assets/rustom.jpeg';
 import rustom1 from '@/assets/rustom1.jpeg';
 import adfactor from '@/assets/adfactor.jpeg';
 import adfactor1 from '@/assets/adfactor1.jpeg';
+import yashwant from '@/assets/yashwant.jpeg';
+import yashwant1 from '@/assets/yashwant1.jpeg';
 // Case studies data
 const caseStudies = [
   {
@@ -212,7 +214,7 @@ const caseStudies = [
       "Additionally, the use of double-glazed glass effectively reduced sound levels, further enhancing the client's experience.",
     conclusion:
       "Midway Comforts' ability to deliver energy-efficient solutions while ensuring uninterrupted operations proved essential in this project. Our expertise in implementing cutting-edge technology continues to provide unmatched value to our clients.",
-    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
+    images: [yashwant, yashwant1]
   }
 ];
 
