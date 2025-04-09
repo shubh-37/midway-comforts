@@ -13,6 +13,8 @@ import reliance from '@/assets/reliance.jpeg';
 import reliance1 from '@/assets/reliance1.jpeg';
 import tanshiq from '@/assets/tanshiq.jpeg';
 import tanshiq1 from '@/assets/tanshiq1.jpeg';
+import rustom from '@/assets/rustom.jpeg';
+import rustom1 from '@/assets/rustom1.jpeg';
 // Case studies data
 const caseStudies = [
   {
@@ -156,7 +158,7 @@ const caseStudies = [
       "The client was highly satisfied with the outcome, which led to multiple referrals from Rustomjee residents for future projects, enhancing Midway Comforts' reputation as a reliable and proficient service provider.",
     conclusion:
       "This project demonstrated Midway Comforts' ability to tackle complex challenges with finesse. By effectively addressing sound transmission issues without disrupting the interiors, we have reinforced our commitment to excellence and customer satisfaction.",
-    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
+    images: [rustom, rustom1]
   },
   {
     id: 'hybrid',
