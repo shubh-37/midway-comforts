@@ -15,6 +15,8 @@ import tanshiq from '@/assets/tanshiq.jpeg';
 import tanshiq1 from '@/assets/tanshiq1.jpeg';
 import rustom from '@/assets/rustom.jpeg';
 import rustom1 from '@/assets/rustom1.jpeg';
+import adfactor from '@/assets/adfactor.jpeg';
+import adfactor1 from '@/assets/adfactor1.jpeg';
 // Case studies data
 const caseStudies = [
   {
@@ -184,7 +186,7 @@ const caseStudies = [
       'Reduced heat load and improved cooling efficiency, lowered power consumption, resulting in long-term cost savings, and enhanced comfort levels throughout the premises.',
     conclusion:
       "The Hybrid Solutions project for Ad Factor demonstrates Midway Comforts' ability to provide tailored solutions that meet client requirements without compromising quality. By combining innovative approaches with efficient execution, we ensured a highly satisfactory outcome for the client.",
-    images: ['/placeholder.svg?height=400&width=600', '/placeholder.svg?height=400&width=600']
+    images: [adfactor, adfactor1]
   },
   {
     id: 'billing',
