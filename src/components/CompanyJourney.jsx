@@ -146,6 +146,17 @@ export default function CompanyTimeline() {
       color: 'bg-red-500'
     },
     {
+      year: '2024',
+      title: '25 Years of Excellence',
+      description: (
+        <>
+          Celebrating <strong>25 Years of Excellence</strong> at Midway Comforts
+        </>
+      ),
+      icon: <Award className="h-8 w-8" />,
+      color: 'bg-blue-500'
+    },
+    {
       year: '2025',
       title: 'Built to Last',
       description: (
@@ -192,16 +203,16 @@ export default function CompanyTimeline() {
           {milestones.map((milestone, index) => (
             <div
               key={milestone.year}
-              className={`milestone-card relative mb-24 ${
+              className={`milestone-card relative mb-12 ${
                 index % 2 === 0 ? 'md:ml-auto md:mr-[52%] md:pr-12 md:text-right' : 'md:ml-[52%] md:pl-12'
               }`}
               style={{
-                transitionDelay: `${index * 150}ms`,
+                transitionDelay: `${index * 100}ms`,
                 transform: index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)'
               }}
             >
               <div
-                className={`relative mt-20 overflow-hidden rounded-xl border bg-card p-6 shadow-lg transition-all md:mt-0 md:w-[90%] ${
+                className={`relative mt-20 overflow-hidden rounded-xl border bg-card p-3 shadow-lg transition-all md:mt-0 md:w-[90%] ${
                   index % 2 === 0 ? 'md:ml-auto' : ''
                 }`}
               >
