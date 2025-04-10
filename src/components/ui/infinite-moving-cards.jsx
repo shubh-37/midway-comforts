@@ -48,13 +48,7 @@ export const InfiniteMovingAwards = ({ awards, direction = 'left', speed, pauseO
     }
   };
   return (
-    <div
-      ref={containerRef}
-      className={cn(
-        'scroller relative z-20 overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
-        className
-      )}
-    >
+    <div ref={containerRef} className={cn('scroller relative z-20 overflow-hidden', className)}>
       <ul
         ref={scrollerRef}
         className={cn(
