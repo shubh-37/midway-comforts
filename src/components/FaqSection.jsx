@@ -28,12 +28,6 @@ const faqItems = [
       'To improve indoor air quality, consider installing air purifiers, HEPA filters, UV germicidal lights, or whole-home ventilation systems. Regular HVAC maintenance, including duct cleaning and filter replacement, is also essential. Our comprehensive indoor air quality assessment can identify specific issues in your home and recommend targeted solutions to address allergens, pollutants, and humidity concerns.'
   },
   {
-    id: 'faq-5',
-    question: 'Are there any tax credits or rebates available for HVAC upgrades?',
-    answer:
-      'Yes, various federal, state, and local incentives are often available for energy-efficient HVAC upgrades. These may include tax credits, utility rebates, and manufacturer rebates. The specific programs change periodically, but our team stays up-to-date on available incentives and can help you maximize your savings. Energy-efficient systems that qualify for these incentives typically provide significant long-term energy savings in addition to the upfront rebates.'
-  },
-  {
     id: 'faq-6',
     question: 'What maintenance can I do myself vs. calling a professional?',
     answer:
@@ -57,7 +51,7 @@ export default function FaqSection({
   supportButtonUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=midwaycomforts@gmail.com&su=Support Request'
 }) {
   return (
-    <section className="py-16 px-5 mx-auto">
+    <section className="py-16 px-5 mx-auto bg-blue-50">
       <div className="space-y-16">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-2xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">{heading}</h2>
