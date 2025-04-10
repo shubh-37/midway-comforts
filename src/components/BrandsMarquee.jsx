@@ -10,6 +10,7 @@ import rustomjeeLogo from '../assets/rustomjee-logo.png';
 import herStoryLogo from '../assets/her-story.png';
 import montBlancLogo from '../assets/montblanc-1.svg';
 import adFactorLogo from '../assets/ad-factor.jpg';
+import radissonLogo from '../assets/radisson-logo.png';
 const brands = [
   {
     name: 'HDFC Bank',
@@ -66,6 +67,10 @@ const brands = [
   {
     name: 'Ad Factor',
     logo: adFactorLogo
+  },
+  {
+    name: 'Radisson',
+    logo: radissonLogo
   }
 ];
 
