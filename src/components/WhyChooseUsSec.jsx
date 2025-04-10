@@ -18,7 +18,7 @@ const container = {
 
 export default function HVACServicePage() {
   return (
-    <div className="flex flex-col items-center w-full bg-gray-50">
+    <div className="flex flex-col items-center w-full ">
       <motion.div className="w-[90%] px-4 py-8 md:py-16" initial="hidden" animate="visible" variants={fadeIn}>
         <div className="text-center mb-16">
           <motion.h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-gray-800 mb-6" variants={fadeIn}>

@@ -124,7 +124,7 @@ export default function PremiumHVACSolutions() {
   }, [controls]);
 
   return (
-    <div className="flex flex-col items-center w-full bg-gray-50 py-8 md:py-16">
+    <div className="flex flex-col items-center w-full bg-blue-50 py-8 md:py-16">
       <motion.div
         className="w-full px-4 sm:px-6 md:px-12"
         initial="hidden"
