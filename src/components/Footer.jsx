@@ -3,9 +3,10 @@ import { MapPin, Phone, Mail, Calculator, ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const quickLinks = [
   { text: 'About Us', href: '/about' },
-  { text: 'Key Projects', href: '/projects' },
+  { text: 'Case Studies', href: '/case-studies' },
   { text: 'Products', href: '/products' },
   { text: 'AC Guide', href: '/ac-guide' },
+  { text: 'Projects', href: '/projects' },
   { text: 'AC Calculator', href: '/calculator' },
   { text: 'Privacy Policy', href: '/privacy-policy' },
   { text: 'Terms of Service', href: '/tnc' }
