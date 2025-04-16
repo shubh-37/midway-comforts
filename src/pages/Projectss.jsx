@@ -101,8 +101,8 @@ export default function ProjectsPage() {
                 />
               )}
             </div>
-            <p className="text-blue-700/80">HP/TR: {selectedClient.hp.length > 0 ? selectedClient.hp : 'NA'}</p>
-            <p className="text-blue-700/80">SQFT: {selectedClient.sqft}</p>
+            <p className="text-blue-700/80">HP/TR: {selectedClient?.hp.length > 0 ? selectedClient?.hp : 'NA'}</p>
+            <p className="text-blue-700/80">SQFT: {selectedClient?.sqft.length > 0 ? selectedClient?.sqft : 'NA'}</p>
           </div>
         </DialogContent>
       </Dialog>
