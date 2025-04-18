@@ -196,3 +196,48 @@ body {
     }
   }
 }
+@layer pages {
+  .glossy-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .glossy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    z-index: 1;
+    transition: all 0.6s ease;
+  }
+
+  .glossy-card:hover::before {
+    left: 100%;
+  }
+
+  .glossy-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+    z-index: 1;
+  }
+
+  .glossy-card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+  }
+}
