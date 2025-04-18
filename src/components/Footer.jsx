@@ -5,11 +5,13 @@ const quickLinks = [
   { text: 'About Us', href: '/about' },
   { text: 'Case Studies', href: '/case-studies' },
   { text: 'Products', href: '/products' },
-  { text: 'AC Guide', href: '/ac-guide' },
+  // { text: 'AC Guide', href: '/ac-guide' },
   { text: 'Projects', href: '/projects' },
   { text: 'AC Calculator', href: '/calculator' },
-  { text: 'Privacy Policy', href: '/privacy-policy' },
-  { text: 'Terms of Service', href: '/tnc' }
+  { text: 'Career', href: '/career' },
+  { text: 'Gallery', href: '/gallery' },
+  // { text: 'Privacy Policy', href: '/privacy-policy' },
+  // { text: 'Terms of Service', href: '/tnc' }
 ];
 
 const services = [

@@ -12,8 +12,10 @@ const navItems = [
   { name: 'Products', href: '/products' },
   { name: 'Projects', href: '/projects' },
   { name: 'Case Studies', href: '/case-studies' },
-  { name: 'AC Guide', href: '/ac-guide' },
-  { name: 'AC Calculator', href: '/calculator' }
+  // { name: 'AC Guide', href: '/ac-guide' },
+  { name: 'AC Calculator', href: '/calculator' },
+  { name: 'Career', href: '/career' },
+  { name: 'Gallery', href: '/gallery' }
 ];
 
 export default function Header() {
