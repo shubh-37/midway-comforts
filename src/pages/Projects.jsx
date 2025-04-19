@@ -62,27 +62,25 @@ export default function ProjectsPage() {
               >
                 {/* Fixed image height */}
                 <div className="w-full h-48 overflow-hidden">
-                  <img src={client.img} alt={client.clientName} className="w-full h-full object-cover" />
+                  <img src={client.img} alt={client.clientName} className="w-full h-full object-contain" />
                 </div>
 
                 {/* Header with fixed height - truncates long text */}
-                <div className="bg-blue-800 text-white p-4 h-24 flex flex-col justify-center">
-                  <h3 className="font-medium text-lg line-clamp-1 overflow-hidden text-ellipsis">
-                    {client.clientName}
-                  </h3>
-                  <p className="text-blue-100 text-sm overflow-hidden text-ellipsis">
-                    Category: <span className="capitalize">{client.category}</span>
-                  </p>
-                </div>
-
-                {/* Info section with fixed height */}
-                <div className="p-4 h-24 flex flex-col justify-center">
-                  <div className="space-y-2">
-                    <p className="text-blue-700/80 text-sm">
-                      <span className="font-medium">HP/TR:</span> {client.hp.length > 0 ? client.hp : 'NA'}
+                <div className="bg-blue-800 text-white p-2 flex item-center justify-around gap-2">
+                  <div>
+                    <h3 className="font-medium text-lg line-clamp-1 overflow-hidden text-ellipsis">
+                      {client.clientName}
+                    </h3>
+                    <p className="text-blue-100 text-sm overflow-hidden text-ellipsis">
+                      Category: <span className="capitalize">{client.category}</span>
                     </p>
-                    <p className="text-blue-700/80 text-sm">
-                      <span className="font-medium">SQFT:</span> {client.sqft.length > 0 ? client.sqft : 'NA'}
+                  </div>
+                  <div>
+                    <p>
+                      <span className="">HP/TR:</span> {client.hp.length > 0 ? client.hp : 'NA'}
+                    </p>
+                    <p>
+                      <span className="">SQFT:</span> {client.sqft.length > 0 ? client.sqft : 'NA'}
                     </p>
                   </div>
                 </div>
