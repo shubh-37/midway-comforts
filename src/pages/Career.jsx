@@ -462,38 +462,21 @@ export default function CareersPage() {
             Take the next step in your career with Midway Comforts. We're looking for talented individuals who are
             passionate about HVAC and customer service.
           </motion.p>
-          <motion.div
-            variants={item}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{
-              boxShadow: [
-                '0px 0px 0px rgba(255,215,0,0)',
-                '0px 0px 20px rgba(255,215,0,0.5)',
-                '0px 0px 0px rgba(255,215,0,0)'
-              ]
-            }}
-            transition={{
-              boxShadow: {
-                repeat: Number.POSITIVE_INFINITY,
-                duration: 2
-              }
-            }}
+
+          <Button
+            className="bg-[#FFD700] text-blue-700 hover:bg-[#FFD700]/90 font-bold text-lg px-8 py-6"
+            size="lg"
+            asChild
           >
-            <Button
-              className="bg-[#FFD700] text-blue-700 hover:bg-[#FFD700]/90 font-bold text-lg px-8 py-6"
-              size="lg"
-              asChild
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=midwaycomforts@gmail.com&su=Seeking job"
+              target="_blank"
             >
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=midwaycomforts@gmail.com&su=Seeking job"
-                target="_blank"
-              >
-                {' '}
-                Apply Here
-              </a>
-            </Button>
-          </motion.div>
+              {' '}
+              Apply Here
+            </a>
+          </Button>
+
           <motion.div
             className="mt-8 flex flex-wrap justify-center gap-6"
             variants={container}
