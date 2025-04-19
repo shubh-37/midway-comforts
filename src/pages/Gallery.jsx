@@ -1,8 +1,7 @@
 import { useState } from 'react';
-
 import { motion } from 'framer-motion';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import tanshiq from '@/assets/tanshiq.jpeg';
 import tanshiq1 from '@/assets/tanshiq1.jpeg';
@@ -111,23 +110,21 @@ export default function GalleryGrid() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.03 }}
-            className="glossy-card"
+            className="overflow-hidden rounded-lg shadow-lg"
           >
-            <div className="glossy-card-content cursor-pointer group" onClick={() => openModal(item.id)}>
+            <div className="cursor-pointer" onClick={() => openModal(item.id)}>
               <div className="w-full aspect-square relative overflow-hidden">
                 <img
                   src={item.imageUrl || '/placeholder.svg'}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
+              </div>
 
-                {/* Semi-transparent overlay with details */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-white">
-                  <div className="text-center">
-                    <h3 className="font-bold text-xl mb-2 text-white">{item.title}</h3>
-                    <p className="text-sm text-gray-100">{item.description}</p>
-                  </div>
-                </div>
+              {/* Text bar below the image */}
+              <div className="p-3 bg-white border-t border-gray-100">
+                <h3 className="font-semibold text-lg text-blue-700 truncate">{item.title}</h3>
+                <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
               </div>
             </div>
           </motion.div>
