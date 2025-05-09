@@ -18,6 +18,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import clientAero from '@/assets/client-aero.png';
 import clientAndheri from '@/assets/client-andheri.png';
+import OpenPositions from '@/components/JobPosting';
 
 export default function CareersPage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -307,138 +308,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Open Positions */}
-      <section id="open-positions" className="py-16 bg-white">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl font-bold text-center mb-12 text-blue-700"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Open Positions
-          </motion.h2>
-
-          <motion.div
-            className="max-w-3xl mx-auto mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search positions..."
-                className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-700"
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 gap-6 max-w-4xl mx-auto"
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {[
-              {
-                title: 'HVAC Service Technician',
-                location: 'Chicago, IL',
-                type: 'Full-time',
-                experience: '3+ years',
-                description: 'Diagnose, repair, and maintain HVAC systems for residential and commercial clients.'
-              },
-              {
-                title: 'Installation Specialist',
-                location: 'Milwaukee, WI',
-                type: 'Full-time',
-                experience: '2+ years',
-                description: 'Install new HVAC systems according to specifications and industry standards.'
-              },
-              {
-                title: 'HVAC Sales Consultant',
-                location: 'Indianapolis, IN',
-                type: 'Full-time',
-                experience: '4+ years',
-                description: 'Consult with clients to determine their HVAC needs and recommend appropriate solutions.'
-              },
-              {
-                title: 'Apprentice Technician',
-                location: 'Detroit, MI',
-                type: 'Full-time',
-                experience: 'Entry Level',
-                description:
-                  'Learn the HVAC trade while assisting experienced technicians with installations and repairs.'
-              },
-              {
-                title: 'Service Manager',
-                location: 'Columbus, OH',
-                type: 'Full-time',
-                experience: '5+ years',
-                description: 'Oversee service department operations, scheduling, and technician management.'
-              }
-            ].map((job, index) => (
-              <motion.div key={index} variants={item}>
-                <motion.div
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: '0 10px 30px rgba(0, 71, 171, 0.1)',
-                    borderColor: '#FFD700'
-                  }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <Card className="border-2 hover:border-[#FFD700] transition-all">
-                    <CardContent className="p-6">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 className="text-xl font-bold text-blue-700">{job.title}</h3>
-                        <div className="flex flex-wrap gap-2 mt-2 md:mt-0">
-                          <Badge className="bg-blue-700 text-white">{job.type}</Badge>
-                          <Badge variant="outline" className="text-blue-700 border-blue-700">
-                            {job.experience}
-                          </Badge>
-                        </div>
-                      </div>
-                      <p className="text-gray-600 mb-4">{job.description}</p>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center text-gray-500">
-                          <MapPin className="h-4 w-4 mr-1" />
-                          <span className="text-sm">{job.location}</span>
-                        </div>
-                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                          <Button
-                            variant="outline"
-                            className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white"
-                          >
-                            View Details
-                          </Button>
-                        </motion.div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            className="text-center mt-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="outline" className="border-blue-700 text-blue-700">
-                View All Positions
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <OpenPositions />
 
       {/* Apply Here CTA */}
       <motion.section
