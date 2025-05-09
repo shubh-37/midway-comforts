@@ -61,27 +61,30 @@ export default function ProjectsPage() {
                 className="bg-white rounded-lg border border-blue-800/20 overflow-hidden flex flex-col"
               >
                 {/* Fixed image height */}
-                <div className="w-full h-48 overflow-hidden">
-                  <img src={client.img} alt={client.clientName} className="w-full h-full object-contain" />
-                </div>
-
-                {/* Header with fixed height - truncates long text */}
-                <div className="bg-blue-800 text-white p-2 flex item-center justify-around gap-2">
-                  <div>
-                    <h3 className="font-medium text-lg line-clamp-1 overflow-hidden text-ellipsis">
-                      {client.clientName}
-                    </h3>
-                    <p className="text-blue-100 text-sm overflow-hidden text-ellipsis">
-                      Category: <span className="capitalize">{client.category}</span>
-                    </p>
+                <div className="w-full rounded overflow-hidden shadow-md">
+                  <div className="w-full h-48 overflow-hidden">
+                    <img src={client.img} alt={client.clientName} className="w-full h-full object-contain" />
                   </div>
-                  <div>
-                    <p>
-                      <span className="">HP/TR:</span> {client.hp.length > 0 ? client.hp : 'NA'}
-                    </p>
-                    <p>
-                      <span className="">SQFT:</span> {client.sqft.length > 0 ? client.sqft : 'NA'}
-                    </p>
+
+                  {/* Header with better structure */}
+                  <div className="bg-blue-800 text-white p-3 flex justify-between">
+                    {/* Left column - client info */}
+                    <div className="flex-1 overflow-hidden mr-2">
+                      <h3 className="font-medium text-lg truncate">{client.clientName}</h3>
+                      <p className="text-blue-100 text-sm truncate">
+                        Category: <span className="capitalize">{client.category}</span>
+                      </p>
+                    </div>
+
+                    {/* Right column - specs with fixed width */}
+                    <div className="flex-shrink-0 text-right">
+                      <p className="whitespace-nowrap">
+                        <span>HP/TR:</span> {client.hp.length > 0 ? client.hp : 'NA'}
+                      </p>
+                      <p className="whitespace-nowrap">
+                        <span>SQFT:</span> {client.sqft.length > 0 ? client.sqft : 'NA'}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>

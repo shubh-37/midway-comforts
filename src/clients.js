@@ -19,7 +19,6 @@ import clienthdfcChandiwali from '@/assets/client-hdfc-chandiwali.png';
 import clienthdfcPeninsula from '@/assets/client-hdfc-peninsula.png';
 import clienthdfcTalao from '@/assets/client-hdfc-talao.png';
 import clientSandoz from '@/assets/client-sandoz.png';
-import clientHealth from '@/assets/client-health.png';
 import clientIndia from '@/assets/client-india.png';
 import clientKamala from '@/assets/client-kamala.png';
 import clientKj from '@/assets/client-kj.png';
@@ -40,65 +39,67 @@ import clientSmaash from '@/assets/client-smaash.png';
 import clientTiffany from '@/assets/client-tiffany.png';
 import clientUrbania from '@/assets/client-urbania.png';
 import clientYazarina from '@/assets/client-yazarina.png';
+import clientKeys from '@/assets/clientKeys.jpg';
+import clientHbl from '@/assets/clientHbl.jpg';
 import clientJio from '@/assets/jio.png';
 import placeholder from '@/assets/placeholder.png';
 const clients = [
   // DEVELOPERS
   {
-    clientName: 'Jio World Center - BKC',
-    hp: '1325',
-    sqft: '1,50,000',
+    clientName: 'Jio World Center, Service Apartments & Penthouse - BKC',
+    hp: '1325 HP',
+    sqft: '',
     img: clientJio,
     category: 'DEVELOPERS'
   },
   {
-    clientName: 'Rustomjee Elements- Andheri',
-    hp: '4700',
-    sqft: '5,25,000',
+    clientName: 'Rustomjee Elements, Super Premium Apartments, Clubhouse, Banquette Hall & more - Andheri',
+    hp: '4700 HP',
+    sqft: '', 
     img: clientRus,
     category: 'DEVELOPERS'
   },
   {
-    clientName: 'Rustomjee – Season',
-    hp: '1360',
-    sqft: '1,98,000',
+    clientName: 'Rustomjee Season, Premium Apartments – Kalanagar (Bandra East)',
+    hp: '1360 HP',
+    sqft: '',
     img: clientRustom,
     category: 'DEVELOPERS'
   },
   {
-    clientName: 'Rustomjee Yazarina Dadar',
-    hp: '900',
-    sqft: '98,000',
+    clientName: 'Rustomjee Yazarina - Dadar',
+    hp: '240 HP',
+    sqft: '',
     img: clientYazarina,
     category: 'DEVELOPERS'
   },
   {
-    clientName: 'The House of Abhinandan Lodha',
-    hp: '125',
-    sqft: '20,000',
+    clientName: 'The House of Abhinandan Lodha, Clubhouse & Experience Center – Neral',
+    hp: '125 HP',
+    sqft: '',
     img: clientAbhinandan,
     category: 'DEVELOPERS'
   },
 
   // VENTILATION PROJECTS - KALPATARU
   {
-    clientName: 'Kalpataru Bliss ( Manipada ) –Santacruz',
+    clientName: 'Kalpataru Bliss ( Manipada ) – Santacruz',
     hp: '',
-    sqft: '35,000',
+    sqft: '60,000',
     img: clientBliss,
     category: 'VENTILATION PROJECTS'
   },
   {
     clientName: 'Kalpataru Grandeur - Indore',
     hp: '',
-    sqft: '50,000',
+    sqft: '2,00,000',
     img: clientGranduer,
     category: 'VENTILATION PROJECTS'
   },
   {
     clientName: 'Kalpataru Elitus – Mulund',
     hp: '',
-    sqft: '40,000',
+    sqft: '1,20,000',
     img: clientElitus,
     category: 'VENTILATION PROJECTS'
   },
@@ -107,14 +108,14 @@ const clients = [
   {
     clientName: 'Rustomjee Bella – Bhandup',
     hp: '',
-    sqft: '18,000',
+    sqft: '50,000',
     img: clientBella,
     category: 'VENTILATION PROJECTS'
   },
   {
     clientName: 'Rustomjee Urbania – Thane',
     hp: '',
-    sqft: '24,000',
+    sqft: '12,000',
     img: clientUrbania,
     category: 'VENTILATION PROJECTS'
   },
@@ -123,7 +124,7 @@ const clients = [
   {
     clientName: 'Aerro Mall – Pune',
     hp: '',
-    sqft: '80,000',
+    sqft: '5,00,000',
     img: clientAero,
     category: 'VENTILATION PROJECTS'
   },
@@ -132,17 +133,8 @@ const clients = [
   {
     clientName: 'Hotel Radisson - Andheri',
     hp: '',
-    sqft: '20,000',
+    sqft: '24,000',
     img: clientRaddison,
-    category: 'VENTILATION PROJECTS'
-  },
-
-  // VENTILATION PROJECTS - HOTEL SHERATON
-  {
-    clientName: 'Hotel Sheraton - Colombo, Srilanka',
-    hp: '',
-    sqft: '80,000',
-    img: clientSher,
     category: 'VENTILATION PROJECTS'
   },
 
@@ -150,17 +142,8 @@ const clients = [
   {
     clientName: 'Novatel Hotel – Lucknow',
     hp: '',
-    sqft: '30,000',
+    sqft: '16,000',
     img: clientNovotel,
-    category: 'VENTILATION PROJECTS'
-  },
-
-  // VENTILATION PROJECTS - INDIA HOTEL
-  {
-    clientName: 'India Hotel – Varanasi',
-    hp: '',
-    sqft: '25,000',
-    img: clientIndia,
     category: 'VENTILATION PROJECTS'
   },
 
@@ -215,10 +198,10 @@ const clients = [
     category: 'RESTAURANTS & HOTELS'
   },
   {
-    clientName: 'Health View Resort – Mahabaleshwar',
-    hp: '110 HP',
+    clientName: 'Keys Hotel – Mahabaleshwar',
+    hp: '280 HP',
     sqft: '25,000',
-    img: clientHealth,
+    img: clientKeys,
     category: 'RESTAURANTS & HOTELS'
   },
 
@@ -226,7 +209,7 @@ const clients = [
   {
     clientName: 'Rustomjee – Crown-Prabhadevi',
     hp: '66 HP',
-    sqft: '8000',
+    sqft: '',
     img: placeholder,
     category: 'OUR VALUED TOSHIBA & VRF CUSTOMERS'
   },
@@ -294,14 +277,7 @@ const clients = [
     clientName: 'HBL – Kamala Mill & Andheri (E)',
     hp: '680 TR',
     sqft: '95,000',
-    img: placeholder,
-    category: 'BANKING & FINANCE COMPANIES'
-  },
-  {
-    clientName: 'GE Country Wide ( All Bombay)',
-    hp: '200 TR',
-    sqft: '30,000',
-    img: placeholder,
+    img: clientHbl,
     category: 'BANKING & FINANCE COMPANIES'
   },
   {
@@ -312,30 +288,16 @@ const clients = [
     category: 'BANKING & FINANCE COMPANIES'
   },
   {
-    clientName: 'HDFC Bank – Peninsula Park, Tower-B',
-    hp: '270 HP',
-    sqft: '30,000',
+    clientName: 'HDFC Bank – Peninsula Park, Tower-A&B',
+    hp: '515 HP',
+    sqft: '56,000',
     img: clienthdfcPeninsula,
     category: 'BANKING & FINANCE COMPANIES'
   },
   {
-    clientName: 'HDFC Bank – Peninsula Park, Tower-A',
-    hp: '245 HP',
-    sqft: '26,000',
-    img: clienthdfcPeninsula,
-    category: 'BANKING & FINANCE COMPANIES'
-  },
-  {
-    clientName: 'HDFC Bank – 5th Floor Lotus Park, Thane',
-    hp: '176 HP',
-    sqft: '20,000',
-    img: clientLotus,
-    category: 'BANKING & FINANCE COMPANIES'
-  },
-  {
-    clientName: 'HDFC Bank – 6th Floor, Lotus Park, Thane',
-    hp: '146 HP',
-    sqft: '16,000',
+    clientName: 'HDFC Bank – Lotus Park, Thane',
+    hp: '322 HP',
+    sqft: '36,000',
     img: clientLotus,
     category: 'BANKING & FINANCE COMPANIES'
   },
@@ -460,106 +422,6 @@ const clients = [
     sqft: '25,000',
     img: clientTiffany,
     category: 'PREMIUM STORES'
-  },
-
-  // VIP CUSTOMERS - Bunglows and Pent House
-  {
-    clientName: 'Mr. Subodh Menon-(Malad)',
-    hp: '168 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Mr. Ramesh Gowani (Pedder Road)',
-    hp: '200 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Mr. Ajeenkya Patil (Pune-Bunglow)',
-    hp: '250 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Mr. Ravi Agarwal-(Nepeansea Road)',
-    hp: '132 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Mr. Subramaniyam (Vashi)',
-    hp: '72 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Mr. Vijay Patil (Kharghar)',
-    hp: '58 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Adv. Raj Nagrani (Lonavala)',
-    hp: '32 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Mr. Gautam Ahuja (Bandra)',
-    hp: '120 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Mr. Vijay Thakker (JVPD-Juhu)',
-    hp: '62 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Mrs. Chanda Kocchar (Worli)',
-    hp: '36 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Arch. Vijay Punjabi (Bandra) – Mrs. Jayanti Punjabi',
-    hp: '24 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Talati and Panthaky Associated Designers LLP (Worli)',
-    hp: '340 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Rustomjee Realty Ltd. - Elements at D.N. Nagar, Juhu',
-    hp: '2500 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
-  },
-  {
-    clientName: 'Kalpataru Developers (Row Houses) - Amoda Project – Lonavala',
-    hp: '154 HP',
-    sqft: '',
-    img: placeholder,
-    category: 'VIP CUSTOMERS - Bunglows and Pent House'
   }
 ];
 
