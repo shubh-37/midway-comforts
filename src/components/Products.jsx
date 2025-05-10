@@ -42,8 +42,8 @@ export default function ProductsPage() {
                   <img
                     src={provider.logo || '/placeholder.svg'}
                     alt={provider.name}
-                    width={60}
-                    height={30}
+                    width={100}
+                    height={50}
                     className="h-8 object-contain"
                   />
                 </TabsTrigger>

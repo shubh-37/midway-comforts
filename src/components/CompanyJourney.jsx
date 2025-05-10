@@ -203,8 +203,8 @@ export default function CompanyTimeline() {
           {milestones.map((milestone, index) => (
             <div
               key={milestone.year}
-              className={`milestone-card relative mb-12 ${
-                index % 2 === 0 ? 'md:ml-auto md:mr-[52%] md:pr-12 md:text-right' : 'md:ml-[52%] md:pl-12'
+              className={`milestone-card relative mb-6 ${
+                index % 2 === 0 ? 'md:ml-auto md:mr-[52%] md:text-right' : 'md:ml-[52%]'
               }`}
               style={{
                 transitionDelay: `${index * 100}ms`,

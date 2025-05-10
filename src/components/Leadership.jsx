@@ -49,6 +49,36 @@ export default function LeadershipCarousel() {
       image: tabrej
     },
     {
+      id: 9,
+      name: 'Mr. Shabbir Khan',
+      title: 'Projects Execution Head',
+      image: shabbir
+    },
+    {
+      id: 7,
+      name: 'Mr. Rajendra Dalave',
+      title: 'Design Head',
+      image: maleAvatar
+    },
+    {
+      id: 8,
+      name: 'Mr. Santosh Patil ',
+      title: 'Service Head',
+      image: santosh
+    },
+    {
+      id: 10,
+      name: 'Mr. Rajeev Sinha',
+      title: 'Procurement Head',
+      image: rajeev
+    },
+    {
+      id: 11,
+      name: 'Mr. Bonny Fernandes',
+      title: 'Service Coordinator Head',
+      image: bonny
+    },
+    {
       id: 4,
       name: 'Mrs. Nilisha Pathare',
       title: 'Projects Billing Head',
@@ -65,36 +95,6 @@ export default function LeadershipCarousel() {
       name: 'Mr. Ashish Pandya',
       title: 'HR Head',
       image: aashish
-    },
-    {
-      id: 7,
-      name: 'Mr. Rajendra Dalave',
-      title: 'Design Head',
-      image: maleAvatar
-    },
-    {
-      id: 8,
-      name: 'Mr. Santosh Patil ',
-      title: 'Service Head',
-      image: santosh
-    },
-    {
-      id: 9,
-      name: 'Mr. Shabbir Khan',
-      title: 'Projects Execution Head',
-      image: shabbir
-    },
-    {
-      id: 10,
-      name: 'Mr. Rajeev Sinha',
-      title: 'Procurement Head',
-      image: rajeev
-    },
-    {
-      id: 11,
-      name: 'Mr. Bonny Fernandes',
-      title: 'Service Coordinator Head',
-      image: bonny
     }
   ];
 

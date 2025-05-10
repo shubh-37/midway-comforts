@@ -58,9 +58,7 @@ export default function AboutUsHeader() {
           >
             About Us
           </Badge>
-          <CardTitle className="text-3xl font-bold text-primary">
-            <SparklesText text="26 Years of HVAC Excellence" className="text-3xl" />
-          </CardTitle>
+          <CardTitle className="text-3xl font-bold text-primary">26 Years of HVAC Excellence</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 text-center">
           <p className="text-lg">

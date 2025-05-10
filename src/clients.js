@@ -42,7 +42,10 @@ import clientYazarina from '@/assets/client-yazarina.png';
 import clientKeys from '@/assets/clientKeys.jpg';
 import clientHbl from '@/assets/clientHbl.jpg';
 import clientJio from '@/assets/jio.png';
+import clientCrown from '@/assets/crown-client.jpg';
 import placeholder from '@/assets/placeholder.png';
+import clientNerul from '@/assets/clientNerul.png';
+import clientWorli from '@/assets/clientWorli.jpg';
 const clients = [
   // DEVELOPERS
   {
@@ -55,7 +58,7 @@ const clients = [
   {
     clientName: 'Rustomjee Elements, Super Premium Apartments, Clubhouse, Banquette Hall & more - Andheri',
     hp: '4700 HP',
-    sqft: '', 
+    sqft: '',
     img: clientRus,
     category: 'DEVELOPERS'
   },
@@ -138,15 +141,6 @@ const clients = [
     category: 'VENTILATION PROJECTS'
   },
 
-  // VENTILATION PROJECTS - HOTEL NOVOTEL
-  {
-    clientName: 'Novatel Hotel – Lucknow',
-    hp: '',
-    sqft: '16,000',
-    img: clientNovotel,
-    category: 'VENTILATION PROJECTS'
-  },
-
   // RESTAURANTS & HOTELS
   {
     clientName: 'Aman Group',
@@ -166,7 +160,7 @@ const clients = [
     clientName: 'Novotel Hotel – Lucknow',
     hp: '550 HP',
     sqft: '65,000',
-    img: placeholder,
+    img: clientNovotel,
     category: 'RESTAURANTS & HOTELS'
   },
   {
@@ -180,7 +174,7 @@ const clients = [
     clientName: 'Hotel Radisson - Andheri',
     hp: '620 HP',
     sqft: '60,000',
-    img: clientAndheri,
+    img: clientRaddison,
     category: 'RESTAURANTS & HOTELS'
   },
   {
@@ -210,7 +204,7 @@ const clients = [
     clientName: 'Rustomjee – Crown-Prabhadevi',
     hp: '66 HP',
     sqft: '',
-    img: placeholder,
+    img: clientCrown,
     category: 'OUR VALUED TOSHIBA & VRF CUSTOMERS'
   },
   {
@@ -330,14 +324,14 @@ const clients = [
     clientName: 'Dr. D.Y. Patil College – Nerul',
     hp: '160 TR',
     sqft: '22,500',
-    img: placeholder,
+    img: clientNerul,
     category: 'EDUCATIONAL INSTITUTE'
   },
   {
     clientName: 'Dr. D.Y. Patil International School – Worli',
     hp: '80 TR',
     sqft: '12,000',
-    img: placeholder,
+    img: clientWorli,
     category: 'EDUCATIONAL INSTITUTE'
   },
   {

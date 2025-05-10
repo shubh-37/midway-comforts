@@ -56,7 +56,28 @@ import chill12 from '@/assets/chill12.avif';
 import chill13 from '@/assets/chill13.avif';
 import control1 from '@/assets/control1.avif';
 import control2 from '@/assets/control2.avif';
-import cas1 from '@/assets/cas1.avif';
+import c1 from '@/assets/c1.png';
+import c2 from '@/assets/c2.png';
+import c3 from '@/assets/c3.png';
+import c4 from '@/assets/c4.png';
+import c5 from '@/assets/c5.jpg';
+import c6 from '@/assets/c6.jpg';
+import c7 from '@/assets/c7.jpg';
+import c9 from '@/assets/c9.jpg';
+import c10 from '@/assets/c10.jpg';
+import c11 from '@/assets/c11.png';
+import c12 from '@/assets/c12.jpg';
+import c13 from '@/assets/c13.jpg';
+import c14 from '@/assets/c14.jpg';
+import c15 from '@/assets/c15.jpg';
+import c16 from '@/assets/c16.jpg';
+import b1 from '@/assets/b1.jpg';
+import b2 from '@/assets/b2.jpg';
+import b3 from '@/assets/b3.jpg';
+import b4 from '@/assets/b4.jfif';
+import b5 from '@/assets/b5.jpg';
+import b6 from '@/assets/b6.jpg';
+import b7 from '@/assets/b7.jpg';
 import duc1 from '@/assets/duc1.avif';
 import inv1 from '@/assets/inv1.avif';
 import pow1 from '@/assets/pow1.avif';
@@ -430,6 +451,260 @@ export const providers = [
             image: vrf16
           }
         ]
+      },
+      {
+        id: 'controllers',
+        name: 'Controllers',
+        subTypes: [
+          {
+            id: 'controllers',
+            type: 'Smart Touch Wall-Mounted Controller',
+            name: 'RBC-MTSC1 MiNi Touch Screen Controller',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-mtsc1/',
+            rating: 0,
+            image: c1
+          },
+          {
+            id: 'controllers',
+            type: 'Smart Touch Wall-Mounted Controller with 7-Day Timer',
+            name: 'RBC-MTSC2 MiNi Touch Screen Controller',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-mtsc1-mini-touch-screen-controller/',
+            rating: 0,
+            image: c1
+          },
+          {
+            id: 'controllers',
+            type: 'Compact Wired Remote Controller',
+            name: 'RBC-ASCU32Y-E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-ascu32y-e/',
+            rating: 0,
+            image: c2
+          },
+          {
+            id: 'controllers',
+            type: 'Local Compact Remote Controller',
+            name: 'RBC-ASCU11-E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-ascu11-e/',
+            rating: 0,
+            image: c3
+          },
+          {
+            id: 'controllers',
+            type: 'Local Compact Remote Controller',
+            name: 'RBC-ASCU11E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-asc11e/',
+            rating: 0,
+            image: c3
+          },
+          {
+            id: 'controllers',
+            type: 'Local Remote Controller with Bluetooth',
+            name: 'RBC-AWSU52-E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-awsu52-e/',
+            rating: 0,
+            image: c4
+          },
+          {
+            id: 'controllers',
+            type: 'Local Remote Controller',
+            name: 'RBC-AMSU52-E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-amsu52-e/',
+            rating: 0,
+            image: c4
+          },
+          {
+            id: 'controllers',
+            type: 'Local Remote Controller',
+            name: 'RBC-AMSU51-ES',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-amsu51-es/',
+            rating: 0,
+            image: c5
+          },
+          {
+            id: 'controllers',
+            type: 'Local Remote Controller',
+            name: 'RBC-AMS55E-ES',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-ams55es/',
+            rating: 0,
+            image: c5
+          },
+          {
+            id: 'controllers',
+            type: 'Local Remote Controller',
+            name: 'RBC-AMS54E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-ams54e/',
+            rating: 0,
+            image: c5
+          },
+          {
+            id: 'controllers',
+            type: 'Remote Controller',
+            name: 'RBC-AMS41E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-ams41e/',
+            rating: 0,
+            image: c6
+          },
+          {
+            id: 'controllers',
+            type: 'Standard Remote Controller',
+            name: 'RBC-AMTU31-E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-amtu31-e/',
+            rating: 0,
+            image: c6
+          },
+          {
+            id: 'controllers',
+            type: 'Standard Remote Controller',
+            name: 'RBC-AMT32E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-amt32e/',
+            rating: 0,
+            image: c6
+          },
+          {
+            id: 'controllers',
+            type: 'Simplified Wired Remote Controller',
+            name: 'RBC-AS41E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-as41e/',
+            rating: 0,
+            image: c7
+          },
+          {
+            id: 'controllers',
+            type: 'Smart Touch Controller',
+            name: 'RBC-TBPUTS SMART Touch Controller (TU2C-Link)',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-tbputs-smart-touch-controller-tu2c-link/',
+            rating: 0,
+            image: c9
+          },
+          {
+            id: 'controllers',
+            type: 'Smart Touch Controller',
+            name: 'RBC-TBPTS SMART Touch Controller',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-tbps-smart-touch-controller/',
+            rating: 0,
+            image: c10
+          },
+          {
+            id: 'controllers',
+            type: 'BMS (Building Management System) Interface Controller',
+            name: 'RBC-BP2 Black Pear II BMS Interface',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-bp2-black-pear-bms-interface/',
+            rating: 0,
+            image: c11
+          },
+          {
+            id: 'controllers',
+            type: 'Local Hard-Wired Remote Controller',
+            name: 'RB-RWS21-E',
+            link: 'https://www.toshiba-aircon.co.uk/product/rb-rws21-e/',
+            rating: 0,
+            image: c12
+          },
+          {
+            id: 'controllers',
+            type: 'Dedicated Controller for Toshiba Estia Air to Water Heat Pump Systems',
+            name: 'HWS-AMSU51-E',
+            link: 'https://www.toshiba-aircon.co.uk/product/hws-amsu51-e/',
+            rating: 0,
+            image: c13
+          },
+          {
+            id: 'controllers',
+            type: 'Dedicated Local Remote Controller for Toshiba Estia Air to Water Heat Pump Systems',
+            name: 'HWS-AMS11E',
+            link: 'https://www.toshiba-aircon.co.uk/product/hws-ams11e/',
+            rating: 0,
+            image: c14
+          },
+          {
+            id: 'controllers',
+            type: 'Weekly Timer Controller',
+            name: 'NRC-01HE',
+            link: 'https://www.toshiba-aircon.co.uk/product/nrc-01he/',
+            rating: 0,
+            image: c15
+          },
+          {
+            id: 'controllers',
+            type: 'Weekly Timer Schedule Controller',
+            name: 'TCB-EXS21TLE Schedule Timer',
+            link: 'https://www.toshiba-aircon.co.uk/product/tcb-exs21tle-schedule-timer/',
+            rating: 0,
+            image: c16
+          },
+          {
+            id: 'controllers',
+            type: 'BMS Solution Guide (Informational)',
+            name: 'BMS Selection Guide – Which Solution?',
+            link: 'https://www.toshiba-aircon.co.uk/product/bms-selection-guide-wich-solutions/',
+            rating: 0,
+            image: b1
+          },
+          {
+            id: 'controllers',
+            type: 'Versatile Interface for Toshiba Air Conditioning Units',
+            name: 'RBC-TSI1',
+            link: 'https://www.toshiba-aircon.co.uk/product/rbc-tsi1/',
+            rating: 0,
+            image: b2
+          },
+          {
+            id: 'controllers',
+            type: 'Modbus Interface for LC/VRF Indoor Unit',
+            name: 'BMS-IFMB1280U-E Modbus Interface',
+            link: 'https://www.toshiba-aircon.co.uk/product/bms-ifmb1280u-e-modbus-interface/',
+            rating: 0,
+            image: b3
+          },
+          {
+            id: 'controllers',
+            type: 'Modbus Interface for LC/VRF Indoor Unit',
+            name: 'BMS-IFMB0TLR-E',
+            link: 'https://www.toshiba-aircon.co.uk/product/bms-ifmb0tlr-e/',
+            rating: 0,
+            image: b4
+          },
+          {
+            id: 'controllers',
+            type: 'BACnet Interface for Toshiba Control System',
+            name: 'BMS-IFBN1281U-E BACnet Interface',
+            link: 'https://www.toshiba-aircon.co.uk/product/bms-ifbn1281u-e-bacnet-interface/',
+            rating: 0,
+            image: b5
+          },
+          {
+            id: 'controllers',
+            type: 'BACnet Interface for Toshiba Control System',
+            name: 'BMS-IFBN1280U-E BACnet Interface',
+            link: 'https://www.toshiba-aircon.co.uk/product/bms-ifbn1280u-e-bacnet-interface/',
+            rating: 0,
+            image: b5
+          },
+          {
+            id: 'controllers',
+            type: 'BACnet Interface for Toshiba Control System',
+            name: 'BMS-IFBN640TLE BACnet Interface',
+            link: 'https://www.toshiba-aircon.co.uk/product/bacnet-bms-ifbn640tle/',
+            rating: 0,
+            image: b5
+          },
+          {
+            id: 'controllers',
+            type: 'BACnet Interface for Toshiba Control System',
+            name: 'BACnet',
+            link: 'https://www.toshiba-aircon.co.uk/product/bacnet/',
+            rating: 0,
+            image: b6
+          },
+          {
+            id: 'controllers',
+            type: 'Lonworks Interface for Toshiba Air Conditioning',
+            name: 'Lonworks',
+            link: 'https://www.toshiba-aircon.co.uk/product/lonworks/',
+            rating: 0,
+            image: b7
+          }
+        ]
       }
     ]
   },
@@ -691,20 +966,6 @@ export const providers = [
             link: 'https://www.carrier.com/commercial/en/in/products/commercial-products/controls/webctrl/',
             rating: 0,
             image: control2
-          }
-        ]
-      },
-      {
-        id: 'cassette',
-        name: 'Cassette',
-        subTypes: [
-          {
-            id: 'cassette',
-            type: 'Cassette',
-            name: 'Cassette R32',
-            link: 'https://www.carrier.com/commercial/en/in/products/light-commercial-products/systems/cassette-r32/',
-            rating: 0,
-            image: cas1
           }
         ]
       },

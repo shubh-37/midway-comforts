@@ -18,56 +18,48 @@ const galleryItems = [
     id: 1,
     title: 'Commercial HVAC Installation',
     category: 'installations',
-    description: 'Complete HVAC system installation for a 10,000 sq ft office building',
     imageUrl: tanshiq
   },
   {
     id: 2,
     title: 'Residential AC Repair',
     category: 'repairs',
-    description: 'Emergency AC repair service for a family home during summer',
     imageUrl: tanshiq1
   },
   {
     id: 3,
     title: 'Ductwork Replacement',
     category: 'installations',
-    description: 'Complete ductwork replacement for improved air quality and efficiency',
     imageUrl: rustom
   },
   {
     id: 4,
     title: 'Annual Maintenance',
     category: 'maintenance',
-    description: 'Scheduled maintenance service for a retail store HVAC system',
     imageUrl: rustom1
   },
   {
     id: 5,
     title: 'Heat Pump Installation',
     category: 'installations',
-    description: 'Energy-efficient heat pump installation for a modern home',
     imageUrl: adfactor
   },
   {
     id: 6,
     title: 'Commercial Maintenance',
     category: 'maintenance',
-    description: 'Quarterly maintenance for a restaurant ventilation system',
     imageUrl: adfactor1
   },
   {
     id: 7,
     title: 'Emergency Repair',
     category: 'repairs',
-    description: '24-hour emergency repair service for a broken heating system',
     imageUrl: yashwant
   },
   {
     id: 8,
     title: 'New Construction Installation',
     category: 'installations',
-    description: 'Complete HVAC system design and installation for new construction',
     imageUrl: yashwant1
   }
 ];
@@ -124,7 +116,6 @@ export default function GalleryGrid() {
               {/* Text bar below the image */}
               <div className="p-3 bg-white border-t border-gray-100">
                 <h3 className="font-semibold text-lg text-blue-700 truncate">{item.title}</h3>
-                <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
               </div>
             </div>
           </motion.div>
