@@ -45,7 +45,7 @@ import clientJio from '@/assets/jio.png';
 import clientCrown from '@/assets/crown-client.jpg';
 import placeholder from '@/assets/placeholder.png';
 import clientNerul from '@/assets/clientNerul.png';
-import clientWorli from '@/assets/clientWorli.jpg';
+import clientWorli from '@/assets/clientworli.jpg';
 const clients = [
   // DEVELOPERS
   {
