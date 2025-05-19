@@ -116,6 +116,26 @@ import con12 from '@/assets/con12.avif';
 import con13 from '@/assets/con13.avif';
 import con14 from '@/assets/con14.avif';
 import con15 from '@/assets/con15.avif';
+import krugerLogo from '@/assets/kruger.png';
+import kru1 from '@/assets/kru1.png';
+import kru2 from '@/assets/kru2.png';
+import kru3 from '@/assets/kru3.png';
+import kru4 from '@/assets/kru4.png';
+import kru5 from '@/assets/kru5.png';
+import kru6 from '@/assets/kru6.png';
+import kru7 from '@/assets/kru7.png';
+import kru8 from '@/assets/kru8.png';
+import kru9 from '@/assets/kru9.png';
+import kru10 from '@/assets/kru10.png';
+import kru11 from '@/assets/kru11.png';
+import kru12 from '@/assets/kru12.png';
+import kru13 from '@/assets/kru13.png';
+import kru14 from '@/assets/kru14.png';
+import kru15 from '@/assets/kru15.png';
+import kru16 from '@/assets/kru16.png';
+import kru17 from '@/assets/kru17.png';
+import kru18 from '@/assets/kru18.png';
+
 export const providers = [
   {
     id: 'toshiba',
@@ -1296,6 +1316,121 @@ export const providers = [
             image: con15
           }
         ]
+      }
+    ]
+  },
+  {
+    id: 'kruger',
+    name: 'Kruger',
+    logo: krugerLogo,
+    productTypes: [
+      {
+        id: 'ecowatt',
+        name: 'Ecowatt® Controls',
+        image: kru1,
+        link: 'https://www.krugerfan.com/products/subdetail/1/?lang=en'
+      },
+      {
+        id: 'ecowatt-drives',
+        name: 'Ecowatt® Drives',
+        image: kru2,
+        link: 'https://www.krugerfan.com/products/subdetail/2/?lang=en'
+      },
+      {
+        id: 'ecowatt-motors',
+        name: 'Ecowatt® Motors',
+        image: kru3,
+        link: 'https://www.krugerfan.com/products/subdetail/3/?lang=en'
+      },
+      {
+        id: 'ecowatt-accessories',
+        name: 'Accessories',
+        image: kru4,
+        link: 'https://www.krugerfan.com/products/category/2/?lang=en'
+      },
+      {
+        id: 'ecowatt-attenuator',
+        name: 'Attenuator',
+        image: kru5,
+        link: 'https://www.krugerfan.com/products/category/3/?lang=en'
+      },
+      {
+        id: 'ecowatt-axial',
+        name: 'Axial Fans',
+        image: kru6,
+        link: 'https://www.krugerfan.com/products/category/4/?lang=en'
+      },
+      {
+        id: 'ecowatt-centrifugal',
+        name: 'Centrifugal Fans (HVAC)',
+        image: kru7,
+        link: 'https://www.krugerfan.com/products/category/5/?lang=en'
+      },
+      {
+        id: 'ecowatt-domestic',
+        name: 'Domestic Fans',
+        image: kru8,
+        link: 'https://www.krugerfan.com/products/category/6/?lang=en'
+      },
+      {
+        id: 'ecowatt-in-line',
+        name: 'In-Line Fans',
+        image: kru9,
+        link: 'https://www.krugerfan.com/products/category/8/?lang=en'
+      },
+      {
+        id: 'ecowatt-jet',
+        name: 'Jet Fans',
+        image: kru10,
+        link: 'https://www.krugerfan.com/products/category/9/?lang=en'
+      },
+      {
+        id: 'ecowatt-mixed-flow',
+        name: 'Mixed Flow Fans',
+        image: kru11,
+        link: 'https://www.krugerfan.com/products/category/10/?lang=en'
+      },
+      {
+        id: 'ecowatt-roof-exhaust',
+        name: 'Roof Exhaust Fans',
+        image: kru12,
+        link: 'https://www.krugerfan.com/products/category/11/?lang=en'
+      },
+      {
+        id: 'ecowatt-tunnel-fans',
+        name: 'Tunnel Fans',
+        image: kru13,
+        link: 'https://www.krugerfan.com/products/category/12/?lang=en'
+      },
+      {
+        id: 'ecowatt-ferrari',
+        name: 'Centrifugal Fans (Ferrari Industrial Fans)',
+        image: kru14,
+        link: 'https://www.ferrariasiaventilation.com/centrifugal-axial-air-blowers-fans-manufacturer'
+      },
+      {
+        id: 'ecowatt-high-volume-low-speed-fan',
+        name: 'High Volume Low Speed Fan',
+        image: kru15,
+        link: 'https://www.krugerfan.com/products/category/15/?lang=en'
+      },
+      {
+        id: 'ecowatt-fan-filter-unit',
+        name: 'Fan Filter Unit',
+        image: kru16,
+        link: 'https://www.krugerfan.com/products/category/17/?lang=en'
+      },
+      {
+        id: 'ecowatt-agricultural-fans',
+        name: 'Agricultural Fans',
+        image: kru17,
+        link: 'https://www.krugerfan.com/products/category/18/?lang=en'
+      },
+      {
+        id: 'ecowatt-heat-energy-recovery-units',
+        name: 'Heat & Energy Recovery Units',
+        image: kru18,
+        link: 'https://www.krugerfan.com/products/category/19/?lang=en'
       }
     ]
   }
