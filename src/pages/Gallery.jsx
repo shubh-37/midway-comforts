@@ -11,66 +11,111 @@ import adfactor from '@/assets/adfactor.jpeg';
 import adfactor1 from '@/assets/adfactor1.jpeg';
 import yashwant from '@/assets/yashwant.jpeg';
 import yashwant1 from '@/assets/yashwant1.jpeg';
-
+import gal1 from '@/assets/gal1.jpg';
+import gal2 from '@/assets/gal2.jpg';
+import gal3 from '@/assets/gal3.jpg';
+import gal4 from '@/assets/gal4.jpg';
+import gal5 from '@/assets/gal5.jpg';
+import gal6 from '@/assets/gal6.jpg';
+import gal7 from '@/assets/gal7.jpg';
+import gal8 from '@/assets/gal8.jpg';
+import gal9 from '@/assets/gal9.jpg';
+import gal10 from '@/assets/gal10.jpg';
+import gal11 from '@/assets/gal11.jpg';
+import gal12 from '@/assets/gal12.jpg';
+import gal13 from '@/assets/gal13.jpg';
+import gal14 from '@/assets/gal14.jpg';
+import gal15 from '@/assets/gal15.jpg';
+import gal16 from '@/assets/gal16.jpg';
+import gal18 from '@/assets/gal18.jpg';
+import gal19 from '@/assets/gal19.jpg';
+import gal20 from '@/assets/gal20.jpg';
+import gal21 from '@/assets/gal21.jpg';
+import gal22 from '@/assets/gal22.jpg';
+import gal23 from '@/assets/gal23.jpg';
+import gal24 from '@/assets/gal24.jpg';
+import gal25 from '@/assets/gal25.jpg';
+import gal26 from '@/assets/gal26.jpg';
+import gal27 from '@/assets/gal27.jpg';
+import gal28 from '@/assets/gal28.jpg';
+import gal29 from '@/assets/gal29.jpg';
+import gal30 from '@/assets/gal30.jpg';
+import gal31 from '@/assets/gal31.jpg';
+import gal32 from '@/assets/gal32.jpg';
+import gal33 from '@/assets/gal33.jpg';
+import gal34 from '@/assets/gal34.jpg';
+import gal35 from '@/assets/gal35.jpg';
+import gal36 from '@/assets/gal36.jpg';
+import gal37 from '@/assets/gal37.jpg';
+import gal38 from '@/assets/gal38.jpg';
+import gal39 from '@/assets/gal39.jpg';
+import gal40 from '@/assets/gal40.jpg';
+import gal41 from '@/assets/gal41.jpg';
+import gal42 from '@/assets/gal42.jpg';
+import gal43 from '@/assets/gal43.jpg';
+import gal44 from '@/assets/gal44.jpg';
 // Sample gallery items - replace with actual HVAC project images
 const galleryItems = [
-  {
-    id: 1,
-    title: 'Commercial HVAC Installation',
-    category: 'installations',
-    imageUrl: tanshiq
-  },
-  {
-    id: 2,
-    title: 'Residential AC Repair',
-    category: 'repairs',
-    imageUrl: tanshiq1
-  },
-  {
-    id: 3,
-    title: 'Ductwork Replacement',
-    category: 'installations',
-    imageUrl: rustom
-  },
-  {
-    id: 4,
-    title: 'Annual Maintenance',
-    category: 'maintenance',
-    imageUrl: rustom1
-  },
-  {
-    id: 5,
-    title: 'Heat Pump Installation',
-    category: 'installations',
-    imageUrl: adfactor
-  },
-  {
-    id: 6,
-    title: 'Commercial Maintenance',
-    category: 'maintenance',
-    imageUrl: adfactor1
-  },
-  {
-    id: 7,
-    title: 'Emergency Repair',
-    category: 'repairs',
-    imageUrl: yashwant
-  },
-  {
-    id: 8,
-    title: 'New Construction Installation',
-    category: 'installations',
-    imageUrl: yashwant1
-  }
+  tanshiq,
+  tanshiq1,
+  rustom,
+  rustom1,
+  adfactor,
+  adfactor1,
+  yashwant,
+  yashwant1,
+  gal1,
+  gal2,
+  gal3,
+  gal4,
+  gal5,
+  gal6,
+  gal7,
+  gal8,
+  gal9,
+  gal10,
+  gal11,
+  gal12,
+  gal13,
+  gal14,
+  gal15,
+  gal16,
+  gal18,
+  gal19,
+  gal20,
+  gal21,
+  gal22,
+  gal23,
+  gal24,
+  gal25,
+  gal26,
+  gal27,
+  gal28,
+  gal29,
+  gal30,
+  gal31,
+  gal32,
+  gal33,
+  gal34,
+  gal35,
+  gal36,
+  gal37,
+  gal38,
+  gal39,
+  gal40,
+  gal41,
+  gal42,
+  gal43,
+  gal44
 ];
 
 export default function GalleryGrid() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const openModal = (id) => setSelectedImage(id);
+  const openModal = (index) => setSelectedImage(index);
   const closeModal = () => setSelectedImage(null);
 
-  const currentIndex = selectedImage !== null ? galleryItems.findIndex((item) => item.id === selectedImage) : -1;
+  const currentIndex = selectedImage !== null ? selectedImage : -1;
 
   const navigateImage = (direction) => {
     if (currentIndex === -1) return;
@@ -80,7 +125,7 @@ export default function GalleryGrid() {
         ? (currentIndex + 1) % galleryItems.length
         : (currentIndex - 1 + galleryItems.length) % galleryItems.length;
 
-    setSelectedImage(galleryItems[newIndex].id);
+    setSelectedImage(newIndex);
   };
 
   return (
@@ -95,27 +140,18 @@ export default function GalleryGrid() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {galleryItems.map((item) => (
+        {galleryItems.map((item, index) => (
           <motion.div
-            key={item.id}
+            key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.03 }}
             className="overflow-hidden rounded-lg shadow-lg"
           >
-            <div className="cursor-pointer" onClick={() => openModal(item.id)}>
+            <div className="cursor-pointer" onClick={() => openModal(index)}>
               <div className="w-full aspect-square relative overflow-hidden">
-                <img
-                  src={item.imageUrl || '/placeholder.svg'}
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Text bar below the image */}
-              <div className="p-3 bg-white border-t border-gray-100">
-                <h3 className="font-semibold text-lg text-blue-700 truncate">{item.title}</h3>
+                <img src={item} alt="Gallery Image" className="w-full h-full object-cover" />
               </div>
             </div>
           </motion.div>
@@ -127,11 +163,7 @@ export default function GalleryGrid() {
           {selectedImage !== null && currentIndex !== -1 && (
             <div className="relative">
               <div className="relative aspect-video w-full">
-                <img
-                  src={galleryItems[currentIndex].imageUrl || '/placeholder.svg'}
-                  alt={galleryItems[currentIndex].title}
-                  className="w-full h-full object-contain"
-                />
+                <img src={galleryItems[currentIndex]} alt="Gallery Image" className="w-full h-full object-contain" />
               </div>
 
               <div className="absolute left-2 top-1/2 -translate-y-1/2">
@@ -154,11 +186,6 @@ export default function GalleryGrid() {
                 >
                   <ChevronRight className="h-6 w-6" />
                 </Button>
-              </div>
-
-              <div className="p-4 bg-primary text-black">
-                <h2 className="text-xl font-semibold text-secondary">{galleryItems[currentIndex].title}</h2>
-                <p className="mt-1">{galleryItems[currentIndex].description}</p>
               </div>
             </div>
           )}
