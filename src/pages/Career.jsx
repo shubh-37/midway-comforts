@@ -2,23 +2,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import companyImage from '@/assets/company.jpeg';
-import {
-  Award,
-  Briefcase,
-  GraduationCap,
-  Heart,
-  Clock,
-  DollarSign,
-  Leaf,
-  MapPin,
-  CalendarDays,
-  Search
-} from 'lucide-react';
+import { Award, Briefcase, GraduationCap, Heart, TrendingUp, MapPin, CalendarDays, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import clientAero from '@/assets/client-aero.png';
 import clientAndheri from '@/assets/client-andheri.png';
 import OpenPositions from '@/components/JobPosting';
+import car1 from '@/assets/car1.jpg';
+import car2 from '@/assets/car2.jpg';
 
 export default function CareersPage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -120,43 +111,45 @@ export default function CareersPage() {
           >
             {[
               {
-                icon: <DollarSign className="h-10 w-10 text-blue-700" />,
-                title: 'Competitive Compensation',
-                description:
-                  'We offer industry-leading pay and comprehensive benefits packages to reward your expertise and dedication.'
-              },
-              {
                 icon: <GraduationCap className="h-10 w-10 text-blue-700" />,
-                title: 'Career Development',
+                title: 'Learning & Development Culture',
                 description:
-                  'Continuous learning opportunities, certifications, and clear paths for advancement within the company.'
-              },
-              {
-                icon: <Heart className="h-10 w-10 text-blue-700" />,
-                title: 'Comprehensive Benefits',
-                description:
-                  'Health, dental, vision insurance, 401(k) matching, paid time off, and wellness programs for you and your family.'
-              },
-              {
-                icon: <Clock className="h-10 w-10 text-blue-700" />,
-                title: 'Work-Life Balance',
-                description:
-                  'Flexible scheduling options and respect for your time outside of work to ensure you stay refreshed and motivated.'
+                  'We believe in continuous growth — not just for the company but for our people. Regular training, on-the-job learning, and mentorship from industry veterans ensure that you’re always improving and staying ahead in your field.'
               },
               {
                 icon: <Award className="h-10 w-10 text-blue-700" />,
-                title: 'Recognition Programs',
-                description: "Your hard work doesn't go unnoticed with our employee recognition and incentive programs."
+                title: 'Legacy of Trust & Excellence',
+                description:
+                  'With over 25 years in the HVAC industry, Midway Comforts is a name synonymous with reliability and quality. Our long-standing reputation has been built through consistent performance and strong client relationships. When you join us, you become part of a legacy that stands tall in the market.'
               },
               {
-                icon: <Leaf className="h-10 w-10 text-blue-700" />,
-                title: 'Sustainable Practices',
+                icon: <Heart className="h-10 w-10 text-blue-700" />,
+                title: 'Supportive Team Environment',
                 description:
-                  'Be part of a company committed to environmental responsibility and sustainable HVAC solutions.'
+                  "At Midway Comforts, you’re not just another employee — you're family. We foster a culture of teamwork, mutual respect, and open communication, where everyone’s ideas and efforts are valued and recognized."
+              },
+              {
+                icon: <TrendingUp className="h-10 w-10 text-blue-700" />,
+                title: 'Stability with Growth Potential',
+                description:
+                  'We combine the security of a well-established business with the mindset of ongoing expansion. Our steady growth means more opportunities for career advancement, job stability, and personal development over time.'
+              },
+              {
+                icon: <Users className="h-10 w-10 text-blue-700" />,
+                title: 'Diverse Career Opportunities',
+                description:
+                  "We offer a wide range of roles — from technical and engineering positions to project management, sales, and support. Whether you're just starting out or have years of experience, there's a place for you to grow and thrive at Midway Comforts."
+              },
+              {
+                icon: <Briefcase className="h-10 w-10 text-blue-700" />,
+                title: 'Hands-On Experience with Big Projects',
+                description:
+                  'Get exposure to some of the most prestigious HVAC projects across commercial, residential, and industrial sectors. Working here means real on-site learning, challenging assignments, and the satisfaction of contributing to large-scale solutions.'
               }
             ].map((item, index) => (
-              <motion.div key={index} variants={item}>
+              <motion.div key={index} variants={item} className="h-full">
                 <motion.div
+                  className="h-full"
                   whileHover={{
                     scale: 1.03,
                     boxShadow: '0 10px 30px rgba(0, 71, 171, 0.1)',
@@ -164,8 +157,8 @@ export default function CareersPage() {
                   }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <Card className="border-2 border-blue-700/10 hover:border-[#FFD700] transition-all h-full">
-                    <CardContent className="p-6">
+                  <Card className="border-2 border-blue-700/10 hover:border-[#FFD700] transition-all h-full flex flex-col">
+                    <CardContent className="p-6 flex flex-col h-full">
                       <motion.div
                         className="mb-4"
                         initial={{ scale: 1 }}
@@ -175,7 +168,7 @@ export default function CareersPage() {
                         {item.icon}
                       </motion.div>
                       <h3 className="text-xl font-bold mb-2 text-blue-700">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
+                      <p className="text-gray-600 flex-grow">{item.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -206,11 +199,7 @@ export default function CareersPage() {
               variants={slideInLeft}
             >
               <h3 className="text-2xl font-bold mb-4 text-blue-700">Our Culture</h3>
-              <p className="text-gray-600 mb-6">
-                At Midway Comforts, we foster a collaborative environment where innovation thrives and every team
-                member's contribution is valued. Our culture is built on mutual respect, open communication, and a
-                shared commitment to excellence.
-              </p>
+
               <motion.ul
                 className="space-y-2"
                 variants={container}
@@ -219,10 +208,10 @@ export default function CareersPage() {
                 viewport={{ once: true, amount: 0.3 }}
               >
                 {[
-                  'Team-oriented approach to problem-solving',
-                  'Regular team building events and activities',
-                  'Open-door policy with leadership',
-                  'Diverse and inclusive workplace'
+                  'People-First Approach – We value every team member and create an environment where everyone feels respected and heard.',
+                  'Teamwork at the Core – Collaboration and support are at the heart of how we work, both on-site and in the office.',
+                  'Celebrating Together – From birthdays to project wins, we take time to celebrate achievements as a team.',
+                  'Professional, Yet Personal – While we maintain high standards, we never lose the warmth of a close-knit, family-like culture.'
                 ].map((item, index) => (
                   <motion.li key={index} className="flex items-start" variants={item}>
                     <span className="mr-2 mt-1 text-[#FFD700]">•</span>
@@ -238,7 +227,7 @@ export default function CareersPage() {
               viewport={{ once: true, amount: 0.3 }}
               variants={slideInRight}
             >
-              <img src={clientAero} alt="Team collaboration at Midway Comforts" fill className="object-cover" />
+              <img src={car2} alt="Team collaboration at Midway Comforts" fill className="object-cover" />
             </motion.div>
           </div>
 
@@ -250,7 +239,7 @@ export default function CareersPage() {
               viewport={{ once: true, amount: 0.3 }}
               variants={slideInLeft}
             >
-              <img src={clientAndheri} alt="Community involvement at Midway Comforts" fill className="object-cover" />
+              <img src={car1} alt="Community involvement at Midway Comforts" fill className="object-cover" />
             </motion.div>
             <motion.div
               className="order-1 lg:order-2"
@@ -259,11 +248,7 @@ export default function CareersPage() {
               viewport={{ once: true, amount: 0.3 }}
               variants={slideInRight}
             >
-              <h3 className="text-2xl font-bold mb-4 text-blue-700">Community Involvement</h3>
-              <p className="text-gray-600 mb-6">
-                We believe in giving back to the communities we serve. Our team regularly participates in local
-                initiatives, volunteer opportunities, and charitable events that make a positive impact.
-              </p>
+              <h3 className="text-2xl font-bold mb-4 text-blue-700">Your Future, Engineered Here</h3>
               <motion.div
                 className="grid grid-cols-2 gap-4"
                 variants={container}
@@ -273,20 +258,24 @@ export default function CareersPage() {
               >
                 {[
                   {
-                    title: 'Volunteer Days',
-                    description: 'Paid time off for community service'
+                    title: 'Grow with Purpose',
+                    description:
+                      'At Midway Comforts, you’re not just doing a job — you’re building a career with direction and long-term goals.'
                   },
                   {
-                    title: 'Charity Partnerships',
-                    description: 'Supporting local organizations'
+                    title: 'Be Part of Innovation',
+                    description:
+                      'From modern HVAC systems to energy-efficient tech, we’re always upgrading — and so will you.'
                   },
                   {
-                    title: 'Environmental Initiatives',
-                    description: 'Reducing our carbon footprint'
+                    title: 'Every Day Is Different',
+                    description:
+                      'Work isn’t routine here. Every project brings new challenges, clients, and creative problem-solving.'
                   },
                   {
-                    title: 'Education Programs',
-                    description: 'HVAC training for underserved communities'
+                    title: 'Proud to Build Something Real',
+                    description:
+                      "Whether it's a massive commercial space or a cozy home, your work has visible impact and real value."
                   }
                 ].map((item, index) => (
                   <motion.div
