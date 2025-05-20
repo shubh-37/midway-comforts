@@ -1,5 +1,5 @@
 import AboutUsHeader from '@/components/AboutUsHeader';
-import { Awards } from '@/components/Awards';
+import Awards from '@/components/Awards';
 import CompanyTimeline from '@/components/CompanyJourney';
 
 function AboutPage() {
