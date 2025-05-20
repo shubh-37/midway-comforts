@@ -38,7 +38,7 @@ export default function LeadershipCarousel() {
     },
     {
       id: 2,
-      name: 'Mr. Sattar Khokhar',
+      name: 'Mr. A.S Khokhar',
       title: 'Director',
       image: sattar
     },

@@ -5,6 +5,7 @@ import { ExternalLink, Award, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import carrierLogo from '@/assets/carrier.svg';
 import toshibaLogo from '@/assets/toshiba.svg';
+import krugerLogo from '@/assets/kruger.png';
 const PartnerBrands = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -73,6 +74,11 @@ const PartnerBrands = () => {
             <div className="flex items-center mt-3 text-blue-600">
               <ShieldCheck className="w-5 h-5 mr-1" />
               <span className="text-sm font-medium">Official Dealer</span>
+            </div>
+          </div>
+          <div className="flex flex-col items-center pb-8">
+            <div className="h-32 w-64 flex items-center justify-center bg-white rounded-lg shadow-md p-4">
+              <img src={krugerLogo} alt="Kruger" className="max-h-20 max-w-full object-contain" />
             </div>
           </div>
         </div>

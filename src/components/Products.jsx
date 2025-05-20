@@ -42,7 +42,7 @@ export default function ProductsPage() {
                   <img
                     src={provider.logo || '/placeholder.svg'}
                     alt={provider.name}
-                    width={120}
+                    width={150}
                     height={50}
                     className="h-8 object-contain"
                   />
