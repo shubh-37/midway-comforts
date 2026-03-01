@@ -1,7 +1,6 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import maleAvatar from '@/assets/male.svg';
-import femaleAvatar from '@/assets/female.svg';
 import manish from '@/assets/manish.jpeg';
 import aashish from '@/assets/aashish.jpeg';
 import sattar from '@/assets/sattar.jpeg';
@@ -11,6 +10,20 @@ import santosh from '@/assets/santosh.jpeg';
 import rajaram from '@/assets/rajaram.jpeg';
 import shabbir from '@/assets/shabbir.jpeg';
 import nilisha from '@/assets/nilisha.jpeg';
+import raj from '@/assets/Raj.png';
+import afzal from '@/assets/Afzal.png';
+import amarjeet from '@/assets/Amarjeet.png';
+import anjit from '@/assets/Anjit.png';
+import jafri from '@/assets/Jafri.png';
+import ashraf from '@/assets/Ashraf.png';
+import deepa from '@/assets/Deepa.png';
+import faizan from '@/assets/Faizan.png';
+import shakeel from '@/assets/shakeel.png';
+import sanchita from '@/assets/Sanchita.png';
+import satish from '@/assets/Satish.png';
+import zulfekar from '@/assets/Zulfekar.png';
+import vishal from '@/assets/Vishal.png';
+import rehman from '@/assets/Rehamn.jpeg';
 import bonny from '@/assets/bonny.jpeg';
 import { Button } from './ui/moving-border';
 import { useEffect, useState } from 'react';
@@ -49,52 +62,130 @@ export default function LeadershipCarousel() {
       image: tabrej
     },
     {
-      id: 9,
+      id: 4,
       name: 'Mr. Shabbir Khan',
       title: 'Projects Execution Head',
       image: shabbir
     },
     {
-      id: 7,
+      id: 5,
       name: 'Mr. Rajendra Dalave',
       title: 'Design Head',
-      image: maleAvatar
+      image: raj
     },
     {
-      id: 8,
+      id: 6,
       name: 'Mr. Santosh Patil ',
       title: 'Service Head',
       image: santosh
     },
     {
-      id: 10,
+      id: 7,
       name: 'Mr. Rajeev Sinha',
       title: 'Procurement Head',
       image: rajeev
     },
     {
-      id: 11,
+      id: 8,
       name: 'Mr. Bonny Fernandes',
       title: 'Service Coordinator Head',
       image: bonny
     },
     {
-      id: 4,
+      id: 9,
       name: 'Mrs. Nilisha Pathare',
       title: 'Projects Billing Head',
       image: nilisha
     },
     {
-      id: 5,
+      id: 10,
       name: 'Mr. Raja Ram',
       title: 'Accounts Head',
       image: rajaram
     },
     {
-      id: 6,
+      id: 11,
       name: 'Mr. Ashish Pandya',
       title: 'HR Head',
       image: aashish
+    },
+    {
+      id: 12,
+      name: 'Abdul Rehman J. Khan',
+      title: 'Project Billing Coordinator',
+      image: rehman
+    },
+    {
+      id: 13,
+      name: 'Afzal Husain Shaikh',
+      title: 'HVAC Commissioning Head',
+      image: afzal
+    },
+    {
+      id: 14,
+      name: 'Amarjeet Chauhan',
+      title: 'Senior Electrical Supervisor',
+      image: amarjeet
+    },
+    {
+      id: 15,
+      name: 'Anjit Singh',
+      title: 'Senior Project Engineer',
+      image: anjit
+    },
+    {
+      id: 16,
+      name: 'Ashiq Haider Jafri',
+      title: 'QA/QC Head',
+      image: jafri
+    },
+    {
+      id: 17,
+      name: 'Ashraf Ali Shaikh',
+      title: 'Safety Head',
+      image: ashraf
+    },
+    {
+      id: 18,
+      name: 'Deepa S. Kalelkar',
+      title: 'Contracts & Revenue Head - Services',
+      image: deepa
+    },
+    {
+      id: 19,
+      name: 'Faizan Ahmed Suleman',
+      title: 'Design & Planning./BIM Head',
+      image: faizan
+    },
+    {
+      id: 20,
+      name: 'Shakeel A. Jamila Khan',
+      title: 'Senior Site Supervisor',
+      image: shakeel
+    },
+    {
+      id: 21,
+      name: 'Sanchita S. Kinjalkar',
+      title: 'Service & Maintenance Co-ordinator',
+      image: sanchita
+    },
+    {
+      id: 22,
+      name: 'Satish Pawar',
+      title: 'Store Fncharge',
+      image: satish
+    },
+    {
+      id: 23,
+      name: 'Zulfekar Ahmed',
+      title: 'Project Executive Engineer',
+      image: zulfekar
+    },
+    {
+      id: 24,
+      name: 'Vishal Ambavale',
+      title: 'Senior Site Engineer',
+      image: vishal
     }
   ];
 

@@ -46,6 +46,7 @@ import clientCrown from '@/assets/crown-client.jpg';
 import placeholder from '@/assets/placeholder.png';
 import clientNerul from '@/assets/clientNerul.png';
 import clientWorli from '@/assets/clientworli.jpg';
+import oakwood from '@/assets/oakwood.jpg';
 const clients = [
   // DEVELOPERS
   {
@@ -140,6 +141,55 @@ const clients = [
     img: clientRaddison,
     category: 'VENTILATION PROJECTS'
   },
+  {
+    clientName: 'Macleods Realty - Juhu',
+    hp: '',
+    sqft: '0.85L',
+    img: 'https://pbs.twimg.com/media/GHO2nblWMAIb1Ku.jpg',
+    category: 'VENTILATION PROJECTS'
+  },
+  {
+    clientName: 'Macleods Realty - MIDC Andheri',
+    hp: '',
+    sqft: '1.25L',
+    img: 'https://pbs.twimg.com/media/GHO2TUrWIAApQRh?format=jpg&name=small',
+    category: 'VENTILATION PROJECTS'
+  },
+  {
+    clientName: 'Rajat Serein - Thane',
+    hp: '',
+    sqft: '1.5L',
+    img: 'https://media.tatahousing.com/projects/April2023/7a61913b5f4bb7448f78.webp',
+    category: 'VENTILATION PROJECTS'
+  },
+  {
+    clientName: 'Crest Oaks - Marol Andheri',
+    hp: '',
+    sqft: '1.2L',
+    img: 'https://crest-oaks.in/public/admin/images/1710095436.jpg',
+    category: 'VENTILATION PROJECTS'
+  },
+  {
+    clientName: 'Kalpataru Azuro - Nepean Sea Road',
+    hp: '',
+    sqft: '0.7L',
+    img: 'https://www.luxuryabode.com/blog/blogimages/kalpataru-azuro-1.jpg',
+    category: 'VENTILATION PROJECTS'
+  },
+  {
+    clientName: 'Kalpataru Summit - Mulund',
+    hp: '',
+    sqft: '2L',
+    img: 'https://lh3.googleusercontent.com/bR45J9XmAQhCEDaiCXjXPDZJ7m2Vtl2lohedZdGx9s-JERNiyHHSHoOOjNv7m3rtoh8wgNw_Go0idGi49rG6C4q9EOvc3a04gA=w1920',
+    category: 'VENTILATION PROJECTS'
+  },
+  {
+    clientName: 'Pebbles Greenfields - Pune',
+    hp: '',
+    sqft: '1.7L',
+    img: 'https://pebblegreenfield.com/wp-content/uploads/2025/03/pebble-greenfield-elevation-1024x652.webp',
+    category: 'VENTILATION PROJECTS'
+  },
 
   // RESTAURANTS & HOTELS
   {
@@ -212,6 +262,20 @@ const clients = [
     hp: '280 HP',
     sqft: '35,000',
     img: clientKamala,
+    category: 'OUR VALUED TOSHIBA & VRF CUSTOMERS'
+  },
+  {
+    clientName: 'HDFC Bank - Kanjurmarg',
+    hp: '180 HP',
+    sqft: '2.16L',
+    img: 'https://www.dssgroup.in/projects/commercial/damji-shamji-business-78/update3.jpg',
+    category: 'OUR VALUED TOSHIBA & VRF CUSTOMERS'
+  },
+  {
+    clientName: 'Lodha School - Goa',
+    hp: '350 HP',
+    sqft: '0.4L',
+    img: oakwood,
     category: 'OUR VALUED TOSHIBA & VRF CUSTOMERS'
   },
 
