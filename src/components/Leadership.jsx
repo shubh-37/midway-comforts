@@ -5,14 +5,14 @@ import manish from '@/assets/manish.jpeg';
 import aashish from '@/assets/aashish.jpeg';
 import sattar from '@/assets/sattar.jpeg';
 import rajeev from '@/assets/rajeev.jpeg';
-import tabrej from '@/assets/tabrej.jpeg';
-import santosh from '@/assets/santosh.jpeg';
+import tabrej from '@/assets/tabrej.png';
+import santosh from '@/assets/santosh.png';
 import rajaram from '@/assets/rajaram.jpeg';
 import shabbir from '@/assets/shabbir.jpeg';
 import nilisha from '@/assets/nilisha.jpeg';
 import raj from '@/assets/Raj.png';
 import afzal from '@/assets/Afzal.png';
-import amarjeet from '@/assets/Amarjeet.png';
+import amarjeet from '@/assets/amarjeet.jpg';
 import anjit from '@/assets/Anjit.png';
 import jafri from '@/assets/Jafri.png';
 import ashraf from '@/assets/Ashraf.png';
@@ -25,6 +25,9 @@ import zulfekar from '@/assets/Zulfekar.png';
 import vishal from '@/assets/Vishal.png';
 import rehman from '@/assets/Rehamn.jpeg';
 import bonny from '@/assets/bonny.jpeg';
+import rahul from '@/assets/Rahul.jpg';
+import ayub from '@/assets/ayub.png';
+import sultan from '@/assets/sultan.png';
 import { Button } from './ui/moving-border';
 import { useEffect, useState } from 'react';
 
@@ -172,7 +175,7 @@ export default function LeadershipCarousel() {
     {
       id: 22,
       name: 'Satish Pawar',
-      title: 'Store Fncharge',
+      title: 'Store Incharge',
       image: satish
     },
     {
@@ -186,6 +189,24 @@ export default function LeadershipCarousel() {
       name: 'Vishal Ambavale',
       title: 'Senior Site Engineer',
       image: vishal
+    },
+    {
+      id: 25,
+      name: 'Mohd Sultan Saikh',
+      title: 'Sr. Project Supervisor',
+      image: sultan
+    },
+    {
+      id: 26,
+      name: 'Mohd Ayub Shaikh',
+      title: 'Senior Site Engineer',
+      image: ayub
+    },
+    {
+      id: 27,
+      name: 'Rahul Chauhan',
+      title: 'Site Supervisor',
+      image: rahul
     }
   ];
 

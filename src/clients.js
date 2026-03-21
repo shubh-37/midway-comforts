@@ -156,7 +156,7 @@ const clients = [
     category: 'VENTILATION PROJECTS'
   },
   {
-    clientName: 'Rajat Serein - Thane',
+    clientName: 'Tata Serein - Thane',
     hp: '',
     sqft: '1.5L',
     img: 'https://media.tatahousing.com/projects/April2023/7a61913b5f4bb7448f78.webp',
@@ -266,7 +266,7 @@ const clients = [
   },
   {
     clientName: 'HDFC Bank - Kanjurmarg',
-    hp: '180 HP',
+    hp: '1800 HP',
     sqft: '2.16L',
     img: 'https://www.dssgroup.in/projects/commercial/damji-shamji-business-78/update3.jpg',
     category: 'OUR VALUED TOSHIBA & VRF CUSTOMERS'
