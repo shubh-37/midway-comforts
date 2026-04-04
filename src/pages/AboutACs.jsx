@@ -131,9 +131,12 @@ const circularProcessStyles = `
   }
 `;
 
+import SEO from '@/seo/SEO';
+
 export default function ACGuidePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
+      <SEO page="acGuide" />
       <style jsx>{circularProcessStyles}</style>
       <HowAcWorksSection />
       <MythsVsFactsSection />

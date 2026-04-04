@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import clients from '@/clients';
+import SEO from '@/seo/SEO';
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -14,6 +15,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="mx-auto py-8 sm:py-12 px-2 sm:px-4">
+      <SEO page="projects" />
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

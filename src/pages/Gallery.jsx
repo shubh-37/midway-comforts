@@ -54,6 +54,7 @@ import gal41 from '@/assets/gal41.jpg';
 import gal42 from '@/assets/gal42.jpg';
 import gal43 from '@/assets/gal43.jpg';
 import gal44 from '@/assets/gal44.jpg';
+import SEO from '@/seo/SEO';
 // Sample gallery items - replace with actual HVAC project images
 const galleryItems = [
   tanshiq,
@@ -130,6 +131,7 @@ export default function GalleryGrid() {
 
   return (
     <div className="mx-auto px-4 py-12">
+      <SEO page="gallery" />
       <div className="mb-12 space-y-6">
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl text-blue-700 text-center">Our Work</h1>

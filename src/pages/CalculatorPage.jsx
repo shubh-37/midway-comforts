@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SEO from '@/seo/SEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -145,6 +146,7 @@ function CalculatorPage() {
 
   return (
     <div className=" bg-white py-8 px-4">
+      <SEO page="calculator" />
       <div className="text-center mb-8">
         <div className="inline-flex items-center justify-center gap-2 bg-yellow-400 text-black font-bold px-4 py-1 rounded-full mb-4">
           <Calculator className="h-4 w-4" />

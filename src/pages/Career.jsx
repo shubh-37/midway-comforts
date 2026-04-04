@@ -10,6 +10,7 @@ import clientAndheri from '@/assets/client-andheri.png';
 import OpenPositions from '@/components/JobPosting';
 import car1 from '@/assets/car1.jpg';
 import car2 from '@/assets/car2.jpg';
+import SEO from '@/seo/SEO';
 
 export default function CareersPage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -51,6 +52,7 @@ export default function CareersPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <SEO page="career" />
       {/* Hero Section */}
       <motion.section
         className="relative bg-blue-700 text-white overflow-hidden"
