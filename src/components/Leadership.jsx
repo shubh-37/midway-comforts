@@ -214,7 +214,7 @@ export default function LeadershipCarousel() {
     <section className="py-10">
       <div className="px-4 mx-auto max-w-7xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Meet Our Leadership Team</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground">Meet Our Leadership Team</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
             Our success over the past 26 years has been driven by our dedicated team of HVAC professionals who bring
             decades of combined experience and passion to every project.
@@ -235,12 +235,12 @@ export default function LeadershipCarousel() {
                   <div className="h-full flex items-center justify-center">
                     <Button
                       borderRadius="1.75rem"
-                      className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 w-[250px]"
+                      className="bg-background text-foreground border-border w-[250px]"
                     >
-                      <Card className="w-[250px] h-[250px] border-none shadow-sm hover:shadow-md transition-shadow duration-300">
+                      <Card className="w-[250px] h-[250px] border-none shadow-sm hover:shadow-md transition-shadow duration-300 bg-card">
                         <CardContent className="p-6 text-center flex flex-col justify-center h-full">
                           <div className="flex justify-center mb-4">
-                            <div className="relative w-28 h-28 rounded-full overflow-hidden bg-muted">
+                            <div className="relative w-28 h-28 rounded-full overflow-hidden bg-secondary">
                               <img
                                 src={member.image || maleAvatar}
                                 alt={member.name}
@@ -248,7 +248,7 @@ export default function LeadershipCarousel() {
                               />
                             </div>
                           </div>
-                          <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                          <h3 className="text-xl font-semibold mb-1 text-foreground">{member.name}</h3>
                           <p className="text-primary font-medium">{member.title}</p>
                         </CardContent>
                       </Card>

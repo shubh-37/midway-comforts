@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import {
   Store,
   Building,
@@ -14,28 +14,6 @@ import {
 } from 'lucide-react';
 
 export default function CompanyTimeline() {
-  const timelineRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
-    );
-
-    const elements = document.querySelectorAll('.milestone-card');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
   const milestones = [
     {
       year: '1999',
@@ -46,7 +24,7 @@ export default function CompanyTimeline() {
           focusing on split and window ACs.
         </>
       ),
-      icon: <Store className="h-8 w-8" />,
+      icon: <Store className="h-7 w-7" />,
       color: 'bg-amber-500'
     },
     {
@@ -54,7 +32,7 @@ export default function CompanyTimeline() {
       title: 'Expanding Horizons',
       description:
         'Started catering to corporate clients, including educational institutions, banks, and developers, building long-term partnerships.',
-      icon: <Building className="h-8 w-8" />,
+      icon: <Building className="h-7 w-7" />,
       color: 'bg-blue-500'
     },
     {
@@ -66,7 +44,7 @@ export default function CompanyTimeline() {
           in <strong>end-to-end solutions</strong>.
         </>
       ),
-      icon: <Briefcase className="h-8 w-8" />,
+      icon: <Briefcase className="h-7 w-7" />,
       color: 'bg-emerald-500'
     },
     {
@@ -74,7 +52,7 @@ export default function CompanyTimeline() {
       title: 'Golden Era of Innovation',
       description:
         'Entered the VRF, chiller, and ventilation space, winning multiple industry awards between 2009 and 2014.',
-      icon: <Award className="h-8 w-8" />,
+      icon: <Award className="h-7 w-7" />,
       color: 'bg-purple-500'
     },
     {
@@ -82,7 +60,7 @@ export default function CompanyTimeline() {
       title: 'Sustainable Solutions',
       description:
         'Began focusing on energy-efficient systems and enhancing indoor air quality, contributing to a healthier environment.',
-      icon: <Leaf className="h-8 w-8" />,
+      icon: <Leaf className="h-7 w-7" />,
       color: 'bg-green-500'
     },
     {
@@ -95,7 +73,7 @@ export default function CompanyTimeline() {
           industry.
         </>
       ),
-      icon: <Building2 className="h-8 w-8" />,
+      icon: <Building2 className="h-7 w-7" />,
       color: 'bg-indigo-500'
     },
     {
@@ -103,11 +81,11 @@ export default function CompanyTimeline() {
       title: 'Nationwide Reach',
       description: (
         <>
-          Secured <strong> All-India Distributorship </strong>for watches, expanding our retail presence across the
+          Secured <strong>All-India Distributorship</strong> for watches, expanding our retail presence across the
           country.
         </>
       ),
-      icon: <Globe className="h-8 w-8" />,
+      icon: <Globe className="h-7 w-7" />,
       color: 'bg-cyan-500'
     },
     {
@@ -118,7 +96,7 @@ export default function CompanyTimeline() {
           Ventured into the <strong>e-commerce space</strong>, bringing our products and services to digital platforms.
         </>
       ),
-      icon: <ShoppingCart className="h-8 w-8" />,
+      icon: <ShoppingCart className="h-7 w-7" />,
       color: 'bg-rose-500'
     },
     {
@@ -130,7 +108,7 @@ export default function CompanyTimeline() {
           <strong>international presence</strong>.
         </>
       ),
-      icon: <Hotel className="h-8 w-8" />,
+      icon: <Hotel className="h-7 w-7" />,
       color: 'bg-orange-500'
     },
     {
@@ -142,7 +120,7 @@ export default function CompanyTimeline() {
           <strong>continuous AC solutions</strong> without interruptions.
         </>
       ),
-      icon: <Shield className="h-8 w-8" />,
+      icon: <Shield className="h-7 w-7" />,
       color: 'bg-red-500'
     },
     {
@@ -153,7 +131,7 @@ export default function CompanyTimeline() {
           Celebrating <strong>25 Years of Excellence</strong> at Midway Comforts
         </>
       ),
-      icon: <Award className="h-8 w-8" />,
+      icon: <Award className="h-7 w-7" />,
       color: 'bg-blue-500'
     },
     {
@@ -165,74 +143,67 @@ export default function CompanyTimeline() {
           <strong>unwavering dedication</strong> and trust-driven relationships.
         </>
       ),
-      icon: <HeartHandshake className="h-8 w-8" />,
+      icon: <HeartHandshake className="h-7 w-7" />,
       color: 'bg-teal-500'
     }
   ];
 
   return (
     <div className="relative bg-gradient-to-b from-background to-muted/30 pt-10 overflow-x-hidden">
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -left-16 top-1/4 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
         <div className="absolute -right-16 top-3/4 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl"></div>
       </div>
 
       <div className="relative mx-auto px-4">
         <div className="mb-16 text-center">
-          <h1 className="mb-3 text-2xl text-gray-800 font-bold tracking-tight md:text-4xl">Our Journey</h1>
-          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">Milestones of Midway Comforts</p>
+          <h1 className="mb-3 text-2xl text-foreground font-bold tracking-tight md:text-4xl">
+            Our Journey
+          </h1>
+          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+            Milestones of Midway Comforts
+          </p>
         </div>
 
-        <div ref={timelineRef} className="relative">
-          {/* Timeline center line - adjusted to be visible */}
-          <div className="absolute hidden md:block left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-gray-300"></div>
-
-          <style jsx>{`
-            .milestone-card {
-              opacity: 0;
-              transition:
-                opacity 1s ease-out,
-                transform 0.1s ease-out;
-            }
-            .milestone-card.visible {
-              opacity: 1;
-              transform: translateX(0) !important;
-            }
-          `}</style>
+        <div className="relative">
+          {/* Timeline center line */}
+          <div className="absolute hidden md:block left-1/2 top-0 h-full w-1 -translate-x-1/2 timeline-line rounded-full" />
 
           {milestones.map((milestone, index) => (
-            <div
+            <motion.div
               key={milestone.year}
-              className={`milestone-card relative mb-6 ${
+              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: index * 0.06, ease: 'easeOut' }}
+              className={`relative mb-6 ${
                 index % 2 === 0 ? 'md:ml-auto md:mr-[52%] md:text-right' : 'md:ml-[52%]'
               }`}
-              style={{
-                transitionDelay: `${index * 100}ms`,
-                transform: index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)'
-              }}
             >
               <div
-                className={`relative mt-20 overflow-hidden rounded-xl border bg-card p-3 shadow-lg transition-all md:mt-0 md:w-[90%] ${
+                className={`relative mt-20 overflow-hidden rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition-shadow duration-300 md:mt-0 md:w-[90%] bg-card border border-border ${
                   index % 2 === 0 ? 'md:ml-auto' : ''
                 }`}
               >
-                <div className={`absolute -right-4 -top-4 h-16 w-16 rounded-full opacity-20 ${milestone.color}`}></div>
+                <div className={`absolute -right-4 -top-4 h-16 w-16 rounded-full opacity-20 ${milestone.color}`} />
 
                 <div className="flex flex-col items-center gap-4 md:flex-row">
                   <div
-                    className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full text-white ${milestone.color}`}
+                    className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full text-white shadow-md ${milestone.color}`}
                   >
                     {milestone.icon}
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="mb-2 text-xl font-bold">{milestone.year}</h3>
-                    <h4 className="mb-2 text-xl">{milestone.title}</h4>
-                    <p className="text-muted-foreground">{milestone.description}</p>
+                    <h3 className="mb-1 text-2xl font-bold text-primary">{milestone.year}</h3>
+                    <h4 className="mb-2 text-lg font-semibold text-foreground">{milestone.title}</h4>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {milestone.description}
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

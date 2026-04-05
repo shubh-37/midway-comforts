@@ -92,12 +92,12 @@ const circularProcessStyles = `
   
   .mobile-marquee-container::before {
     top: 0;
-    background: linear-gradient(to bottom, white, transparent);
+    background: linear-gradient(to bottom, hsl(var(--background)), transparent);
   }
-  
+
   .mobile-marquee-container::after {
     bottom: 0;
-    background: linear-gradient(to top, white, transparent);
+    background: linear-gradient(to top, hsl(var(--background)), transparent);
   }
 
   /* Make mobile cards narrower */
@@ -135,7 +135,7 @@ import SEO from '@/seo/SEO';
 
 export default function ACGuidePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
       <SEO page="acGuide" />
       <style jsx>{circularProcessStyles}</style>
       <HowAcWorksSection />
@@ -167,7 +167,7 @@ function HowAcWorksSection() {
   };
 
   return (
-    <section id="how-ac-works" className="py-10 bg-white">
+    <section id="how-ac-works" className="py-10 bg-background">
       <div className="px-4 md:px-6">
         <motion.div
           ref={ref}
@@ -192,13 +192,13 @@ function HowAcWorksSection() {
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger
                   value="process"
-                  className="data-[state=active]:bg-slate-100 data-[state=active]:text-black py-2"
+                  className="data-[state=active]:bg-muted data-[state=active]:text-foreground py-2"
                 >
                   Step-by-Step Process
                 </TabsTrigger>
                 <TabsTrigger
                   value="diagram"
-                  className="data-[state=active]:bg-slate-100 data-[state=active]:text-black py-2"
+                  className="data-[state=active]:bg-muted data-[state=active]:text-foreground py-2"
                 >
                   AC Cycle Diagram
                 </TabsTrigger>
@@ -405,7 +405,7 @@ function HowAcWorksSection() {
 // Regular ProcessCard for desktop
 function ProcessCard({ step, title, location, description, icon }) {
   return (
-    <div className="bg-white rounded-lg shadow-sm p-4 w-64">
+    <div className="bg-card rounded-lg shadow-sm p-4 w-64">
       <div className="flex items-center mb-2">
         <div className="rounded-full p-2 mr-3">{icon}</div>
         <div>
@@ -422,7 +422,7 @@ function ProcessCard({ step, title, location, description, icon }) {
 // New MobileProcessCard with more compact design
 function MobileProcessCard({ step, title, location, description, icon }) {
   return (
-    <div className="bg-white rounded-lg shadow-sm p-3 mobile-process-card">
+    <div className="bg-card rounded-lg shadow-sm p-3 mobile-process-card">
       <div className="flex items-center mb-1">
         <div className="rounded-full p-1 mr-2">{icon}</div>
         <div>
@@ -522,7 +522,7 @@ function MythsVsFactsSection() {
   };
 
   return (
-    <section id="myths-facts" className="py-16 md:py-24 bg-blue-50">
+    <section id="myths-facts" className="py-16 md:py-24 bg-muted">
       <div className="px-4 md:px-6">
         <motion.div
           ref={ref}
@@ -592,7 +592,7 @@ function MythFactCard({ mythNumber, myth, fact, solution, icon }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6 }}
-      className="rounded-lg overflow-hidden bg-white shadow-md"
+      className="rounded-lg overflow-hidden bg-card shadow-md"
     >
       <div className="grid md:grid-cols-2">
         <div className="bg-muted/30 p-6 flex flex-col">
@@ -616,7 +616,7 @@ function MythFactCard({ mythNumber, myth, fact, solution, icon }) {
             <h3 className="text-lg font-bold">The Truth</h3>
           </div>
           <p className="text-muted-foreground mb-4">{fact}</p>
-          <div className="bg-blue-50 p-4 rounded-lg">
+          <div className="bg-muted p-4 rounded-lg">
             <h4 className="font-medium mb-2">Solution:</h4>
             <p className="text-sm">{solution}</p>
           </div>
@@ -648,7 +648,7 @@ function ServiceImportanceSection() {
   };
 
   return (
-    <section id="service" className="py-16 md:py-24 bg-white">
+    <section id="service" className="py-16 md:py-24 bg-background">
       <div className="px-4 md:px-6">
         <motion.div
           ref={ref}
@@ -708,7 +708,7 @@ function ServiceImportanceSection() {
                 <CardContent className="flex flex-col items-center justify-center p-8">
                   <div className="mb-6">
                     <img src={whatsapp} className="h-24 w-24  mx-auto" />
-                    <p className="text-center mt-4 text-gray-600">
+                    <p className="text-center mt-4 text-muted-foreground">
                       Get quick responses to your questions by contacting us directly on WhatsApp. Our team is ready to
                       assist you!
                     </p>
@@ -723,7 +723,7 @@ function ServiceImportanceSection() {
                   </Button>
                 </CardContent>
               </Card>
-              <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+              <div className="mt-8 p-6 bg-muted rounded-lg">
                 <h3 className="text-xl font-bold mb-4">Did You Know?</h3>
                 <p className="text-muted-foreground mb-3">
                   Regular AC maintenance can improve its efficiency by up to 5-15%.

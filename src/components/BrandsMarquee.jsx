@@ -85,10 +85,10 @@ export default function BrandMarquee() {
   return (
     <section className="w-full overflow-hidden bg-background py-8 md:py-16">
       <div className="flex flex-col items-center justify-center gap-4 text-center px-4">
-        <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-gray-800">
+        <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-foreground">
           Trusted by Leading Brands
         </h3>
-        <p className="mx-auto max-w-[700px] text-gray-600 text-sm md:text-base">
+        <p className="mx-auto max-w-[700px] text-muted-foreground text-sm md:text-base">
           We partner with the world&apos;s most prestigious brands to deliver exceptional experiences.
         </p>
       </div>
@@ -128,14 +128,14 @@ export default function BrandMarquee() {
         >
           {duplicatedBrands.map((brand, idx) => (
             <div key={`${brand.name}-desktop-${idx}`} className="flex w-[260px] flex-col items-center gap-4">
-              <div className="w-32 h-32 bg-white rounded-lg shadow-sm flex items-center justify-center px-1">
+              <div className="w-32 h-32 glass-card-light rounded-xl flex items-center justify-center px-1">
                 <img
                   src={brand.logo || '/placeholder.svg'}
                   alt={`${brand.name} logo`}
                   className="max-h-20 max-w-full"
                 />
               </div>
-              <span className="text-lg font-medium text-center">{brand.name}</span>
+              <span className="text-lg font-medium text-center text-foreground">{brand.name}</span>
             </div>
           ))}
         </motion.div>

@@ -130,12 +130,12 @@ export default function GalleryGrid() {
   };
 
   return (
-    <div className="mx-auto px-4 py-12">
+    <div className="mx-auto px-4 py-12 bg-background min-h-screen">
       <SEO page="gallery" />
       <div className="mb-12 space-y-6">
         <div className="space-y-2">
-          <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl text-blue-700 text-center">Our Work</h1>
-          <p className="text-gray-600 md:text-xl text-center">
+          <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl text-primary text-center">Our Work</h1>
+          <p className="text-muted-foreground md:text-xl text-center">
             Browse through our portfolio of completed HVAC installations, repairs, and maintenance projects.
           </p>
         </div>
@@ -149,7 +149,7 @@ export default function GalleryGrid() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.03 }}
-            className="overflow-hidden rounded-lg shadow-lg"
+            className="overflow-hidden rounded-lg shadow-lg bg-card border border-border"
           >
             <div className="cursor-pointer" onClick={() => openModal(index)}>
               <div className="w-full aspect-square relative overflow-hidden">
@@ -161,7 +161,7 @@ export default function GalleryGrid() {
       </div>
 
       <Dialog open={selectedImage !== null} onOpenChange={(open) => !open && closeModal()}>
-        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-white">
+        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-card">
           {selectedImage !== null && currentIndex !== -1 && (
             <div className="relative">
               <div className="relative aspect-video w-full">

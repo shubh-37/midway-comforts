@@ -51,43 +51,52 @@ export default function FaqSection({
   supportButtonUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=midwaycomforts@gmail.com&su=Support Request'
 }) {
   return (
-    <section className="py-16 px-5 mx-auto bg-blue-50">
-      <div className="space-y-16">
+    <section className="py-16 px-5 mx-auto bg-muted/60 dark:bg-background">
+      <div className="space-y-12">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
-          <h2 className="mb-3 text-2xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">{heading}</h2>
+          <h2 className="mb-3 text-2xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl dark:text-slate-100">{heading}</h2>
           <p className="text-muted-foreground">{description}</p>
         </div>
-        <Accordion type="single" collapsible className="mx-auto w-full lg:max-w-3xl">
+
+        <Accordion type="single" collapsible className="mx-auto w-full lg:max-w-3xl space-y-0">
           {items.map((item) => (
-            <AccordionItem key={item.id} value={item.id}>
-              <AccordionTrigger className="transition-opacity duration-200 hover:no-underline hover:opacity-60">
-                <div className="font-medium sm:py-1 lg:py-2 lg:text-lg">{item.question}</div>
-              </AccordionTrigger>
-              <AccordionContent className="sm:mb-1 lg:mb-2">
-                <div className="text-muted-foreground lg:text-lg">{item.answer}</div>
-              </AccordionContent>
-            </AccordionItem>
+            <div
+              key={item.id}
+              className="mb-3 rounded-xl overflow-hidden border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow duration-200"
+            >
+              <AccordionItem value={item.id} className="border-0">
+                <AccordionTrigger className="px-5 py-4 hover:no-underline hover:bg-muted/80 transition-colors duration-150">
+                  <div className="font-semibold text-left text-gray-800 dark:text-slate-100 sm:py-0 lg:text-lg">
+                    {item.question}
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-5 pb-4">
+                  <div className="text-gray-600 dark:text-slate-400 lg:text-base leading-relaxed">{item.answer}</div>
+                </AccordionContent>
+              </AccordionItem>
+            </div>
           ))}
         </Accordion>
-        <div className="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-card p-2 text-center md:rounded-xl md:p-4 lg:p-6">
-          <div className="relative">
-            <Avatar className="absolute mb-4 size-16 origin-bottom -translate-x-[60%] scale-[80%] border md:mb-5">
+
+        <div className="mx-auto flex max-w-4xl flex-col items-center rounded-2xl bg-card text-card-foreground border border-border shadow-sm p-6 text-center md:p-8">
+          <div className="relative mb-6">
+            <Avatar className="absolute size-16 origin-bottom -translate-x-[60%] scale-[80%] border">
               <AvatarImage src="https://shadcnblocks.com/images/block/avatar-2.webp" />
               <AvatarFallback>SU</AvatarFallback>
             </Avatar>
-            <Avatar className="absolute mb-4 size-16 origin-bottom translate-x-[60%] scale-[80%] border md:mb-5">
+            <Avatar className="absolute size-16 origin-bottom translate-x-[60%] scale-[80%] border">
               <AvatarImage src="https://shadcnblocks.com/images/block/avatar-3.webp" />
               <AvatarFallback>SU</AvatarFallback>
             </Avatar>
-            <Avatar className="mb-4 size-16 border md:mb-5">
+            <Avatar className="size-16 border">
               <AvatarImage src="https://shadcnblocks.com/images/block/avatar-1.webp" />
               <AvatarFallback>SU</AvatarFallback>
             </Avatar>
           </div>
-          <h3 className="mb-2 max-w-3xl font-semibold lg:text-lg">{supportHeading}</h3>
+          <h3 className="mb-2 max-w-3xl font-semibold lg:text-lg dark:text-slate-100">{supportHeading}</h3>
           <p className="mb-8 max-w-3xl text-muted-foreground lg:text-lg">{supportDescription}</p>
           <div className="flex w-full flex-col justify-center gap-2 sm:flex-row">
-            <Button className="text-white bg-blue-800 hover:bg-white hover:text-blue-700" asChild>
+            <Button className="text-white bg-blue-800 hover:bg-white hover:text-blue-700 dark:hover:bg-[#1a2840] dark:hover:text-blue-300" asChild>
               <a href={supportButtonUrl} target="_blank" rel="noopener noreferrer">
                 {supportButtonText}
               </a>

@@ -6,7 +6,7 @@ import { OrganizationSchema } from '@/seo/JsonLd';
 
 function AboutPage() {
   return (
-    <div className="py-16 px-4 md:px-6">
+    <div className="py-16 px-4 md:px-6 bg-white dark:bg-[#070e1a]">
       <SEO page="about" />
       <OrganizationSchema />
       <AboutUsHeader />

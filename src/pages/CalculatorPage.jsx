@@ -145,7 +145,7 @@ function CalculatorPage() {
   };
 
   return (
-    <div className=" bg-white py-8 px-4">
+    <div className="bg-background py-8 px-4">
       <SEO page="calculator" />
       <div className="text-center mb-8">
         <div className="inline-flex items-center justify-center gap-2 bg-yellow-400 text-black font-bold px-4 py-1 rounded-full mb-4">
@@ -153,7 +153,7 @@ function CalculatorPage() {
           <span>HVAC TOOLS</span>
         </div>
         <h1 className="text-4xl font-bold text-blue-700 mb-4">AC Tonnage Calculator</h1>
-        <p className="text-gray-600 max-w-3xl mx-auto">
+        <p className="text-muted-foreground max-w-3xl mx-auto">
           Determine the right size air conditioning system for your space. Our calculator provides an estimate based on
           your room dimensions and other factors. For a professional assessment, contact our team with 26 years of HVAC
           expertise.
@@ -161,18 +161,18 @@ function CalculatorPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        <div className="lg:col-span-2 bg-white border border-blue-200 shadow-lg shadow-blue-100 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold mb-6 text-blue-800 flex items-center">
+        <div className="lg:col-span-2 bg-card border border-border shadow-lg p-6 rounded-lg">
+          <h2 className="text-xl font-semibold mb-6 text-primary flex items-center">
             <span className="bg-blue-600 text-white p-1 rounded mr-2 text-xs">01</span>
             Enter Your Space Details
           </h2>
 
           {/* Room Dimensions */}
-          <div className="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100">
-            <h3 className="font-medium mb-3 text-blue-900">Room Dimensions</h3>
+          <div className="mb-6 bg-muted p-4 rounded-lg border border-border">
+            <h3 className="font-medium mb-3 text-primary">Room Dimensions</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="length" className="text-gray-700">
+                <Label htmlFor="length" className="text-foreground">
                   Length (feet)
                 </Label>
                 <Input
@@ -185,7 +185,7 @@ function CalculatorPage() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="width" className="text-gray-700">
+                <Label htmlFor="width" className="text-foreground">
                   Width (feet)
                 </Label>
                 <Input
@@ -198,7 +198,7 @@ function CalculatorPage() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="ceiling-height" className="text-gray-700">
+                <Label htmlFor="ceiling-height" className="text-foreground">
                   Ceiling Height (feet)
                 </Label>
                 <Input
@@ -214,11 +214,11 @@ function CalculatorPage() {
           </div>
 
           {/* Location Factors */}
-          <div className="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100">
-            <h3 className="font-medium mb-3 text-blue-900">Location Factors</h3>
+          <div className="mb-6 bg-muted p-4 rounded-lg border border-border">
+            <h3 className="font-medium mb-3 text-primary">Location Factors</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="climate-zone" className="text-gray-700">
+                <Label htmlFor="climate-zone" className="text-foreground">
                   Climate Zone
                 </Label>
                 <Select
@@ -228,7 +228,7 @@ function CalculatorPage() {
                   <SelectTrigger id="climate-zone" className="border-blue-200">
                     <SelectValue placeholder="Select your climate" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent className="bg-card border-border">
                     <SelectItem value="hot">Hot (32°C+ summers)</SelectItem>
                     <SelectItem value="warm">Warm (26-32°C summers)</SelectItem>
                     <SelectItem value="moderate">Moderate (21-26°C summers)</SelectItem>
@@ -237,7 +237,7 @@ function CalculatorPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="sun-exposure" className="text-gray-700">
+                <Label htmlFor="sun-exposure" className="text-foreground">
                   Sun Exposure
                 </Label>
                 <Select
@@ -247,7 +247,7 @@ function CalculatorPage() {
                   <SelectTrigger id="sun-exposure" className="border-blue-200">
                     <SelectValue placeholder="Select exposure level" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent className="bg-card border-border">
                     <SelectItem value="high">High (direct sun most of the day)</SelectItem>
                     <SelectItem value="moderate">Moderate (partial sun exposure)</SelectItem>
                     <SelectItem value="low">Low (minimal direct sunlight)</SelectItem>
@@ -259,11 +259,11 @@ function CalculatorPage() {
           </div>
 
           {/* Building Characteristics */}
-          <div className="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100">
-            <h3 className="font-medium mb-3 text-blue-900">Building Characteristics</h3>
+          <div className="mb-6 bg-muted p-4 rounded-lg border border-border">
+            <h3 className="font-medium mb-3 text-primary">Building Characteristics</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="insulation" className="text-gray-700">
+                <Label htmlFor="insulation" className="text-foreground">
                   Insulation Quality
                 </Label>
                 <Select
@@ -273,7 +273,7 @@ function CalculatorPage() {
                   <SelectTrigger id="insulation" className="border-blue-200">
                     <SelectValue placeholder="Select insulation level" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent className="bg-card border-border">
                     <SelectItem value="poor">Poor (minimal insulation)</SelectItem>
                     <SelectItem value="average">Average (standard insulation)</SelectItem>
                     <SelectItem value="good">Good (well insulated)</SelectItem>
@@ -282,7 +282,7 @@ function CalculatorPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="windows" className="text-gray-700">
+                <Label htmlFor="windows" className="text-foreground">
                   Number of Windows
                 </Label>
                 <Input
@@ -298,18 +298,18 @@ function CalculatorPage() {
           </div>
 
           {/* Room Usage */}
-          <div className="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100">
-            <h3 className="font-medium mb-3 text-blue-900">Room Usage</h3>
+          <div className="mb-6 bg-muted p-4 rounded-lg border border-border">
+            <h3 className="font-medium mb-3 text-primary">Room Usage</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="room-type" className="text-gray-700">
+                <Label htmlFor="room-type" className="text-foreground">
                   Room Type
                 </Label>
                 <Select value={usage.roomType} onValueChange={(value) => setUsage({ ...usage, roomType: value })}>
                   <SelectTrigger id="room-type" className="border-blue-200">
                     <SelectValue placeholder="Select room type" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent className="bg-card border-border">
                     <SelectItem value="living">Living Room</SelectItem>
                     <SelectItem value="bedroom">Bedroom</SelectItem>
                     <SelectItem value="kitchen">Kitchen</SelectItem>
@@ -320,7 +320,7 @@ function CalculatorPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="occupants" className="text-gray-700">
+                <Label htmlFor="occupants" className="text-foreground">
                   Average Occupants
                 </Label>
                 <Input
@@ -344,7 +344,7 @@ function CalculatorPage() {
           </Button>
 
           {result && (
-            <Card className="mt-6 border-blue-500 bg-white">
+            <Card className="mt-6 border-blue-500 bg-card">
               <CardHeader className=" rounded-t-lg">
                 <CardTitle className="text-blue-700 flex items-center">
                   <Zap className="mr-2 h-5 w-5" />
@@ -354,15 +354,15 @@ function CalculatorPage() {
               <CardContent className="pt-6">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-700">Recommended AC Size:</span>
+                    <span className="text-foreground">Recommended AC Size:</span>
                     <span className="text-2xl font-bold text-blue-700">{result.tonnage} tons</span>
                   </div>
                   <div className="flex items-center justify-between border-t border-blue-100 pt-2">
-                    <span className="text-gray-700">Room Size:</span>
+                    <span className="text-foreground">Room Size:</span>
                     <span className="font-medium text-blue-600">{result.squareFootage} square feet</span>
                   </div>
-                  <div className="bg-yellow-50 p-4 rounded-lg mt-4 border-l-4 border-yellow-400">
-                    <p className="text-sm text-gray-700">{result.recommendation}</p>
+                  <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg mt-4 border-l-4 border-yellow-400">
+                    <p className="text-sm text-foreground">{result.recommendation}</p>
                   </div>
                 </div>
               </CardContent>
@@ -371,7 +371,7 @@ function CalculatorPage() {
         </div>
 
         <div className="lg:col-span-1">
-          <Card className="bg-white border border-blue-200 shadow-lg shadow-blue-100 overflow-hidden">
+          <Card className="bg-card border border-border shadow-lg overflow-hidden">
             <CardHeader className="text-blue-600 border-b border-blue-200">
               <CardTitle className="flex items-center text-lg">
                 <Info className="mr-2 h-5 w-5" />
@@ -380,13 +380,13 @@ function CalculatorPage() {
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
-                <p className="text-gray-700">
+                <p className="text-foreground">
                   Air conditioner size is measured in "Tons," which refers to the cooling capacity of the system. One
                   ton equals 12,000 BTU/hr (British Thermal Units per hour).
                 </p>
 
-                <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
-                  <p className="text-blue-800 font-semibold text-sm">
+                <div className="bg-muted p-3 rounded-lg border border-border">
+                  <p className="text-blue-800 dark:text-blue-300 font-semibold text-sm">
                     The AC tonnage calculator provided on this site is intended for general reference only. While it
                     offers useful estimates, it may not account for all factors affecting cooling needs. For accurate
                     recommendations tailored to your specific requirements, we recommend consulting a certified HVAC
@@ -395,44 +395,44 @@ function CalculatorPage() {
                 </div>
 
                 <div className="border-l-4 border-yellow-400 pl-4 py-2">
-                  <h3 className="font-medium mb-2 text-blue-800">Why proper sizing matters:</h3>
+                  <h3 className="font-medium mb-2 text-blue-800 dark:text-blue-300">Why proper sizing matters:</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
-                      <div className="bg-blue-100 rounded-full p-1 mr-2 mt-0.5 flex-shrink-0">
-                        <Check className="h-3 w-3 text-blue-700" />
+                      <div className="bg-muted rounded-full p-1 mr-2 mt-0.5 flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-700 dark:text-blue-400" />
                       </div>
-                      <span className="text-sm text-gray-700">
+                      <span className="text-sm text-foreground">
                         Undersized systems run constantly without providing adequate cooling
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <div className="bg-blue-100 rounded-full p-1 mr-2 mt-0.5 flex-shrink-0">
-                        <Check className="h-3 w-3 text-blue-700" />
+                      <div className="bg-muted rounded-full p-1 mr-2 mt-0.5 flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-700 dark:text-blue-400" />
                       </div>
-                      <span className="text-sm text-gray-700">
+                      <span className="text-sm text-foreground">
                         Oversized systems cycle too frequently, causing temperature swings and humidity issues
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <div className="bg-blue-100 rounded-full p-1 mr-2 mt-0.5 flex-shrink-0">
-                        <Check className="h-3 w-3 text-blue-700" />
+                      <div className="bg-muted rounded-full p-1 mr-2 mt-0.5 flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-700 dark:text-blue-400" />
                       </div>
-                      <span className="text-sm text-gray-700">
+                      <span className="text-sm text-foreground">
                         Properly sized systems provide optimal comfort and energy efficiency
                       </span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-lg flex">
+                <div className="bg-muted p-4 rounded-lg flex border border-border">
                   <div className="mr-4">
                     <div className="bg-yellow-400 rounded-full p-2 text-black">
                       <Zap className="h-5 w-5" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-medium text-blue-800">26 Years of Expert Sizing & Installation</h3>
-                    <p className="text-sm text-gray-700 mt-1">
+                    <h3 className="font-medium text-blue-800 dark:text-blue-300">26 Years of Expert Sizing & Installation</h3>
+                    <p className="text-sm text-foreground mt-1">
                       Trust our experienced technicians to help you select the perfect HVAC system for your specific
                       needs. We've been sizing and installing systems correctly since 1999.
                     </p>

@@ -51,7 +51,7 @@ export default function CareersPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-background">
       <SEO page="career" />
       {/* Hero Section */}
       <motion.section
@@ -93,7 +93,7 @@ export default function CareersPage() {
       </motion.section>
 
       {/* Why Work With Us Section */}
-      <section id="why-work-with-us" className="py-16 bg-white">
+      <section id="why-work-with-us" className="py-16 bg-background">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-3xl font-bold text-center mb-12 text-blue-700"
@@ -170,7 +170,7 @@ export default function CareersPage() {
                         {item.icon}
                       </motion.div>
                       <h3 className="text-xl font-bold mb-2 text-blue-700">{item.title}</h3>
-                      <p className="text-gray-600 flex-grow">{item.description}</p>
+                      <p className="text-muted-foreground flex-grow">{item.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -181,7 +181,7 @@ export default function CareersPage() {
       </section>
 
       {/* Life at Midway Comforts */}
-      <section id="life-at-midway" className="py-16 bg-gray-50">
+      <section id="life-at-midway" className="py-16 bg-muted">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-3xl font-bold text-center mb-12 text-blue-700"
@@ -282,7 +282,7 @@ export default function CareersPage() {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className="p-4 bg-white rounded-lg shadow-sm"
+                    className="p-4 bg-card rounded-lg shadow-sm"
                     variants={item}
                     whileHover={{
                       y: -5,
@@ -290,7 +290,7 @@ export default function CareersPage() {
                     }}
                   >
                     <h4 className="font-bold text-blue-700">{item.title}</h4>
-                    <p className="text-sm text-gray-600">{item.description}</p>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
                   </motion.div>
                 ))}
               </motion.div>

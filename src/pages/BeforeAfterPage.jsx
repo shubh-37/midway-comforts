@@ -97,10 +97,10 @@ const BeforeAfterGallery = () => {
     activeFilter === 'All Projects' ? projects : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-7xl mx-auto px-4 py-12 bg-background text-foreground">
       <h1 className="text-4xl font-bold text-center mb-4">Before & After Gallery</h1>
 
-      <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+      <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
         See the remarkable difference our HVAC solutions can make. Over our 26 years of experience, we've transformed
         thousands of homes and commercial spaces. Here's a glimpse of our work.
       </p>
@@ -112,7 +112,7 @@ const BeforeAfterGallery = () => {
             key={filter}
             onClick={() => setActiveFilter(filter)}
             className={`px-6 py-2 rounded-md transition-colors ${
-              activeFilter === filter ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              activeFilter === filter ? 'bg-blue-600 text-white' : 'bg-muted text-foreground hover:bg-secondary'
             }`}
           >
             {filter}

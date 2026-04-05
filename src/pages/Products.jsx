@@ -3,7 +3,7 @@ import SEO from '@/seo/SEO';
 
 const Products = () => {
   return (
-    <div className="bg-gray-5">
+    <div className="bg-background">
       <SEO page="products" />
       <ProductsListing />
     </div>

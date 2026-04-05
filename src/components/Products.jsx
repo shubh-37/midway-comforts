@@ -26,13 +26,13 @@ export default function ProductsPage() {
   const currentProductType = currentProvider?.productTypes.find((t) => t.id === selectedType);
 
   return (
-    <div className=" bg-white text-slate-900">
+    <div className="bg-background text-foreground">
       <div className="mx-auto py-12 px-4 sm:px-6">
-        <h1 className="text-4xl font-bold mb-10 text-center text-blue-600">Our Products</h1>
+        <h1 className="text-4xl font-bold mb-10 text-center text-primary">Our Products</h1>
 
-        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-md mb-10">
+        <div className="bg-card border border-border rounded-xl p-6 shadow-md mb-10">
           <Tabs defaultValue={selectedProvider} onValueChange={handleProviderChange} className="mb-8">
-            <TabsList className="grid w-full grid-cols-3 mb-6 gap-2">
+            <TabsList className="grid w-full grid-cols-3 mb-6 gap-2 bg-transparent">
               {providers.map((provider) => (
                 <TabsTrigger
                   key={provider.id}
@@ -94,11 +94,11 @@ export default function ProductsPage() {
                               transition={{ duration: 0.5 }}
                               whileHover={{ scale: 1.02 }}
                             >
-                              <Card className="bg-white border border-slate-200 h-[450px] flex flex-col">
+                              <Card className="bg-card border border-border h-[450px] flex flex-col">
                                 <CardHeader className="pb-2">
                                   <div className="flex justify-between items-start">
                                     <div>
-                                      <CardTitle className="text-slate-900">{subType.name}</CardTitle>
+                                      <CardTitle className="text-foreground">{subType.name}</CardTitle>
                                     </div>
                                   </div>
                                 </CardHeader>
@@ -119,7 +119,7 @@ export default function ProductsPage() {
                                     </div>
                                   </div>
                                 </CardContent>
-                                <CardFooter className="border-t border-slate-200 pt-4 mt-auto">
+                                <CardFooter className="border-t border-border pt-4 mt-auto">
                                   <a href={subType.link} target="_blank" rel="noreferrer" className="w-full">
                                     <Button
                                       variant="outline"
@@ -160,11 +160,11 @@ export default function ProductsPage() {
                               transition={{ duration: 0.5 }}
                               whileHover={{ scale: 1.02 }}
                             >
-                              <Card className="bg-white border border-slate-200 h-[450px] flex flex-col">
+                              <Card className="bg-card border border-border h-[450px] flex flex-col">
                                 <CardHeader className="pb-2">
                                   <div className="flex justify-between items-start">
                                     <div>
-                                      <CardTitle className="text-slate-900">{subType.name}</CardTitle>
+                                      <CardTitle className="text-foreground">{subType.name}</CardTitle>
                                       {subType.type && (
                                         <CardDescription className="mt-1 text-slate-600">
                                           {subType.type}
@@ -207,7 +207,7 @@ export default function ProductsPage() {
                                     </div>
                                   </div>
                                 </CardContent>
-                                <CardFooter className="border-t border-slate-200 pt-4 mt-auto">
+                                <CardFooter className="border-t border-border pt-4 mt-auto">
                                   <a href={subType.link} target="_blank" rel="noreferrer" className="w-full">
                                     <Button
                                       variant="outline"

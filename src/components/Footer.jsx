@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-blue-700 py-8 text-center">
+      <div className="bg-blue-700 dark:bg-blue-900 py-8 text-center">
         <div className="mx-auto px-4 space-y-2">
           <p className="text-sm font-medium">Celebrating a Milestone</p>
           <h2 className="text-2xl md:text-3xl font-bold">26 Years of Excellence in HVAC Solutions</h2>

@@ -100,7 +100,7 @@ export default function OpenPositions() {
   };
 
   return (
-    <section id="open-positions" className="py-16 bg-white">
+    <section id="open-positions" className="py-16 bg-background">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-700">Open Positions</h2>
 
@@ -132,9 +132,9 @@ export default function OpenPositions() {
                         </Badge>
                       </div>
                     </div>
-                    <p className="text-gray-600 mb-4">{job.shortDescription}</p>
+                    <p className="text-muted-foreground mb-4">{job.shortDescription}</p>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center text-gray-500">
+                      <div className="flex items-center text-muted-foreground">
                         <MapPin className="h-4 w-4 mr-1" />
                         <span className="text-sm">{job.location}</span>
                       </div>
@@ -151,7 +151,7 @@ export default function OpenPositions() {
               </div>
             ))
           ) : (
-            <div className="text-center text-gray-500 py-8">
+            <div className="text-center text-muted-foreground py-8">
               No jobs match your search criteria. Please try a different search term.
             </div>
           )}
@@ -160,7 +160,7 @@ export default function OpenPositions() {
 
       {/* Job Details Modal */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-white scrollbar-hide">
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-card scrollbar-hide">
           {selectedJob && (
             <>
               <DialogHeader>
@@ -172,7 +172,7 @@ export default function OpenPositions() {
                   <Badge variant="outline" className="text-blue-700 border-blue-700">
                     {selectedJob.department}
                   </Badge>
-                  <div className="flex items-center text-gray-500 ml-2">
+                  <div className="flex items-center text-muted-foreground ml-2">
                     <MapPin className="h-4 w-4 mr-1" />
                     <span className="text-sm">{selectedJob.location}</span>
                   </div>
@@ -182,7 +182,7 @@ export default function OpenPositions() {
               <div className="space-y-6 mt-4">
                 <div>
                   <h3 className="text-lg font-semibold text-blue-700 mb-2">About the Role</h3>
-                  <p className="text-gray-700">{selectedJob.aboutRole}</p>
+                  <p className="text-foreground">{selectedJob.aboutRole}</p>
                 </div>
 
                 <Separator />
@@ -191,7 +191,7 @@ export default function OpenPositions() {
                   <h3 className="text-lg font-semibold text-blue-700 mb-2">Key Responsibilities</h3>
                   <ul className="list-disc pl-5 space-y-1">
                     {selectedJob.responsibilities.map((resp, index) => (
-                      <li key={index} className="text-gray-700">
+                      <li key={index} className="text-foreground">
                         {resp}
                       </li>
                     ))}
@@ -204,7 +204,7 @@ export default function OpenPositions() {
                   <h3 className="text-lg font-semibold text-blue-700 mb-2">Required Qualifications</h3>
                   <ul className="list-disc pl-5 space-y-1">
                     {selectedJob.qualifications.map((qual, index) => (
-                      <li key={index} className="text-gray-700">
+                      <li key={index} className="text-foreground">
                         {qual}
                       </li>
                     ))}
@@ -216,12 +216,12 @@ export default function OpenPositions() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="text-lg font-semibold text-blue-700 mb-2">Salary Range</h3>
-                    <p className="text-gray-700">{selectedJob.salary}</p>
+                    <p className="text-foreground">{selectedJob.salary}</p>
                   </div>
 
                   <div>
                     <h3 className="text-lg font-semibold text-blue-700 mb-2">Reporting To</h3>
-                    <p className="text-gray-700">{selectedJob.reportingTo}</p>
+                    <p className="text-foreground">{selectedJob.reportingTo}</p>
                   </div>
                 </div>
 
@@ -229,7 +229,7 @@ export default function OpenPositions() {
                   <h3 className="text-lg font-semibold text-blue-700 mb-2">Benefits & Perks</h3>
                   <ul className="list-disc pl-5 space-y-1">
                     {selectedJob.benefits.map((benefit, index) => (
-                      <li key={index} className="text-gray-700">
+                      <li key={index} className="text-foreground">
                         {benefit}
                       </li>
                     ))}
@@ -238,7 +238,7 @@ export default function OpenPositions() {
 
                 <div>
                   <h3 className="text-lg font-semibold text-blue-700 mb-2">Positions Available</h3>
-                  <p className="text-gray-700">{selectedJob.positions} openings</p>
+                  <p className="text-foreground">{selectedJob.positions} openings</p>
                 </div>
 
                 <Separator />

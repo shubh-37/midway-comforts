@@ -300,11 +300,11 @@ const CaseStudyModal = ({ study, isOpen, onClose }) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ type: 'spring', damping: 20 }}
-        className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-card rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sticky top-0 bg-white z-10 flex justify-between items-center p-4 border-b">
-          <h2 className="text-2xl font-bold text-blue-950">{study.title}</h2>
+        <div className="sticky top-0 bg-card z-10 flex justify-between items-center p-4 border-b border-border">
+          <h2 className="text-2xl font-bold text-foreground">{study.title}</h2>
           <Button variant="ghost" size="icon" onClick={onClose} className="rounded-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -329,7 +329,7 @@ const CaseStudyModal = ({ study, isOpen, onClose }) => {
           <div className="flex justify-between items-start mb-6">
             <div>
               {study.subtitle && <p className="text-yellow-600 font-medium">{study.subtitle}</p>}
-              <p className="text-gray-600 mt-1">
+              <p className="text-muted-foreground mt-1">
                 {study.client} | {study.location}
               </p>
             </div>
@@ -340,7 +340,7 @@ const CaseStudyModal = ({ study, isOpen, onClose }) => {
           {study.images && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {study.images.map((image, index) => (
-                <div key={index} className="rounded-lg overflow-hidden border border-gray-200">
+                <div key={index} className="rounded-lg overflow-hidden border border-border">
                   <img
                     src={image || '/placeholder.svg'}
                     alt={`${study.title} - Image ${index + 1}`}
@@ -352,43 +352,43 @@ const CaseStudyModal = ({ study, isOpen, onClose }) => {
           )}
 
           <div className="space-y-6">
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Client Overview</h3>
-              <p className="text-gray-700">{study.overview}</p>
+            <div className="bg-muted p-4 rounded-lg border border-border">
+              <h3 className="text-xl font-semibold text-primary mb-3">Client Overview</h3>
+              <p className="text-foreground">{study.overview}</p>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Initial Situation & Challenges</h3>
-              <p className="text-gray-700">{study.problem}</p>
+              <h3 className="text-xl font-semibold text-primary mb-3">Initial Situation & Challenges</h3>
+              <p className="text-foreground">{study.problem}</p>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Assessment & Proposed Solution</h3>
+              <h3 className="text-xl font-semibold text-primary mb-3">Assessment & Proposed Solution</h3>
               <CaseStudySection title="Assessment" content={study.assessment} className="mb-4" />
               <CaseStudySection title="Proposed Solution" content={study.solution} />
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Implementation Process</h3>
-              <p className="text-gray-700">{study.implementation}</p>
+              <h3 className="text-xl font-semibold text-primary mb-3">Implementation Process</h3>
+              <p className="text-foreground">{study.implementation}</p>
             </div>
 
             {study.safetyProtocols && (
               <div>
-                <h3 className="text-xl font-semibold text-blue-900 mb-3">Safety Protocols</h3>
+                <h3 className="text-xl font-semibold text-primary mb-3">Safety Protocols</h3>
                 <CaseStudySection content={study.safetyProtocols} />
               </div>
             )}
 
             <div>
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Results & Benefits</h3>
+              <h3 className="text-xl font-semibold text-primary mb-3">Results & Benefits</h3>
               <CaseStudySection title="Results" content={study.results} className="mb-4" />
               <CaseStudySection title="Benefits" content={study.benefits} />
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Conclusion</h3>
-              <p className="text-gray-700">{study.conclusion}</p>
+              <h3 className="text-xl font-semibold text-primary mb-3">Conclusion</h3>
+              <p className="text-foreground">{study.conclusion}</p>
             </div>
           </div>
 
@@ -441,8 +441,8 @@ export default function KeyProjects() {
         transition={{ duration: 0.5 }}
         className="text-center mb-8"
       >
-        <h1 className="text-4xl font-bold text-blue-950 mb-4">Our Success Stories</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-foreground mb-4">Our Success Stories</h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Explore our case studies to see how we've helped clients overcome challenges and achieve exceptional results.
         </p>
       </motion.div>
@@ -450,7 +450,7 @@ export default function KeyProjects() {
       {/* Fixed position tabs container with shadow for better visibility */}
       <div className="sticky top-0 z-30 mb-8">
         <Tabs defaultValue="all" onValueChange={setFilter} className="w-full">
-          <TabsList className="bg-blue-100 p-2 w-full h-auto flex flex-wrap justify-center gap-3 md:gap-2">
+          <TabsList className="bg-muted p-2 w-full h-auto flex flex-wrap justify-center gap-3 md:gap-2">
             {filterOptions.map((option) => (
               <TabsTrigger
                 key={option.value}
@@ -472,7 +472,7 @@ export default function KeyProjects() {
 
       {filteredStudies.length === 0 && (
         <div className="text-center py-16">
-          <p className="text-xl text-gray-500">No case studies found for this filter.</p>
+          <p className="text-xl text-muted-foreground">No case studies found for this filter.</p>
           <Button variant="outline" className="mt-4" onClick={() => setFilter('all')}>
             View all case studies
           </Button>

@@ -195,8 +195,8 @@ export default function Awards() {
         transition={{ duration: 0.5 }}
         className="text-center mb-6"
       >
-        <h2 className="text-3xl font-bold mb-2 text-blue-700">Our Achievements</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold mb-2 text-primary">Our Achievements</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
           A showcase of our excellence and recognition in the industry over the years.
         </p>
       </motion.div>
@@ -205,7 +205,7 @@ export default function Awards() {
         {/* Navigation buttons */}
         <button
           onClick={scrollLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-blue-600 text-white rounded-full p-2 shadow-lg hidden md:block hover:bg-blue-700 transition-colors"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center bg-card border border-border text-muted-foreground rounded-full shadow-lg hidden md:block hover:bg-blue-600 hover:text-white transition-all duration-200"
           aria-label="Scroll left"
         >
           <ChevronLeft className="h-6 w-6" />
@@ -213,7 +213,7 @@ export default function Awards() {
 
         <button
           onClick={scrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-blue-600 text-white rounded-full p-2 shadow-lg hidden md:block hover:bg-blue-700 transition-colors"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 flex items-center justify-center bg-card border border-border text-muted-foreground rounded-full shadow-lg hidden md:block hover:bg-blue-600 hover:text-white transition-all duration-200"
           aria-label="Scroll right"
         >
           <ChevronRight className="h-6 w-6" />
@@ -221,7 +221,7 @@ export default function Awards() {
 
         {/* Scroll indicator for mobile */}
         <div className="flex justify-center mb-4 md:hidden">
-          <div className="flex items-center gap-2 text-sm text-gray-500">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <ChevronLeft className="h-4 w-4" />
             <span>Swipe to see more awards</span>
             <ChevronRight className="h-4 w-4" />
@@ -243,7 +243,7 @@ export default function Awards() {
                     {awardsByYear[year].length} Award{awardsByYear[year].length > 1 ? 's' : ''}
                   </Badge>
                 </div>
-                <div className="bg-blue-50 rounded-b-lg p-3 h-[400px] overflow-y-auto scrollbar-hide">
+                <div className="bg-muted rounded-b-lg p-3 h-[400px] overflow-y-auto scrollbar-hide">
                   <div className="space-y-3">
                     {awardsByYear[year].map((award, index) => (
                       <motion.div
@@ -252,15 +252,15 @@ export default function Awards() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
                       >
-                        <Card className="overflow-hidden border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 hover:shadow-md p-0">
-                          <div className="relative h-32 overflow-hidden bg-blue-50">
+                        <Card className="overflow-hidden border-2 border-border hover:border-blue-400 transition-all duration-300 hover:shadow-md p-0">
+                          <div className="relative h-32 overflow-hidden bg-muted">
                             <img src={award.image} alt={award.title} className="object-contain w-full h-full" />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/70 to-transparent p-2">
                               <Badge className="bg-yellow-500 hover:bg-yellow-600 text-xs">{award.category}</Badge>
                             </div>
                           </div>
                           <CardContent className="p-3">
-                            <p className="text-sm font-medium line-clamp-3">{award.title}</p>
+                            <p className="text-sm font-medium line-clamp-3 text-foreground">{award.title}</p>
                           </CardContent>
                         </Card>
                       </motion.div>
